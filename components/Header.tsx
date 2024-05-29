@@ -24,12 +24,13 @@ const Header = () => {
   const navItems = [
     { text: "About", href: "/about" },
     { text: "Book An Appointment", href: "/appointments" },
+    { text: "Contact", href: "/contact" },
   ];
 
   return (
     <nav className={``}>
-      <div className="grid grid-cols-2 py-4 mx-auto max-w-screen-lg h-full">
-        <div>
+      <div className="grid grid-cols-2 py-4 px-10 mx-auto max-w-screen-lg h-full text-blue ">
+        <div className="self-center text-2xl">
           <Link href="/">Keenesse Coaching & Consulting</Link>
         </div>
 
@@ -49,7 +50,7 @@ const Header = () => {
 
         <div className="flex col-start-2 justify-end">
           <ul
-            className={`${!navOpen ? "hidden" : ""} absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-tan items-center justify-between md:space-x-4 text-2xl`}
+            className={`${!navOpen ? "hidden" : ""} absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-tan items-center justify-between md:space-x-4`}
           >
             {navItems.map(({ text, href }) => (
               <NavItem text={text} href={href} key={text} />

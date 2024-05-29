@@ -7,6 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontSize: {},
+    colors: {
+      blue: "rgb(20, 112, 175)",
+      lightBlue: "rgb(142, 182, 220)",
+      white: "#FFFFFF",
+    },
     animation: {
       slideIn: "300ms 1 alternate slidein",
     },
