@@ -29,18 +29,8 @@ const Header = () => {
   return (
     <nav className={``}>
       <div className="grid grid-cols-2 py-4 mx-auto max-w-screen-lg h-full">
-        <div className="flex">
-          <ul
-            className={`${!navOpen ? "hidden" : ""} absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-tan items-center justify-between md:space-x-4`}
-          >
-            {navItems.map(({ text, href }) => (
-              <NavItem text={text} href={href} key={text} />
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex">
-          <Link href="/">Keenesse Coaching &amp; Consulting</Link>
+        <div>
+          <Link href="/">Keenesse Coaching & Consulting</Link>
         </div>
 
         <div className="md:hidden justify-self-end flex mr-5">
@@ -55,6 +45,16 @@ const Header = () => {
               alt={"Navigation Menu"}
             />
           </button>
+        </div>
+
+        <div className="flex col-start-2 justify-end">
+          <ul
+            className={`${!navOpen ? "hidden" : ""} absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-tan items-center justify-between md:space-x-4 text-2xl`}
+          >
+            {navItems.map(({ text, href }) => (
+              <NavItem text={text} href={href} key={text} />
+            ))}
+          </ul>
         </div>
       </div>
 

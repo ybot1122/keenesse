@@ -9,11 +9,13 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/components/[object Object].js",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    animation: {
+      slideIn: "300ms 1 alternate slidein",
+    },
+    keyframes: {
+      slidein: {
+        "0%": { transform: "translateX(50%)" },
+        "100%": { transform: "translateX(0px)" },
       },
     },
   },
