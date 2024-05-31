@@ -8,19 +8,23 @@ export const metadata: Metadata = {
 
 const testimonials = [
   {
+    id: "a",
     message:
       "Since speaking with Daisy, I have gained confidence to network on LinkedIn",
   },
   {
+    id: "b",
     message:
       "Thank you so much, Daisy! You gave me really PRACTICAL things I could change!",
     from: "Linda",
   },
   {
+    id: "c",
     message:
       "I appreciate Daisy's honest feedback and willingess to help with career advice.",
   },
   {
+    id: "d",
     message:
       "The exercise to identify gap analysis was the most helpful from our session.",
     from: "Jessi",
@@ -76,7 +80,10 @@ export default function About() {
         </h3>
 
         {testimonials.map((t) => (
-          <div className="bg-white m-5 text-blue text-center p-10 max-w-[520px]">
+          <div
+            className="bg-white m-5 text-blue text-center p-10 max-w-[520px]"
+            key={t.id}
+          >
             <p className="text-2xl">&ldquo;{t.message}&rdquo;</p>
             {t.from ? <p className="mt-5">{t.from}</p> : null}
           </div>
