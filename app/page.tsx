@@ -1,9 +1,30 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Keenesse Coaching & Consulting",
+  description:
+    "Connect with a partner who has been where you are. Your first meeting is on us.",
+  keywords: ["Keenesse", "coaching", "consulting", "software engineering"],
+  openGraph: {
+    title: "Keenesse Coaching & Consulting",
+    description:
+      "Connect with a partner who has been where you are. Your first meeting is on us.",
+    url: "https://www.keeness.com",
+    siteName: "Keenesse Coaching & Consulting",
+  },
+  twitter: {
+    title: "Keenesse Coaching & Consulting",
+    description:
+      "Connect with a partner who has been where you are. Your first meeting is on us.",
+    card: "summary",
+  },
+};
 
 export default function Home() {
   return (
     <main className="">
-      <div className="text-center text-blue pt-[6vmax] pb-[3vw] px-5 w-[75%] mx-auto">
+      <div className="text-center text-blue pt-[6vmax] pb-[5vw] px-5 w-[75%] mx-auto">
         <h1 id="headline" className="tracking-normal">
           Connect with a partner who has been where you are.
         </h1>
@@ -12,8 +33,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:flex bg-blue text-white pt-[6vmax] pb-[6vmax] px-10 justify-center">
-        <div id="sectionheadline" className="pr-20 pb-10">
+      <div className="md:flex bg-blue text-white pt-[10vmax] pb-[10vmax] px-10 justify-center">
+        <div id="sectionheadline" className="pr-20 pb-10 md:text-right">
           Consultation Specialties
         </div>
 

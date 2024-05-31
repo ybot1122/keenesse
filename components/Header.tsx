@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const NavItem = ({ text, href }: { text: string; href: string }) => {
   return (
-    <li className={`group relative md:text-center uppercase`}>
+    <li className={`group relative md:text-center uppercase hover:underline`}>
       <Link href={href} className="block p-5">
         {text}
       </Link>
@@ -29,8 +29,8 @@ const Header = () => {
 
   return (
     <nav className={``}>
-      <div className="grid grid-cols-2 py-4 px-10 mx-auto max-w-screen-lg h-full text-blue ">
-        <div className="self-center text-2xl">
+      <div className="grid grid-cols-2 py-4 px-10 mx-auto max-w-screen-lg h-full text-blue">
+        <div className="self-center" id="title">
           <Link href="/">Keenesse Coaching & Consulting</Link>
         </div>
 
@@ -58,16 +58,6 @@ const Header = () => {
           </ul>
         </div>
       </div>
-
-      {/*navOpen && (
-        <ul
-          className={`absolute flex md:hidden items-center justify-between space-x-3 text-2xl w-full z-30 animate-slideIn bg-tan`}
-        >
-          {navItems.map(({ text, href }) => (
-            <NavItem text={text} href={href} key={text} />
-          ))}
-        </ul>
-          )*/}
     </nav>
   );
 };
