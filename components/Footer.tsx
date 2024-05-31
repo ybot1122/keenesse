@@ -3,9 +3,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <Link href="#">
+    <footer className="text-center">
+      <div className="mt-10 mb-5">
+        <Link
+          href="https://twitter.com/keenesse"
+          target="_blank"
+          className="inline-block pr-5"
+        >
           <Image
             src="/icons8-twitter.svg"
             alt="Twitter"
@@ -13,7 +17,11 @@ export default function Footer() {
             height="30"
           />
         </Link>
-        <Link href="#">
+        <Link
+          href="http://www.linkedin.com/in/keenesse/"
+          target="_blank"
+          className="inline-block"
+        >
           <Image
             src="/icons8-linkedin.svg"
             alt="LinkedIn"
@@ -21,8 +29,8 @@ export default function Footer() {
             height="30"
           />
         </Link>
-        <p>© 2024 Keenesse LLC. All Rights Reserved</p>
       </div>
+      <p className="mb-5">© 2024 Keenesse LLC. All Rights Reserved</p>
     </footer>
   );
 }
