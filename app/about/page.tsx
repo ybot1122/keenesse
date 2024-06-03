@@ -1,3 +1,4 @@
+import FAQItem from "@/components/FAQItem";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +29,46 @@ const testimonials = [
     message:
       "The exercise to identify gap analysis was the most helpful from our session.",
     from: "Jessi",
+  },
+];
+
+const faqs = [
+  {
+    q: "What can I expect during a coaching session?",
+    a: [
+      "Keenesse provides a partner to help you navigate life so that you can achieve your personal, career and life goals! Together, we'll create a unique plan for your individual background and interests, measure progress and ensure that you're thriving within your strengths while also growing in each season.",
+      "A free 30-minute session is always offered to ensure we're the right fit for you! When you are ready to take the next steps, you can schedule incremental sessions or take advantage of up to 25% discount on 3 or 6-session packages.",
+      "You'll be working with our coach, Daisy, who has a 12+ year track record of growing individuals in business, non-profit and technology sectors amongst others. She truly cares about each person, takes the time to understand their situation and has dedicated the last 4 years to making herself available to her clients around the globe.",
+    ],
+  },
+  {
+    q: "I have a unique project & collaboration request. What do I do?",
+    a: [
+      "Keenesse coaching & consulting provides a wide array of professional services for businesses, non-profits and individuals. The first step is to schedule a free consultation with Daisy to ensure we're a right fit.",
+      "For individuals, the next steps would be to book 1:1 sessions or packages according to the rates on the appointment page. Meanwhile for organizations and businesses, a custom contract would need to be built together. This includes expectations of the service, rates and method of payments, possible mileage or travel fees.",
+    ],
+  },
+  {
+    q: "Are there discounts for students?",
+    a: [
+      "Yes, students get an additional 10% off coaching sessions and packages! Email hello@keenesse.com from your .edu email address to request student discounts.",
+    ],
+  },
+  {
+    q: "Do you offer pro bono services?",
+    a: [
+      "On a case by case basis we offer pro bono services. At this time the capacity for pro bono services is full but feel free to email hello@keenesse.com or fill out the contact form on the website to inquire about future opportunities.",
+    ],
+  },
+  {
+    q: "Do you offer refunds?",
+    a: [
+      "No refunds for services are offered. But we understand that life happens. If you can no longer make a scheduled time, you are welcome to reschedule as many times as you would like using the reschedule link at the bottom of your booking confirmation email.",
+    ],
+  },
+  {
+    q: "I still have more questions, how do I reach out?",
+    a: ["Don't be shy, visit our contact form and send us further questions!"],
   },
 ];
 
@@ -89,7 +130,20 @@ export default function About() {
           </div>
         ))}
       </div>
-      <h1>about</h1>
+
+      <div className="bg-gray w-full p-10 md:p-24">
+        <div className="w-full lg:grid lg:grid-cols-3">
+          <h3 className="text-4xl text-blue lg:text-center lg:col-span-1 my-10 lg:text-6xl">
+            FAQs
+          </h3>
+
+          <div className="lg:col-span-2">
+            {faqs.map(({ q, a }, ind) => (
+              <FAQItem q={q} a={a} isLast={ind === faqs.length - 1} />
+            ))}
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

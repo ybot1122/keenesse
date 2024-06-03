@@ -12,6 +12,7 @@ const config: Config = {
       lightBlue: "rgb(142, 182, 220)",
       white: "#FFFFFF",
       gray: "#eaeaee",
+      borderGray: "#747476",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",
