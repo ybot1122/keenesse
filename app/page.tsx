@@ -28,12 +28,15 @@ export default function Home() {
         <h1 className="tracking-normal text-4xl md:text-6xl">
           Connect with a partner who has been where you are.
         </h1>
-        <div id="subheadline" className="mt-10 text-lightBlue italic underline">
+        <div
+          id="subheadline"
+          className="mt-10 mb-10 text-lightBlue italic underline"
+        >
           <Link href="/appointments">Your first meeting is on us</Link>
         </div>
       </div>
 
-      <div className="md:flex bg-blue text-white pt-[20vmax] pb-[20vmax] px-10 justify-center">
+      <div className="md:flex bg-blue text-white py-[5vmax] md:py-[10vmax] px-10 justify-center">
         <div id="sectionheadline" className="pr-20 pb-10 md:text-right">
           Consultation Specialties
         </div>

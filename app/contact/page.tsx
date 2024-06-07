@@ -37,10 +37,10 @@ export default function Contact() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full">
         <div className="col-span-1 pr-10">
-          <h3 className="text-blue text-4xl">Let's Talk</h3>
+          <h3 className="text-blue text-4xl">Let&apos;s Talk</h3>
           <p className="py-10 text-xl">
             Feel free to reach out here or if you prefer, drop an email. If
-            you're interested in 1:1 coaching, you can also go ahead and{" "}
+            you&apos;re interested in 1:1 coaching, you can also go ahead and{" "}
             <Link href="/appointments" className="underline text-blue">
               schedule your free consultation.
             </Link>
@@ -50,7 +50,7 @@ export default function Contact() {
 
         <div className="col-span-1">
           {formState.status === "success" ? (
-            <p>Thank you for the message, I'l get back to you shortly!</p>
+            <p>Thank you for the message, I&apos;ll get back to you shortly!</p>
           ) : (
             <form className="grid grid-cols-2 gap-2" action={formAction}>
               <ContactForm message={formState.message} />
