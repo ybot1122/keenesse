@@ -139,7 +139,7 @@ export default function About() {
 
           <div className="lg:col-span-2">
             {faqs.map(({ q, a }, ind) => (
-              <FAQItem q={q} a={a} isLast={ind === faqs.length - 1} />
+              <FAQItem q={q} a={a} isLast={ind === faqs.length - 1} key={q} />
             ))}
           </div>
         </div>
