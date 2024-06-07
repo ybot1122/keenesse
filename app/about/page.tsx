@@ -1,4 +1,5 @@
 import FAQItem from "@/components/FAQItem";
+import WannaChat from "@/components/WannaChat";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -114,7 +115,6 @@ export default function About() {
           </p>
         </div>
       </div>
-
       <div className="flex bg-blue w-full p-5 items-center flex-wrap justify-center">
         <h3 className="text-4xl text-white text-center my-10 w-full lg:text-6xl">
           What Clients are Saying
@@ -130,7 +130,6 @@ export default function About() {
           </div>
         ))}
       </div>
-
       <div className="bg-gray w-full p-10 md:p-24">
         <div className="w-full lg:grid lg:grid-cols-3">
           <h3 className="text-4xl text-blue lg:text-center lg:col-span-1 my-10 lg:text-6xl">
@@ -144,19 +143,7 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <div className="flex bg-blue w-full pt-10 pb-20 items-center flex-wrap justify-center">
-        <h3 className="text-4xl text-white text-center my-10 w-full">
-          Have questions or just want to chat?
-        </h3>
-
-        <Link
-          className="bg-white text-blue py-5 px-10 hover:bg-gray"
-          href="/contact"
-        >
-          Drop a Message
-        </Link>
-      </div>
+      <WannaChat />{" "}
     </main>
   );
 }
