@@ -87,7 +87,7 @@ export default function About() {
           </div>
         </div>
         <div className="bg-white p-10 text-blue w-full md:w-1/2 lg:p-20 max-w-[620px]">
-          <h3 className="text-4xl mb-5">Hi, I&apos;m Daisy</h3>
+          <h3 className="text-4xl mb-5 lg:text-6xl">Hi, I&apos;m Daisy</h3>
           <p className="text-xl mb-3 leading-8">
             I started Keenesse with one goal in mind: to connect people with a
             partner who has been in their shoes and can help them navigate their
@@ -116,7 +116,7 @@ export default function About() {
       </div>
 
       <div className="flex bg-blue w-full p-5 items-center flex-wrap justify-center">
-        <h3 className="text-4xl text-white text-center my-10 w-full">
+        <h3 className="text-4xl text-white text-center my-10 w-full lg:text-6xl">
           What Clients are Saying
         </h3>
 
@@ -143,6 +143,19 @@ export default function About() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="flex bg-blue w-full p-10 items-center flex-wrap justify-center">
+        <h3 className="text-4xl text-white text-center my-10 w-full">
+          Have questions or just want to chat?
+        </h3>
+
+        <Link
+          className="bg-white text-blue py-5 px-10 hover:bg-gray"
+          href="/contact"
+        >
+          Drop a Message
+        </Link>
       </div>
     </main>
   );

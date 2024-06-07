@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:flex bg-blue text-white pt-[10vmax] pb-[10vmax] px-10 justify-center">
+      <div className="md:flex bg-blue text-white pt-[20vmax] pb-[20vmax] px-10 justify-center">
         <div id="sectionheadline" className="pr-20 pb-10 md:text-right">
           Consultation Specialties
         </div>
