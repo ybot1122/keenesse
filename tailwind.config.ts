@@ -14,6 +14,8 @@ const config: Config = {
       gray: "#eaeaee",
       borderGray: "#747476",
       inputBg: "#fafafa",
+      sendHover: "#428cbe",
+      inputHover: "#fcfcfc",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",

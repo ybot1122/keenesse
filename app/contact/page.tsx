@@ -19,34 +19,40 @@ export default function Contact() {
         <div className="col-span-1">
           <form className="grid grid-cols-2 gap-2">
             <div className="col-span-1">
-              <label htmlFor="firstName">First Name</label>
+              <label htmlFor="firstName" className="text-lg">
+                First Name
+              </label>
               <input
                 id="firstName"
                 type="text"
                 name="firstName"
-                className="bg-inputBg w-full block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
+                className="hover:bg-inputHover bg-inputBg w-full block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2 mt-1"
               />
             </div>
             <div className="col-span-1">
-              <label htmlFor="lastName">Last Name</label>
+              <label htmlFor="lastName" className="text-lg">
+                Last Name
+              </label>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
-                className="w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
+                className="hover:bg-inputHover mt-1 w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
               />
             </div>
             <div className="col-span-2 mt-5">
-              <label htmlFor="Email">Email</label>
+              <label htmlFor="Email" className="text-lg">
+                Email
+              </label>
               <input
                 type="email"
                 id="Email"
                 name="Email"
-                className="w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
+                className="hover:bg-inputHover mt-1 w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
               />
             </div>
             <div className="col-span-2 mt-5">
-              <legend>Inquiring About</legend>
+              <legend className="text-lg">Inquiring About</legend>
               <label className="cursor-pointer block my-5">
                 <input
                   type="checkbox"
@@ -91,12 +97,22 @@ export default function Contact() {
               </label>
             </div>
             <div className="col-span-2 mt-5">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message" className="text-lg">
+                Message
+              </label>
               <textarea
                 wrap="soft"
                 id="message"
                 name="message"
-                className="w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[100px] p-2"
+                className="hover:bg-inputHover mt-1 w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[100px] p-2"
+              />
+            </div>
+
+            <div className="col-span-2">
+              <input
+                type="submit"
+                value="Send"
+                className="bg-blue text-white py-5 px-10 mt-5 hover:bg-sendHover cursor-pointer"
               />
             </div>
           </form>
