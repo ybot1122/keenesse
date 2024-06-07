@@ -43,7 +43,10 @@ export default function ContactForm({
         />
       </div>
       <div className="col-span-2 mt-5">
-        <legend className="text-lg">Inquiring About</legend>
+        <legend className="text-lg">
+          Inquiring About{" "}
+          <span className="text-inputRequired">(select at least one)</span>
+        </legend>
         <label className="cursor-pointer block my-5">
           <input
             type="checkbox"

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const NavItem = ({ text, href }: { text: string; href: string }) => {
   return (
@@ -27,6 +27,16 @@ const Header = () => {
     { text: "Contact", href: "/contact" },
   ];
 
+  const closeCb = useCallback(() => setNavOpen(false), []);
+
+  useEffect(() => {
+    if (navOpen) {
+      document.addEventListener("click", closeCb);
+    } else {
+      document.removeEventListener("click", closeCb);
+    }
+  }, [navOpen]);
+
   return (
     <nav className={``}>
       <div className="grid grid-cols-2 py-4 px-10 mx-auto max-w-screen-lg h-full text-blue">
@@ -37,7 +47,9 @@ const Header = () => {
         <div className="md:hidden justify-self-end flex mr-5">
           <button
             className=" rounded-full hover:bg-silver p-2 self-center"
-            onClick={() => setNavOpen(!navOpen)}
+            onClick={(e) => {
+              setNavOpen(!navOpen);
+            }}
           >
             <Image
               src="/icons8-menu.svg"
