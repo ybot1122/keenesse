@@ -145,7 +145,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="flex bg-blue w-full p-10 items-center flex-wrap justify-center">
+      <div className="flex bg-blue w-full pt-10 pb-20 items-center flex-wrap justify-center">
         <h3 className="text-4xl text-white text-center my-10 w-full">
           Have questions or just want to chat?
         </h3>

@@ -35,7 +35,7 @@ export default function FAQItem({
         ></div>
       </button>
 
-      {isOpen && a.map((ans) => <p className="md:mx-10 mb-5 w-full">{ans}</p>)}
+      {isOpen && a.map((ans) => <p className="md:mx-10 w-full">{ans}</p>)}
     </div>
   );
 }
