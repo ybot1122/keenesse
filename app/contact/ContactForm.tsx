@@ -1,4 +1,12 @@
-export default function ContactForm() {
+import { useFormStatus } from "react-dom";
+import { ContactFormState } from "./contactFormAction";
+import Image from "next/image";
+
+export default function ContactForm({
+  message,
+}: {
+  message: ContactFormState["message"];
+}) {
   return (
     <>
       <div className="col-span-1">
@@ -92,12 +100,34 @@ export default function ContactForm() {
       </div>
 
       <div className="col-span-2">
-        <input
-          type="submit"
-          value="Send"
-          className="bg-blue text-white py-5 px-10 mt-5 hover:bg-sendHover cursor-pointer"
-        />
+        <SubmitButton message={message} />
       </div>
     </>
   );
 }
+
+const SubmitButton = ({
+  message,
+}: {
+  message: ContactFormState["message"];
+}) => {
+  const { pending } = useFormStatus();
+
+  return (
+    <>
+      <input
+        type="submit"
+        value={pending ? "Sending..." : "Send"}
+        className="bg-blue text-white py-5 px-10 mt-5 hover:bg-sendHover cursor-pointer"
+        disabled={pending}
+      />
+      {message && (
+        <div>
+          <p className="bg-errorBg text-white mt-1 p-2 inline-block text-sm">
+            {message}
+          </p>
+        </div>
+      )}
+    </>
+  );
+};

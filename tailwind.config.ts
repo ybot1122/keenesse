@@ -16,6 +16,7 @@ const config: Config = {
       inputBg: "#fafafa",
       sendHover: "#428cbe",
       inputHover: "#fcfcfc",
+      errorBg: "#ce2c30",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",

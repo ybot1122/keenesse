@@ -53,7 +53,7 @@ export default function Contact() {
             <p>Thank you for the message, I'l get back to you shortly!</p>
           ) : (
             <form className="grid grid-cols-2 gap-2" action={formAction}>
-              <ContactForm />
+              <ContactForm message={formState.message} />
             </form>
           )}
         </div>
