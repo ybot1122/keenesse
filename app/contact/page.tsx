@@ -34,10 +34,10 @@ export default function Contact() {
   );
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-gray pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-white m-10 p-10 max-w-[1280px]">
         <div className="col-span-1 pr-10">
-          <h3 className="text-blue text-4xl">Let&apos;s Talk</h3>
+          <h3 className="text-blue text-4xl text-center">Let&apos;s Talk!</h3>
           <p className="py-10 text-xl">
             Feel free to reach out here or if you prefer, drop an email. If
             you&apos;re interested in 1:1 coaching, you can also go ahead and{" "}

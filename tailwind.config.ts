@@ -22,13 +22,20 @@ const config: Config = {
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",
+      slideOut: "300ms 1 alternate slideout",
       closePlus: "100ms 1 linear closePlus",
       openPlus: "100ms 1 linear openPlus",
+      slideUpAndFadeIn: "700ms 1 ease-out slideUpAndFadeIn",
+      slideRightAndFadeIn: "1400ms 1 ease-out slideRightAndFadeIn",
     },
     keyframes: {
       slidein: {
         "0%": { transform: "translateX(50%)" },
         "100%": { transform: "translateX(0px)" },
+      },
+      slideout: {
+        "0%": { transform: "translateX(0px)" },
+        "100%": { transform: "translateX(-100%)" },
       },
       closePlus: {
         "0%": { transform: "rotate(90deg)" },
@@ -37,6 +44,15 @@ const config: Config = {
       openPlus: {
         "0%": { transform: "rotate(0)" },
         "100%": { transform: "rotate(90deg)" },
+      },
+      slideUpAndFadeIn: {
+        "0%": { transform: "translateY(100%)", opacity: "0" },
+        "100%": { transform: "translateY(0px)", opacity: "1" },
+      },
+      slideRightAndFadeIn: {
+        "0%": { transform: "translateX(-100%)", opacity: "0" },
+        "50%": { opacity: "0" },
+        "100%": { transform: "translateX(0px)", opacity: "1" },
       },
     },
   },

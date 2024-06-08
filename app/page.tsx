@@ -25,12 +25,12 @@ export default function Home() {
   return (
     <main className="">
       <div className="text-center text-blue pt-[6vmax] pb-[5vw] px-5 w-[75%] mx-auto">
-        <h1 className="tracking-normal text-4xl md:text-6xl">
+        <h1 className="tracking-normal text-4xl md:text-6xl animate-slideUpAndFadeIn">
           Connect with a partner who has been where you are.
         </h1>
         <div
           id="subheadline"
-          className="mt-10 mb-10 text-lightBlue italic underline"
+          className="mt-10 mb-10 text-lightBlue italic underline animate-slideRightAndFadeIn"
         >
           <Link href="/appointments">Your first meeting is on us</Link>
         </div>

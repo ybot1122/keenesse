@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 
 const NavItem = ({ text, href }: { text: string; href: string }) => {
   return (
-    <li className={`group relative md:text-center uppercase`}>
+    <li className={`group relative md:text-center uppercase text-md`}>
       <Link href={href} className="block p-5">
         {text}
       </Link>
@@ -39,9 +39,13 @@ const Header = () => {
 
   return (
     <nav className={``}>
-      <div className="grid grid-cols-2 py-4 px-10 mx-auto max-w-screen-lg h-full text-blue">
-        <div className="self-center text-xl md:text-2xl">
-          <Link href="/">Keenesse Coaching & Consulting</Link>
+      <div className="flex py-4 mx-auto max-w-screen-lg h-full text-blue">
+        <div className="self-center ml-5 flex-grow">
+          <Link href="/" className="text-center inline-block text-2xl">
+            Keenesse
+            <br />
+            Coaching &amp; Consulting
+          </Link>
         </div>
 
         <div className="md:hidden justify-self-end flex mr-5">
@@ -62,7 +66,7 @@ const Header = () => {
 
         <div className="flex col-start-2 justify-end">
           <ul
-            className={`${!navOpen ? "hidden" : ""} absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-white items-center justify-between md:space-x-4`}
+            className={`${!navOpen ? "hidden" : ""} mt-[60px] md:mt-[0px] absolute md:mr-5 md:static max-md:animate-slideIn md:flex w-1/2 md:w-auto z-40 bg-white items-center justify-between md:space-x-4`}
           >
             {navItems.map(({ text, href }) => (
               <NavItem text={text} href={href} key={text} />
