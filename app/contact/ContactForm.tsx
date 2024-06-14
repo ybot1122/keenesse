@@ -18,6 +18,7 @@ export default function ContactForm({
           type="text"
           name="firstName"
           className="hover:bg-inputHover bg-inputBg w-full block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2 mt-1"
+          required
         />
       </div>
       <div className="col-span-1">
@@ -29,6 +30,7 @@ export default function ContactForm({
           id="lastName"
           name="lastName"
           className="hover:bg-inputHover mt-1 w-full bg-inputBg block border border-inputBorder focus:border-blue focus:outline-none h-[50px] p-2"
+          required
         />
       </div>
       <div className="col-span-2 mt-5">

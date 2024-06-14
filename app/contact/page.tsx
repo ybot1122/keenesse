@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
 import validateContactForm from "./validateContactForm";
-import { ContactFormState } from "./contactFormAction";
+import { ContactFormState, contactFormAction } from "./contactFormAction";
 import ContactForm from "./ContactForm";
 
 const action = async (
@@ -21,9 +21,7 @@ const action = async (
     };
   }
 
-  return {
-    status: "success",
-  };
+  return await contactFormAction(currentState, formData);
 };
 
 export default function Contact() {
