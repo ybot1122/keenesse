@@ -41,7 +41,10 @@ const Header = () => {
     <nav className={``}>
       <div className="flex py-4 mx-auto max-w-screen-lg h-full text-blue">
         <div className="self-center ml-5 flex-grow">
-          <Link href="/" className="text-center inline-block text-2xl">
+          <Link
+            href="/"
+            className="text-center inline-block text-2xl md:text-4xl"
+          >
             Keenesse
             <br />
             Coaching &amp; Consulting
