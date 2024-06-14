@@ -43,7 +43,7 @@ export default function Contact() {
               schedule your free consultation.
             </Link>
           </p>
-          <p className="pb-10 text-xl">hello@kenesse.com</p>
+          <p className="pb-10 text-xl">hello@keenesse.com</p>
         </div>
 
         <div className="col-span-1">
