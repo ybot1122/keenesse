@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       <div className="md:flex bg-blue text-white py-[5vmax] md:py-[10vmax] px-10 justify-center">
-        <div id="sectionheadline" className="pr-20 pb-10 md:text-right">
+        <div className="pr-20 pb-10 md:text-right text-2xl md:text-4xl">
           Consultation Specialties
         </div>
 
