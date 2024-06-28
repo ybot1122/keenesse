@@ -30,7 +30,7 @@ export default function Home() {
         </h1>
         <div
           id="subheadline"
-          className="mt-10 mb-10 text-lightBlue italic underline animate-slideRightAndFadeIn"
+          className="mt-10 mb-10 text-lightBlue italic underline animate-slideRightAndFadeIn font-bold"
         >
           <Link href="/appointments">Your first meeting is on us</Link>
         </div>

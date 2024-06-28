@@ -25,26 +25,41 @@ const action = async (
 };
 
 export default function Contact() {
-  const [formState, formAction] = useFormState<ContactFormState>(
-    //@ts-ignore
-    action,
-    {},
-  );
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-white pt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
+      <div className="grid grid-cols-1 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
         <div className="col-span-1 pr-10">
           <h3 className="text-blue text-4xl text-center">Let&apos;s Talk!</h3>
           <p className="py-10 text-xl">
-            Feel free to reach out here or if you prefer, drop an email. If
-            you&apos;re interested in 1:1 coaching, you can also go ahead and{" "}
+            Feel free to drop an email to{" "}
+            <span className="font-bold">hello@keenesse.com</span>
+          </p>
+
+          <p className="pb-10 text-xl">
+            You can also connect with me on{" "}
+            <Link
+              className="font-bold underline"
+              href="http://www.linkedin.com/in/keenesse/"
+              target="_blank"
+            >
+              LinkedIn
+            </Link>
+            .
+          </p>
+
+          <p className="pb-10 text-xl">
+            If you&apos;re interested in 1:1 coaching, you can also go ahead and{" "}
             <Link href="/appointments" className="underline text-blue">
               schedule your free consultation.
             </Link>
           </p>
-          <p className="pb-10 text-xl">hello@keenesse.com</p>
         </div>
+      </div>
+    </main>
+  );
+}
+
+/*
 
         <div className="col-span-1">
           {formState.status === "success" ? (
@@ -54,8 +69,5 @@ export default function Contact() {
               <ContactForm message={formState.message} />
             </form>
           )}
-        </div>
-      </div>
-    </main>
-  );
-}
+          </div>
+*/
