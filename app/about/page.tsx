@@ -3,6 +3,7 @@ import WannaChat from "@/components/WannaChat";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import me from "@/public/my-pic.jpeg";
 
 export const metadata: Metadata = {
   title: "About - Keenesse Coaching & Consulting",
@@ -80,10 +81,11 @@ export default function About() {
         <div className="w-full md:w-1/2 max-w-[620px] h-[50vw] max-h-[420px]">
           <div className="relative w-full h-full">
             <Image
-              src="/my-pic.jpeg"
+              src={me}
               alt="Daisy"
               fill
               className="object-cover"
+              placeholder="blur"
             />
           </div>
         </div>
