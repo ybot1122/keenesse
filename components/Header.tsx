@@ -35,7 +35,7 @@ const Header = () => {
     } else {
       document.removeEventListener("click", closeCb);
     }
-  }, [navOpen]);
+  }, [navOpen, closeCb]);
 
   return (
     <nav className={``}>
