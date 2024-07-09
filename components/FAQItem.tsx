@@ -25,14 +25,17 @@ export default function FAQItem({
       </button>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? "mb-10" : ""} ml-5`}
+        className={`${isOpen ? "mb-10" : ""} ml-5 relative`}
         aria-hidden="true"
       >
-        <div className="w-[20px] h-[1px] bg-blue" aria-hidden="true"></div>
-        <div
-          className={`w-[20px] h-[1px] bg-blue ${isOpen ? "animate-closePlus" : "rotate-90 animate-openPlus"}`}
+        <rect
+          className="right-[20px] absolute inline-block w-[20px] h-[2px] bg-blue"
           aria-hidden="true"
-        ></div>
+        ></rect>
+        <rect
+          className={`right-[20px] inline-block w-[20px] h-[2px] bg-blue absolute ${isOpen ? "animate-closePlus" : "rotate-90 animate-openPlus"}`}
+          aria-hidden="true"
+        ></rect>
       </button>
 
       {isOpen &&
