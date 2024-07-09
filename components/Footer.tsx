@@ -31,7 +31,7 @@ export default function Footer() {
         </Link>
       </div>
       <p className="mb-5">© 2024 Keenesse LLC. All Rights Reserved</p>
-      <p>
+      <p className="invisible">
         <Link href="/termsofservice">Terms of Service</Link> |{" "}
         <Link href="privacypolicy">Privacy Policy</Link>
       </p>

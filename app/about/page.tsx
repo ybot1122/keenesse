@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "I still have more questions, how do I reach out?",
-    a: ["Don't be shy, visit our contact form and send us further questions!"],
+    a: ["Don't be shy, email hello@keenesee.com with further questions!"],
   },
 ];
 

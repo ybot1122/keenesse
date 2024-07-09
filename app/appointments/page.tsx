@@ -109,6 +109,7 @@ export default function Appointments() {
               href="/contact"
               indented={false}
               bg="white"
+              label="Request"
             />
             <BuyCard
               description="Custom Request "
@@ -116,6 +117,7 @@ export default function Appointments() {
               href="/contact"
               indented={true}
               bg="white"
+              label="Request"
             />
           </div>
         </div>

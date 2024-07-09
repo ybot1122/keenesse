@@ -7,6 +7,7 @@ export default function BuyCard({
   price,
   indented,
   bg,
+  label,
 }: {
   href: string;
   description: string;
@@ -14,6 +15,7 @@ export default function BuyCard({
   price?: string;
   indented: boolean;
   bg: "gray" | "white";
+  label?: string;
 }) {
   return (
     <div
@@ -29,7 +31,7 @@ export default function BuyCard({
           target="_blank"
           className="inline-block bg-blue text-white py-3 w-3/4 max-w-[200px] font-semibold hover:bg-sendHover"
         >
-          Schedule
+          {label ?? "Schedule"}
         </Link>
       </div>
     </div>
