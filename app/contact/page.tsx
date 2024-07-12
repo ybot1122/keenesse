@@ -32,7 +32,7 @@ export default function Contact() {
   );
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-white pt-10">
-      <div className="grid grid-cols-1 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
         <div className="col-span-1 pr-10">
           <h3 className="text-blue text-4xl text-center">Let&apos;s Talk!</h3>
           <p className="py-10 text-xl">
@@ -59,13 +59,6 @@ export default function Contact() {
             </Link>
           </p>
         </div>
-      </div>
-    </main>
-  );
-}
-
-/*
-
         <div className="col-span-1">
           {formState.status === "success" ? (
             <p>Thank you for the message, I&apos;ll get back to you shortly!</p>
@@ -74,5 +67,14 @@ export default function Contact() {
               <ContactForm message={formState.message} />
             </form>
           )}
+        </div>
+      </div>
+    </main>
+  );
+}
+
+/*
+
+        <div className="col-span-1">
           </div>
 */

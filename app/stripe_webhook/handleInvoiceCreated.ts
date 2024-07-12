@@ -1,6 +1,10 @@
 type StripeInvoice = {
   lines: {
-    data: {}[];
+    data: {
+      plan: {
+        product: string;
+      };
+    }[];
   };
 };
 

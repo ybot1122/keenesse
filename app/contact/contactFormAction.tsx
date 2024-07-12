@@ -50,7 +50,7 @@ const contactFormAction = async (
         validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
       email: validation.sanitized?.email,
     };
-    sendSmtpEmail.to = [{ email: "hello@keenesse.com", name: "Keenesse" }];
+    sendSmtpEmail.to = [{ email: "ybot1122@gmail.com", name: "Keenesse" }];
     sendSmtpEmail.replyTo = {
       name:
         validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
