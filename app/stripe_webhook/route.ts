@@ -38,19 +38,13 @@ export async function POST(request: NextRequest) {
 
   // Handle the event
   switch (event.type) {
-    case "payment_intent.succeeded":
-      const paymentIntent = event.data.object;
-      console.log(`PaymentIntent for ${paymentIntent.amount} was successful!`);
-      // Then define and call a method to handle the successful payment intent.
-      // handlePaymentIntentSucceeded(paymentIntent);
+    case "customer.created":
+      const customer = event.data.object;
       break;
-    case "payment_method.attached":
-      const paymentMethod = event.data.object;
-      // Then define and call a method to handle the successful attachment of a PaymentMethod.
-      // handlePaymentMethodAttached(paymentMethod);
+    case "invoice.created":
+      const invoice = event.data.object;
       break;
     default:
-      // Unexpected event type
       console.log(`Unhandled event type ${event.type}.`);
   }
 
