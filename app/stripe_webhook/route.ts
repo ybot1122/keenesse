@@ -1,5 +1,6 @@
 import stripe from "stripe";
 import { NextResponse, type NextRequest } from "next/server";
+import handleCustomerCreated from "./handleCustomerCreated";
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
 const stripeApiSecret = process.env.STRIPE_API_KEY ?? "";
@@ -40,6 +41,7 @@ export async function POST(request: NextRequest) {
   switch (event.type) {
     case "customer.created":
       const customer = event.data.object;
+      await handleCustomerCreated(customer);
       break;
     case "invoice.created":
       const invoice = event.data.object;
