@@ -1,6 +1,7 @@
 import stripe from "stripe";
 import { NextResponse, type NextRequest } from "next/server";
 import handleCustomerCreated from "./handleCustomerCreated";
+import handleInvoiceCreated from "./handleInvoiceCreated";
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
 const stripeApiSecret = process.env.STRIPE_API_KEY ?? "";
@@ -46,6 +47,7 @@ export async function POST(request: NextRequest) {
         break;
       case "invoice.created":
         const invoice = event.data.object;
+        await handleInvoiceCreated(invoice);
         break;
       default:
         console.log(`Unhandled event type ${event.type}.`);
