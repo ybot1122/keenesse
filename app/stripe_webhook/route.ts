@@ -37,17 +37,27 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  // Handle the event
-  switch (event.type) {
-    case "customer.created":
-      const customer = event.data.object;
-      await handleCustomerCreated(customer);
-      break;
-    case "invoice.created":
-      const invoice = event.data.object;
-      break;
-    default:
-      console.log(`Unhandled event type ${event.type}.`);
+  try {
+    // Handle the event
+    switch (event.type) {
+      case "customer.created":
+        const customer = event.data.object;
+        await handleCustomerCreated(customer);
+        break;
+      case "invoice.created":
+        const invoice = event.data.object;
+        break;
+      default:
+        console.log(`Unhandled event type ${event.type}.`);
+    }
+  } catch (err: any) {
+    console.log(`Error handling event ${event.type}.`, err.message);
+    return new NextResponse(
+      `Error handling event ${event.type}. ${err.message}`,
+      {
+        status: 400,
+      },
+    );
   }
 
   return new NextResponse("hi");
