@@ -25,6 +25,11 @@ const action = async (
 };
 
 export default function Contact() {
+  const [formState, formAction] = useFormState<ContactFormState>(
+    //@ts-ignore
+    action,
+    {},
+  );
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-white pt-10">
       <div className="grid grid-cols-1 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
