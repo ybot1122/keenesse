@@ -96,9 +96,24 @@ export default async function handleInvoicePaymentSucceeded(
     const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
 
     if (response.response.statusCode === 201) {
-      return {
-        status: "success",
-      };
+      return new NextResponse(
+        JSON.stringify({
+          message: "One time schedule Calendly url created",
+          calendlyUrl,
+        }),
+        {
+          status: 200,
+        },
+      );
+    } else {
+      return new NextResponse(
+        JSON.stringify({
+          message: "Sending email failed",
+        }),
+        {
+          status: 500,
+        },
+      );
     }
   } catch (e) {
     console.error(e);
@@ -106,14 +121,4 @@ export default async function handleInvoicePaymentSucceeded(
       "Failed to send Transactional Email containing the Calendly URL.",
     );
   }
-
-  return new NextResponse(
-    JSON.stringify({
-      message: "One time schedule Calendly url created",
-      calendlyUrl,
-    }),
-    {
-      status: 200,
-    },
-  );
 }

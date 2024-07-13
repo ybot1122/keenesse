@@ -67,6 +67,4 @@ export async function POST(request: NextRequest) {
       },
     );
   }
-
-  return new NextResponse("hi");
 }
