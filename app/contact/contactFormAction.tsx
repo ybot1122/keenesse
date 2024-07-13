@@ -32,7 +32,7 @@ const contactFormAction = async (
   }
 
   // Add user to mailing list
-  // await newsletterSignupAction({}, formData);
+  await newsletterSignupAction({}, formData);
 
   // Send transactional email
   try {
