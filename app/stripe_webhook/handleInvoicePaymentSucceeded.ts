@@ -7,6 +7,8 @@ const productIds = ["prod_QSTWXLF2x2W86n"];
 type StripeInvoice = {
   lines: {
     data: {
+      customer_name: string;
+      customer_email: string;
       plan: {
         product: string;
       };

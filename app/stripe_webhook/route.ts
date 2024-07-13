@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
             message: "Unhandled event",
           }),
           {
-            status: 400,
+            status: 200,
           },
         );
     }
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     return new NextResponse(
       `Error handling event ${event.type}. ${err.message}`,
       {
-        status: 400,
+        status: 500,
       },
     );
   }

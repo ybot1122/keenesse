@@ -32,7 +32,7 @@ const contactFormAction = async (
   }
 
   // Add user to mailing list
-  await newsletterSignupAction({}, formData);
+  // await newsletterSignupAction({}, formData);
 
   // Send transactional email
   try {
@@ -43,18 +43,23 @@ const contactFormAction = async (
     );
     const sendSmtpEmail = new Brevo.SendSmtpEmail();
 
-    sendSmtpEmail.subject = `CONTACT FORM: from ${validation.sanitized?.firstName}`;
-    sendSmtpEmail.htmlContent = validation.sanitized?.message;
     sendSmtpEmail.sender = {
-      name:
-        validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
-      email: validation.sanitized?.email,
+      name: "Keenesse",
+      email: "hello@keenesse.com",
     };
-    sendSmtpEmail.to = [{ email: "ybot1122@gmail.com", name: "Keenesse" }];
+    sendSmtpEmail.to = [{ email: "hello@keenesse.com", name: "Keenesse" }];
     sendSmtpEmail.replyTo = {
       name:
         validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
       email: validation.sanitized?.email ?? "",
+    };
+    sendSmtpEmail.templateId = 1;
+    sendSmtpEmail.params = {
+      name:
+        validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
+      email: validation.sanitized?.email,
+      message: validation.sanitized?.message,
+      topics: validation.sanitized?.topics.join(", "),
     };
 
     const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
