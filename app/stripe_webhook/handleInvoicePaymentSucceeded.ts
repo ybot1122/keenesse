@@ -1,25 +1,31 @@
 import { NextResponse } from "next/server";
+import * as Brevo from "@getbrevo/brevo";
 
 const calendlyPersonalAccessToken = process.env.CALENDLY_PAT ?? "";
+const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 
 const productIds = ["prod_QSTWXLF2x2W86n"];
 
 type StripeInvoice = {
-  lines: {
-    data: {
-      customer_name: string;
-      customer_email: string;
-      plan: {
-        product: string;
-      };
-    }[];
+  data: {
+    customer_name: string;
+    customer_email: string;
+    lines: {
+      data: {
+        plan: {
+          product: string;
+        };
+      }[];
+    };
   };
 };
 
 export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
-  if (!invoice.lines.data.some((d) => productIds.includes(d.plan?.product))) {
+  if (
+    !invoice.data.lines.data.some((d) => productIds.includes(d.plan?.product))
+  ) {
     return new NextResponse(
       JSON.stringify({
         message: "Your invoice does not require a one time schedule URL",
@@ -58,6 +64,47 @@ export default async function handleInvoicePaymentSucceeded(
     console.log(e);
     console.log("Failed to generate Calendly URL. This is bad.");
     throw new Error("Failed to generate Calendly URL.");
+  }
+
+  // Send Email
+  try {
+    const apiInstance = new Brevo.TransactionalEmailsApi();
+    apiInstance.setApiKey(
+      Brevo.TransactionalEmailsApiApiKeys.apiKey,
+      BREVO_API_KEY,
+    );
+    const sendSmtpEmail = new Brevo.SendSmtpEmail();
+
+    sendSmtpEmail.sender = {
+      name: "Keenesse",
+      email: "hello@keenesse.com",
+    };
+    sendSmtpEmail.to = [
+      { email: invoice.data.customer_email, name: invoice.data.customer_name },
+    ];
+    sendSmtpEmail.replyTo = {
+      name: "Keenesse",
+      email: "hello@keenesse.com",
+    };
+    sendSmtpEmail.templateId = 1;
+    sendSmtpEmail.params = {
+      name: invoice.data.customer_name,
+      email: invoice.data.customer_email,
+      message: `Here is your one time signup URL: ${calendlyUrl}`,
+    };
+
+    const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
+    if (response.response.statusCode === 201) {
+      return {
+        status: "success",
+      };
+    }
+  } catch (e) {
+    console.error(e);
+    throw new Error(
+      "Failed to send Transactional Email containing the Calendly URL.",
+    );
   }
 
   return new NextResponse(
