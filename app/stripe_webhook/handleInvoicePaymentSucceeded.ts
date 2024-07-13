@@ -7,31 +7,40 @@ const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 const productIds = ["prod_QSTWXLF2x2W86n"];
 
 type StripeInvoice = {
-  data: {
-    customer_name: string;
-    customer_email: string;
-    lines: {
-      data: {
-        plan: {
-          product: string;
-        };
-      }[];
-    };
+  customer_name: string;
+  customer_email: string;
+  lines: {
+    data: {
+      plan: {
+        product: string;
+      };
+    }[];
   };
 };
 
 export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
-  if (
-    !invoice.data.lines.data.some((d) => productIds.includes(d.plan?.product))
-  ) {
+  console.log(invoice);
+
+  if (!invoice.lines.data.some((d) => productIds.includes(d.plan?.product))) {
     return new NextResponse(
       JSON.stringify({
         message: "Your invoice does not require a one time schedule URL",
       }),
       {
         status: 200,
+      },
+    );
+  }
+
+  if (!invoice.customer_email || !invoice.customer_name) {
+    return new NextResponse(
+      JSON.stringify({
+        message: "This invoice does not have the customer email and name",
+      }),
+      {
+        status: 400,
       },
     );
   }
@@ -80,7 +89,7 @@ export default async function handleInvoicePaymentSucceeded(
       email: "hello@keenesse.com",
     };
     sendSmtpEmail.to = [
-      { email: invoice.data.customer_email, name: invoice.data.customer_name },
+      { email: invoice.customer_email, name: invoice.customer_name },
     ];
     sendSmtpEmail.replyTo = {
       name: "Keenesse",
@@ -88,8 +97,8 @@ export default async function handleInvoicePaymentSucceeded(
     };
     sendSmtpEmail.templateId = 1;
     sendSmtpEmail.params = {
-      name: invoice.data.customer_name,
-      email: invoice.data.customer_email,
+      name: invoice.customer_name,
+      email: invoice.customer_email,
       message: `Here is your one time signup URL: ${calendlyUrl}`,
     };
 
