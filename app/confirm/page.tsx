@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import getStripeCheckoutSession from "./getStripeCheckoutSession";
+import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
 
 export default async function Confirm({
   searchParams,
@@ -12,10 +12,14 @@ export default async function Confirm({
   const checkoutSessionId = searchParams["checkout_session_id"];
 
   if (!checkoutSessionId) {
-    redirect("/)");
+    redirect("/");
   }
 
-  const checkoutSession = await getStripeCheckoutSession(checkoutSessionId);
+  const isValid = await isValidStripeCheckoutSession(checkoutSessionId);
+
+  if (!isValid) {
+    redirect("/");
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -36,7 +40,6 @@ export default async function Confirm({
             Every week you stay subscribed, you will receive an email with a new
             Calendly link to schedule your session.
           </p>
-          <p>{checkoutSessionId}</p>
         </div>
       </div>
     </main>

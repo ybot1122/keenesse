@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import * as Brevo from "@getbrevo/brevo";
+import { STRIPE_SUBSCRIPTION_PRODUCT_IDS } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 
 const calendlyPersonalAccessToken = process.env.CALENDLY_PAT ?? "";
 const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
-
-const productIds = ["prod_QSTWXLF2x2W86n"];
 
 type StripeInvoice = {
   customer_name: string;
@@ -21,7 +20,11 @@ type StripeInvoice = {
 export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
-  if (!invoice.lines.data.some((d) => productIds.includes(d.plan?.product))) {
+  if (
+    !invoice.lines.data.some((d) =>
+      STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.plan?.product),
+    )
+  ) {
     return new NextResponse(
       JSON.stringify({
         message: "Your invoice does not require a one time schedule URL",
