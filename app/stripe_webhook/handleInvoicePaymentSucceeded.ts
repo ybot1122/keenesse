@@ -21,8 +21,6 @@ type StripeInvoice = {
 export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
-  console.log(invoice);
-
   if (!invoice.lines.data.some((d) => productIds.includes(d.plan?.product))) {
     return new NextResponse(
       JSON.stringify({

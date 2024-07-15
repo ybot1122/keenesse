@@ -59,4 +59,11 @@ export default async function handleCustomerCreated(customer: StripeCustomer) {
   });
 
   await promise;
+
+  return new NextResponse(
+    JSON.stringify({
+      message: "Contact added",
+    }),
+    { status: 200 },
+  );
 }

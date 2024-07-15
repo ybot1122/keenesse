@@ -20,13 +20,13 @@ export default function Appointments() {
             take advantage of up to 25% discount on 3 or 6-session packages.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 text-center mt-10 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 text-center mt-10 gap-2">
             <BuyCard
               description="First Time Only - 30 Minutes"
               title="Free Consultation"
               price={"$0"}
               href="https://calendly.com/keenesse/free30min"
-              indented={true}
+              indented={false}
               bg="white"
             />
             <BuyCard
@@ -42,7 +42,15 @@ export default function Appointments() {
               title="60 Minutes"
               price="$179"
               href="https://calendly.com/keenesse/60min"
-              indented={true}
+              indented={false}
+              bg="white"
+            />
+            <BuyCard
+              description="Accountability Package"
+              title="60 Minutes Every Day"
+              price="$10 / Day"
+              href="https://buy.stripe.com/test_cN2dU6d4S5HigiQ9AB"
+              indented={false}
               bg="white"
             />
           </div>
