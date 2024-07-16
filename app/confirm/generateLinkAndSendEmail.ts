@@ -12,13 +12,12 @@ export default async function generateLinkAndSendEmail(
   if (!calendlyUrl) {
     calendlyUrl = await generateOneTimeCalendlyUrl();
     kv.set(checkout_session_id, calendlyUrl);
+    await brevoSendTransactionalEmail(
+      customer_email,
+      customer_name,
+      `Here is your one time signup URL: ${calendlyUrl}`,
+    );
   }
-
-  await brevoSendTransactionalEmail(
-    customer_email,
-    customer_name,
-    `Here is your one time signup URL: ${calendlyUrl}`,
-  );
 
   return calendlyUrl;
 }
