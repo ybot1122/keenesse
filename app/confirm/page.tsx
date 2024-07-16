@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
+import generateLinkAndSendEmail from "./generateLinkAndSendEmail";
 
 export default async function Confirm({
   searchParams,
@@ -15,11 +16,16 @@ export default async function Confirm({
     redirect("/");
   }
 
-  const isValid = await isValidStripeCheckoutSession(checkoutSessionId);
+  const customerDetails = await isValidStripeCheckoutSession(checkoutSessionId);
 
-  if (!isValid) {
+  if (!customerDetails) {
     redirect("/");
   }
+
+  await generateLinkAndSendEmail(
+    customerDetails.customer_email,
+    customerDetails.customer_name,
+  );
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
