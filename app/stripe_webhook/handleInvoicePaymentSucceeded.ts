@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
-import * as Brevo from "@getbrevo/brevo";
 import { STRIPE_SUBSCRIPTION_PRODUCT_IDS } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
-
-const calendlyPersonalAccessToken = process.env.CALENDLY_PAT ?? "";
-const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
+import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
+import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
 
 type StripeInvoice = {
   customer_name: string;
   customer_email: string;
+  billing_reason: "subscription_cycle" | "subscription_create";
   lines: {
     data: {
       plan: {
@@ -21,6 +20,7 @@ export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
   if (
+    invoice.billing_reason === "subscription_create" ||
     !invoice.lines.data.some((d) =>
       STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.plan?.product),
     )
@@ -46,89 +46,20 @@ export default async function handleInvoicePaymentSucceeded(
     );
   }
 
-  let calendlyUrl = "";
+  let calendlyUrl = await generateOneTimeCalendlyUrl();
 
-  // Generate One-Time Calendly URL
-  try {
-    const calendlyResponse = await fetch(
-      "https://api.calendly.com/scheduling_links",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${calendlyPersonalAccessToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          max_event_count: 1,
-          owner:
-            "https://api.calendly.com/event_types/27eb0c2c-469c-4403-9348-587a9656f278",
-          owner_type: "EventType",
-        }),
-      },
-    );
+  await brevoSendTransactionalEmail(
+    invoice.customer_email,
+    invoice.customer_name,
+    `Here is your one time signup URL: ${calendlyUrl}`,
+  );
 
-    const data = await calendlyResponse.json();
-
-    calendlyUrl = data.resource.booking_url;
-  } catch (e: any) {
-    console.log(e);
-    console.log("Failed to generate Calendly URL. This is bad.");
-    throw new Error("Failed to generate Calendly URL.");
-  }
-
-  // Send Email
-  try {
-    const apiInstance = new Brevo.TransactionalEmailsApi();
-    apiInstance.setApiKey(
-      Brevo.TransactionalEmailsApiApiKeys.apiKey,
-      BREVO_API_KEY,
-    );
-    const sendSmtpEmail = new Brevo.SendSmtpEmail();
-
-    sendSmtpEmail.sender = {
-      name: "Keenesse",
-      email: "hello@keenesse.com",
-    };
-    sendSmtpEmail.to = [
-      { email: invoice.customer_email, name: invoice.customer_name },
-    ];
-    sendSmtpEmail.replyTo = {
-      name: "Keenesse",
-      email: "hello@keenesse.com",
-    };
-    sendSmtpEmail.templateId = 1;
-    sendSmtpEmail.params = {
-      name: invoice.customer_name,
-      email: invoice.customer_email,
-      message: `Here is your one time signup URL: ${calendlyUrl}`,
-    };
-
-    const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
-
-    if (response.response.statusCode === 201) {
-      return new NextResponse(
-        JSON.stringify({
-          message: "One time schedule Calendly url created",
-          calendlyUrl,
-        }),
-        {
-          status: 200,
-        },
-      );
-    } else {
-      return new NextResponse(
-        JSON.stringify({
-          message: "Sending email failed",
-        }),
-        {
-          status: 500,
-        },
-      );
-    }
-  } catch (e) {
-    console.error(e);
-    throw new Error(
-      "Failed to send Transactional Email containing the Calendly URL.",
-    );
-  }
+  return new NextResponse(
+    JSON.stringify({
+      message: "One time schedule Calendly url created",
+    }),
+    {
+      status: 200,
+    },
+  );
 }
