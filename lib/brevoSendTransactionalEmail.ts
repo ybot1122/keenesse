@@ -6,6 +6,8 @@ export default async function brevoSendTransactionalEmail(
   customer_email: string,
   customer_name: string,
   message: string,
+  templateId: 1 | 2,
+  params: undefined | {},
 ) {
   // Send Email
   try {
@@ -25,11 +27,12 @@ export default async function brevoSendTransactionalEmail(
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.templateId = 1;
+    sendSmtpEmail.templateId = templateId;
     sendSmtpEmail.params = {
       name: customer_name,
       email: customer_email,
       message: message,
+      ...params,
     };
 
     const response = await apiInstance.sendTransacEmail(sendSmtpEmail);

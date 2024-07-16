@@ -16,6 +16,8 @@ export default async function generateLinkAndSendEmail(
       customer_email,
       customer_name,
       `Here is your one time signup URL: ${calendlyUrl}`,
+      2,
+      { calendlyUrl },
     );
   }
 

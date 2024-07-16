@@ -52,6 +52,8 @@ export default async function handleInvoicePaymentSucceeded(
     invoice.customer_email,
     invoice.customer_name,
     `Here is your one time signup URL: ${calendlyUrl}`,
+    1,
+    {},
   );
 
   return new NextResponse(
