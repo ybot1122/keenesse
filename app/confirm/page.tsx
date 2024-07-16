@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
 import generateLinkAndSendEmail from "./generateLinkAndSendEmail";
+import Link from "next/link";
 
 export default async function Confirm({
   searchParams,
@@ -22,7 +23,8 @@ export default async function Confirm({
     redirect("/");
   }
 
-  await generateLinkAndSendEmail(
+  const calendlyUrl = await generateLinkAndSendEmail(
+    checkoutSessionId,
     customerDetails.customer_email,
     customerDetails.customer_name,
   );
@@ -39,8 +41,10 @@ export default async function Confirm({
             for subscribing to a weekly accountability check-in
           </h1>
           <p className="text-2xl text-center mb-5">
-            You will receive an email shortly with a Calendly link to schedule
-            your session.
+            To schedule your first session, click here:{" "}
+            <Link href={calendlyUrl} className="underline">
+              {calendlyUrl}
+            </Link>
           </p>
           <p className="text-2xl text-center">
             Every week you stay subscribed, you will receive an email with a new
