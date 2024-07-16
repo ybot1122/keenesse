@@ -29,6 +29,8 @@ export default async function Confirm({
     customerDetails.customer_name,
   );
 
+  redirect(calendlyUrl);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="bg-gray w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
