@@ -51,9 +51,9 @@ export default async function handleInvoicePaymentSucceeded(
   await brevoSendTransactionalEmail(
     invoice.customer_email,
     invoice.customer_name,
-    `Here is your one time signup URL: ${calendlyUrl}`,
-    1,
-    {},
+    ``,
+    2,
+    { calendlyUrl },
   );
 
   return new NextResponse(
