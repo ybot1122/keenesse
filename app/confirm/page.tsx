@@ -35,11 +35,12 @@ export default async function Confirm({
         <div className="w-full max-w-[1024px]">
           <h1 className="text-4xl text-center block text-blue mb-5">
             <span className="font-bold">
-              Thank You
-              <br />
-            </span>{" "}
-            for subscribing to a weekly accountability check-in
+              Thank You {customerDetails.customer_name}
+            </span>
           </h1>
+          <h2 className="text-center text-2xl mb-5">
+            You are subscribed to a weekly accountability check-in
+          </h2>
           <p className="text-2xl text-center mb-5">
             To schedule your first session, click here:{" "}
             <Link href={calendlyUrl} className="underline">
@@ -47,8 +48,9 @@ export default async function Confirm({
             </Link>
           </p>
           <p className="text-2xl text-center">
-            Every week you stay subscribed, you will receive an email with a new
-            Calendly link to schedule your session.
+            Every week you stay subscribed, we will email{" "}
+            <span className="underline">{customerDetails.customer_email}</span>{" "}
+            a new Calendly link to schedule your session.
           </p>
         </div>
       </div>
