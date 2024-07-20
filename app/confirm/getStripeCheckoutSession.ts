@@ -13,9 +13,9 @@ export default async function isValidStripeCheckoutSession(
   const stripe_api = new stripe(stripeApiSecret);
 
   try {
-    const lineItems = (await stripe_api.checkout.sessions.listLineItems(
-      checkoutSessionId,
-    )) as any;
+    const lineItems = (
+      await stripe_api.checkout.sessions.listLineItems(checkoutSessionId)
+    ).data as any;
     const session =
       await stripe_api.checkout.sessions.retrieve(checkoutSessionId);
 
@@ -29,7 +29,7 @@ export default async function isValidStripeCheckoutSession(
     }
 
     if (
-      lineItems.data.some(
+      lineItems.some(
         (d: StripeLineItem) =>
           d.price &&
           STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.price.product as string),

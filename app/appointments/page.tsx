@@ -48,7 +48,7 @@ export default function Appointments() {
             <BuyCard
               description="Weekly Accountability Package"
               title="30 Minutes Every Week"
-              price="$79 / week"
+              price="$89 / week"
               href="https://buy.stripe.com/test_cN2dU6d4S5HigiQ9AB"
               indented={false}
               bg="white"
