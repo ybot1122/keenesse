@@ -1,4 +1,5 @@
 import * as Brevo from "@getbrevo/brevo";
+import { NextResponse } from "next/server";
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 
@@ -11,7 +12,12 @@ type StripeCustomer = {
 
 export default async function handleCustomerCreated(customer: StripeCustomer) {
   if (!customer.email && !customer.name) {
-    throw new Error("Customer does not have name or email");
+    return new NextResponse(
+      JSON.stringify({
+        message: "Customer does not have name or email",
+      }),
+      { status: 200 },
+    );
   }
 
   let apiInstance = new Brevo.ContactsApi();
@@ -53,4 +59,11 @@ export default async function handleCustomerCreated(customer: StripeCustomer) {
   });
 
   await promise;
+
+  return new NextResponse(
+    JSON.stringify({
+      message: "Contact added",
+    }),
+    { status: 200 },
+  );
 }

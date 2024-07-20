@@ -1,9 +1,16 @@
 import Link from "next/link";
 
-export default function WannaChat() {
+export default function WannaChat({
+  bg = "bg-blue",
+}: {
+  bg?: "bg-blue" | "bg-gray";
+}) {
+  const fontcolor = bg === "bg-blue" ? "text-white" : "text-blue";
   return (
-    <div className="flex bg-blue w-full pt-10 pb-20 items-center flex-wrap justify-center">
-      <h3 className="text-4xl text-white text-center my-10 w-full px-20">
+    <div
+      className={`flex ${bg} w-full pt-10 pb-20 items-center flex-wrap justify-center`}
+    >
+      <h3 className={`text-4xl ${fontcolor} text-center my-10 w-full px-20`}>
         Have questions or just want to chat?
       </h3>
 

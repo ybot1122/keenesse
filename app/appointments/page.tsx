@@ -52,9 +52,38 @@ export default function Appointments() {
       <div className="bg-blue w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
           <h1 className="text-4xl text-center block text-white">
-            Packages &amp; Discounts
+            Accountability Packages
           </h1>
           <p className="text-center max-w-[625px] text-lg my-5 mx-auto text-white">
+            I offer accountability packages for weekly or monthly check ins.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center mt-10 gap-2">
+            <BuyCard
+              description="Weekly Accountability Package"
+              title="30 Minutes Every Week"
+              price="$89 / week"
+              href="https://buy.stripe.com/28o02za8O74C8s8145"
+              indented={false}
+              bg="white"
+            />
+            <BuyCard
+              description="Monthly Accountability Package"
+              title="60 Minutes Every Month"
+              price="$179 / Month"
+              href="https://buy.stripe.com/3cseXt0yecoW7o44gg"
+              indented={false}
+              bg="white"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
+        <div className="w-full max-w-[1024px]">
+          <h1 className="text-4xl text-center block text-blue">
+            Packages &amp; Discounts
+          </h1>
+          <p className="text-center max-w-[625px] text-lg my-5 mx-auto text-blue">
             Students get additional 10% off all services and packages. Email
             hello@keenesse.com from your .edu email address to request student
             discount pricing
@@ -66,7 +95,7 @@ export default function Appointments() {
               price="$239"
               href="https://calendly.com/keenesse/3-30-minute-sessions"
               indented={true}
-              bg="gray"
+              bg="white"
             />
             <BuyCard
               description="15% OFF"
@@ -74,7 +103,7 @@ export default function Appointments() {
               price="$449"
               href="https://calendly.com/keenesse/3-60-minute-sessions"
               indented={false}
-              bg="gray"
+              bg="white"
             />
             <BuyCard
               description="20% OFF"
@@ -82,15 +111,15 @@ export default function Appointments() {
               price="$859"
               href="https://calendly.com/keenesse/6-60-minute-sessions"
               indented={true}
-              bg="gray"
+              bg="white"
             />
           </div>
         </div>
       </div>
 
-      <div className="bg-gray w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
+      <div className="bg-blue w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
-          <h1 className="text-4xl text-center block text-blue">
+          <h1 className="text-4xl text-center block text-white">
             Business &amp; Group Rates
           </h1>
 
@@ -123,7 +152,7 @@ export default function Appointments() {
         </div>
       </div>
 
-      <WannaChat />
+      <WannaChat bg="bg-gray" />
     </main>
   );
 }

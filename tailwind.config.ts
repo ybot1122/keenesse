@@ -19,6 +19,7 @@ const config: Config = {
       inputRequired: "#727272",
       errorBg: "#ce2c30",
       buyAccent: "#a5c8e0",
+      black: "#000000",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",

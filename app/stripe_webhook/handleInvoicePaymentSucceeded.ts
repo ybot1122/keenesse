@@ -1,25 +1,27 @@
 import { NextResponse } from "next/server";
-
-const calendlyPersonalAccessToken = process.env.CALENDLY_PAT ?? "";
-
-const productIds = ["prod_QSTWXLF2x2W86n"];
+import { STRIPE_SUBSCRIPTION_PRODUCT_IDS } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
+import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
+import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
+import { StripeLineItem } from "@/constants/StripeLineItem";
 
 type StripeInvoice = {
+  customer_name: string;
+  customer_email: string;
+  billing_reason: "subscription_cycle" | "subscription_create";
   lines: {
-    data: {
-      customer_name: string;
-      customer_email: string;
-      plan: {
-        product: string;
-      };
-    }[];
+    data: StripeLineItem[];
   };
 };
 
 export default async function handleInvoicePaymentSucceeded(
   invoice: StripeInvoice,
 ) {
-  if (!invoice.lines.data.some((d) => productIds.includes(d.plan?.product))) {
+  if (
+    invoice.billing_reason === "subscription_create" ||
+    !invoice.lines.data.some((d) =>
+      STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.price?.product),
+    )
+  ) {
     return new NextResponse(
       JSON.stringify({
         message: "Your invoice does not require a one time schedule URL",
@@ -30,40 +32,30 @@ export default async function handleInvoicePaymentSucceeded(
     );
   }
 
-  let calendlyUrl = "";
-
-  // Generate One-Time Calendly URL
-  try {
-    const calendlyResponse = await fetch(
-      "https://api.calendly.com/scheduling_links",
+  if (!invoice.customer_email || !invoice.customer_name) {
+    return new NextResponse(
+      JSON.stringify({
+        message: "This invoice does not have the customer email and name",
+      }),
       {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${calendlyPersonalAccessToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          max_event_count: 1,
-          owner:
-            "https://api.calendly.com/event_types/27eb0c2c-469c-4403-9348-587a9656f278",
-          owner_type: "EventType",
-        }),
+        status: 400,
       },
     );
-
-    const data = await calendlyResponse.json();
-
-    calendlyUrl = data.resource.booking_url;
-  } catch (e: any) {
-    console.log(e);
-    console.log("Failed to generate Calendly URL. This is bad.");
-    throw new Error("Failed to generate Calendly URL.");
   }
+
+  let calendlyUrl = await generateOneTimeCalendlyUrl(invoice.lines.data);
+
+  await brevoSendTransactionalEmail(
+    invoice.customer_email,
+    invoice.customer_name,
+    ``,
+    2,
+    { calendlyUrl },
+  );
 
   return new NextResponse(
     JSON.stringify({
       message: "One time schedule Calendly url created",
-      calendlyUrl,
     }),
     {
       status: 200,
