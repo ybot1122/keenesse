@@ -2,17 +2,14 @@ import { NextResponse } from "next/server";
 import { STRIPE_SUBSCRIPTION_PRODUCT_IDS } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
 import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
+import { StripeLineItem } from "@/constants/StripeLineItem";
 
 type StripeInvoice = {
   customer_name: string;
   customer_email: string;
   billing_reason: "subscription_cycle" | "subscription_create";
   lines: {
-    data: {
-      plan: {
-        product: string;
-      };
-    }[];
+    data: StripeLineItem[];
   };
 };
 
@@ -22,7 +19,7 @@ export default async function handleInvoicePaymentSucceeded(
   if (
     invoice.billing_reason === "subscription_create" ||
     !invoice.lines.data.some((d) =>
-      STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.plan?.product),
+      STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.price?.product),
     )
   ) {
     return new NextResponse(
@@ -46,7 +43,7 @@ export default async function handleInvoicePaymentSucceeded(
     );
   }
 
-  let calendlyUrl = await generateOneTimeCalendlyUrl();
+  let calendlyUrl = await generateOneTimeCalendlyUrl(invoice.lines.data);
 
   await brevoSendTransactionalEmail(
     invoice.customer_email,

@@ -1,7 +1,47 @@
+import {
+  PRE_PAID_30MINS_EVENT_TYPE,
+  PRE_PAID_60MINS_EVENT_TYPE,
+} from "@/constants/CALENDLY_EVENT_TYPES";
+import {
+  MONTHLY_ACCOUNTABILITY_PRODUCT_ID,
+  TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID,
+  WEEKLY_ACCOUNTABILITY_PRODUCT_ID,
+} from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
+import { StripeLineItem } from "@/constants/StripeLineItem";
+
 const calendlyPersonalAccessToken = process.env.CALENDLY_PAT ?? "";
 
-export default async function generateOneTimeCalendlyUrl() {
+/**
+ * Given Stripe Invoice Line Items, generate the correct Calendly URL
+ * (usually either a 60min or 30min session)
+ * @param lineItems
+ * @returns CalendlyURL
+ */
+export default async function generateOneTimeCalendlyUrl(
+  lineItems: StripeLineItem[],
+) {
   let calendlyUrl = "";
+  let calendlyEventType = "";
+
+  if (
+    lineItems.some(
+      (li) =>
+        WEEKLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID === li.price.product,
+    )
+  ) {
+    calendlyEventType = PRE_PAID_30MINS_EVENT_TYPE;
+  } else if (
+    lineItems.some(
+      (li) => MONTHLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product,
+    )
+  ) {
+    calendlyEventType = PRE_PAID_60MINS_EVENT_TYPE;
+  } else {
+    throw new Error(
+      "Tried to create a Calendly URL but did not have a valid subscription",
+    );
+  }
 
   try {
     const calendlyResponse = await fetch(
@@ -14,8 +54,7 @@ export default async function generateOneTimeCalendlyUrl() {
         },
         body: JSON.stringify({
           max_event_count: 1,
-          owner:
-            "https://api.calendly.com/event_types/27eb0c2c-469c-4403-9348-587a9656f278",
+          owner: calendlyEventType,
           owner_type: "EventType",
         }),
       },
@@ -26,8 +65,15 @@ export default async function generateOneTimeCalendlyUrl() {
     calendlyUrl = data.resource.booking_url;
   } catch (e: any) {
     console.log(e);
-    console.log("Failed to generate Calendly URL. This is bad.");
-    throw new Error("Failed to generate Calendly URL.");
+    throw new Error(
+      "Failed to generate Calendly URL when we should have one for a paying subscriber",
+    );
+  }
+
+  if (!calendlyUrl) {
+    throw new Error(
+      "Failed to generate Calendly URL when we should have one for a paying subscriber",
+    );
   }
 
   return calendlyUrl;
