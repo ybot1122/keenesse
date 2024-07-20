@@ -1,4 +1,5 @@
 import { STRIPE_SUBSCRIPTION_PRODUCT_IDS } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
+import { StripeLineItem } from "@/constants/StripeLineItem";
 import stripe from "stripe";
 const stripeApiSecret = process.env.STRIPE_API_KEY ?? "";
 
@@ -7,12 +8,14 @@ export default async function isValidStripeCheckoutSession(
 ): Promise<{
   customer_name: string;
   customer_email: string;
+  lineItems: StripeLineItem[];
 }> {
   const stripe_api = new stripe(stripeApiSecret);
 
   try {
-    const lineItems =
-      await stripe_api.checkout.sessions.listLineItems(checkoutSessionId);
+    const lineItems = (await stripe_api.checkout.sessions.listLineItems(
+      checkoutSessionId,
+    )) as any;
     const session =
       await stripe_api.checkout.sessions.retrieve(checkoutSessionId);
 
@@ -27,7 +30,7 @@ export default async function isValidStripeCheckoutSession(
 
     if (
       lineItems.data.some(
-        (d) =>
+        (d: StripeLineItem) =>
           d.price &&
           STRIPE_SUBSCRIPTION_PRODUCT_IDS.includes(d.price.product as string),
       )
@@ -35,6 +38,7 @@ export default async function isValidStripeCheckoutSession(
       return {
         customer_name,
         customer_email,
+        lineItems,
       };
     }
   } catch (e: any) {

@@ -24,6 +24,7 @@ export default async function Confirm({
   }
 
   const calendlyUrl = await generateLinkAndSendEmail(
+    customerDetails.lineItems,
     checkoutSessionId,
     customerDetails.customer_email,
     customerDetails.customer_name,
