@@ -18,14 +18,14 @@ export default function FAQItem({
       className={` flex py-10 border-t border-borderGray text-left w-full flex-wrap ${isLast ? "border-b" : ""}`}
     >
       <button
-        className={`block text-blue text-2xl cursor w-1/2 text-left ${isOpen ? "mb-10" : ""} grow`}
+        className={`block text-blue text-2xl cursor w-1/2 text-left ${isOpen ? "mb-10" : ""} grow mr-5`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {q}
       </button>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? "mb-10" : ""} ml-5 relative`}
+        className={`${isOpen ? "mb-10" : ""} ml-5 relative w-[20px]`}
         aria-hidden="true"
       >
         <rect

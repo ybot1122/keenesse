@@ -37,25 +37,48 @@ export default function Home() {
       </div>
 
       <div className="md:flex bg-blue text-white py-[5vmax] md:py-[10vmax] px-10 justify-center">
-        <div className="pr-20 pb-10 md:text-right text-2xl md:text-4xl">
+        <div className="md:pr-20 pb-10 text-center md:text-right text-4xl">
           Consultation Specialties
         </div>
 
-        <div className="sectiontext mr-20">
-          <p className="pb-5">Career Development & Transitions</p>
-          <p className="pb-5">Graduate Studies</p>
-          <p className="pb-5">Interviewing</p>
-          <p className="pb-5">Public Speaking</p>
-        </div>
+        <div className="sectiontext md:mr-20">
+          <div className="grid grid-cols-2">
+            <div className="col-span-2 font-bold text-center mb-5 text-xl border-b border-t border-white py-5">
+              For Individuals
+            </div>
 
-        <div className="sectiontext">
-          <p className="pb-5">Software Engineering</p>
+            <div className="col-span-1">
+              <p className="px-5 pb-5">Job Application Strategies</p>
+              <p className="px-5 pb-5">Resume Development</p>
+              <p className="px-5 pb-5">Interviewing</p>
+              <p className="px-5">Offer Negotiations</p>
+            </div>
+            <div className="col-span-1">
+              <p className="px-5 pb-5">Career Development &amp; Transitions</p>
+              <p className="px-5 pb-5">Growth &amp; Leadership</p>
+              <p className="px-5 pb-5">Lifestyle Changes</p>
+              <p className="px-5">Accountability</p>
+            </div>
+          </div>
 
-          <p className="pb-5">Program Management</p>
+          <div className="grid grid-cols-2">
+            <div className="col-span-2 font-bold text-center my-5 text-xl border-b border-t border-white py-5">
+              For Businesses
+            </div>
 
-          <p className="pb-5">Job Offer Negotiations</p>
-
-          <p className="pb-5">Lifestyle changes</p>
+            <div className="col-span-1">
+              <p className="px-5 pb-5">Small Business Planning &amp; Launch</p>
+              <p className="px-5 pb-5">Digital Transformation</p>
+              <p className="px-5 pb-5">Website Design &amp; Development</p>
+              <p className="px-5">Product Management</p>
+            </div>
+            <div className="col-span-1">
+              <p className="px-5 pb-5">STEM Education</p>
+              <p className="px-5 pb-5">Non-profit development</p>
+              <p className="px-5 pb-5">Event Speaking</p>
+              <p className="px-5">Customized Solutions</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>

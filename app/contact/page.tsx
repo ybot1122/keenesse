@@ -12,8 +12,6 @@ const action = async (
 ): Promise<ContactFormState> => {
   const validation = validateContactForm(formData);
 
-  console.log(validation);
-
   if (validation.status === "Invalid") {
     return {
       status: "fail",
