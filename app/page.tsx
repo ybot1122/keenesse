@@ -37,13 +37,13 @@ export default function Home() {
       </div>
 
       <div className="md:flex bg-blue text-white py-[5vmax] md:py-[10vmax] px-10 justify-center">
-        <div className="md:pr-20 pb-10 text-center md:text-right text-4xl">
+        <div className="md:pr-20 pb-10 text-center md:text-right text-5xl md:w-[325px]">
           Consultation Specialties
         </div>
 
-        <div className="sectiontext md:mr-20">
+        <div className="sectiontext text-2xl">
           <div className="grid grid-cols-2">
-            <div className="col-span-2 font-bold text-center mb-5 text-xl border-b border-t border-white py-5">
+            <div className="col-span-2 text-center mb-5 text-3xl border-b border-t border-white py-5">
               For Individuals
             </div>
 
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2">
-            <div className="col-span-2 font-bold text-center my-5 text-xl border-b border-t border-white py-5">
+            <div className="col-span-2 text-center mt-10 mb-5 text-3xl border-b border-t border-white py-5">
               For Businesses
             </div>
 
@@ -74,7 +74,7 @@ export default function Home() {
             </div>
             <div className="col-span-1">
               <p className="px-5 pb-5">STEM Education</p>
-              <p className="px-5 pb-5">Non-profit development</p>
+              <p className="px-5 pb-5">Non-Profit Development</p>
               <p className="px-5 pb-5">Event Speaking</p>
               <p className="px-5">Customized Solutions</p>
             </div>
