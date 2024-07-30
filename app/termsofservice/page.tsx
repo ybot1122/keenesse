@@ -70,12 +70,6 @@ export default function TermsOfService() {
           upper limits or temporal limits may be set by us at any time, in our
           sole discretion.
         </TermsP>
-        <TermsP>
-          B. All purchases of products and/or services via the Service are
-          governed by the Terms and Conditions of Sale available at{" "}
-          <span className="font-bold text-blue">TO BE LINKED</span>, which are
-          hereby incorporated by reference into this Agreement.
-        </TermsP>
         <TermsP>2. Acceptable Use Policy.</TermsP>
         <TermsP>
           A. You agree that (i) you will use the Service solely for your own,
