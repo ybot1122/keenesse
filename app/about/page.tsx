@@ -6,7 +6,7 @@ import Link from "next/link";
 import me from "@/public/my-pic.jpeg";
 
 export const metadata: Metadata = {
-  title: "About - Keenesse Coaching & Consulting",
+  title: "Keenesse - About",
 };
 
 const testimonials = [

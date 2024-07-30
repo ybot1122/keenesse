@@ -1,6 +1,11 @@
 import BuyCard from "@/components/BuyCard";
 import WannaChat from "@/components/WannaChat";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Keenesse - Appointments",
+};
 
 export default function Appointments() {
   return (
