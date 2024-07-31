@@ -81,6 +81,39 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="bg-gray w-full p-10 md:p-24">
+        <h2 className="pb-10 text-center text-5xl md:w-[420px] mx-auto">
+          Why Keenesse?
+        </h2>
+        <div className="grid grid-cols-2 text-center max-w-[620px] mx-auto">
+          <div className="col-span-1 p-5">
+            <p className="text-2xl">Care</p>
+            <p>Every person and organization is cared for from day one</p>
+          </div>
+          <div className="col-span-1 p-5">
+            <p className="text-2xl">Excellence</p>
+            <p>
+              We ensure a quality of experience and take pride in doing our work
+              with excellence
+            </p>
+          </div>
+          <div className="col-span-1 p-5">
+            <p className="text-2xl">Empowerment</p>
+            <p>
+              Our commitment is to empower you and give you all the tools you
+              need to succeed
+            </p>
+          </div>
+          <div className="col-span-1 p-5">
+            <p className="text-2xl">Authenticity</p>
+            <p>
+              We take the time to understand every unique situation and provide
+              authentic, personalized solutions
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

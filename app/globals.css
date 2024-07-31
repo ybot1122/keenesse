@@ -15,7 +15,7 @@
 }
 
 #subheadline {
-  font-size: calc((var(--large-text-size-value) - 1) * 1.2vw + 1rem)
+  font-size: calc((var(--large-text-size-value) - 1) * 1.2vw + 1rem);
 }
 
 #sectionheadline {
