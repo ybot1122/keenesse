@@ -92,27 +92,26 @@ export default function About() {
         <div className="bg-white p-10 text-blue w-full md:w-1/2 lg:p-20 max-w-[620px]">
           <h3 className="text-4xl mb-5 lg:text-6xl">Hi, I&apos;m Daisy</h3>
           <p className="text-xl mb-3 leading-8">
-            I started Keenesse with one goal in mind: to connect people with a
-            partner who has been in their shoes and can help them navigate their
-            work, studies and life with finesse. I strongly believe in the power
-            of coaching, accountability and support.
+            I started Keenesse with one goal in mind: to partner with
+            individuals and organizations so that they can navigate their work
+            and life with finesse.
           </p>
           <p className="text-xl mb-3 leading-8">
             I have a 12+ years track record of growing individuals and building
             projects from the ground up in business, non-profit and technology
             sectors amongst others. I provide consulting services on a wide
-            array of areas. To name a few: software engineering, product/program
-            management, education, research and development.
+            array of areas. To name a few: career development, leadership, small
+            business launch and growth, and STEM education.
           </p>
           <p className="text-xl mb-3 leading-8">
-            I truly care about each client. I take the time to understand their
-            needs and I have dedicated the last 4 years to making myself
+            I truly care about each client. I take the time to understand each
+            unique situation and I have dedicated Keenesse to making myself
             available to my clients around the globe.
           </p>
           <p className="text-xl mb-3 leading-8">
-            Still interested?{" "}
+            Interested?{" "}
             <Link href="/appointments" className="underline">
-              Let&apos;s work together!
+              Schedule a discovery call!
             </Link>
           </p>
         </div>
