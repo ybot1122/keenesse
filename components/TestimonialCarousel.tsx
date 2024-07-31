@@ -51,15 +51,15 @@ const TestimonialCarousel = ({}: {}) => {
   }, []);
 
   return (
-    <div className="group flex relative w-full aspect-square md:aspect-video mx-auto justify-center overflow-hidden">
+    <div className="group flex relative w-[520px] h-[400px] md:aspect-video mx-auto justify-center overflow-hidden">
       <button
-        className="absolute z-30 w-10 aspect-square bg-transparentBlack text-white rounded-full p-2 left-2 self-center hover:bg-orange transition"
+        className="absolute z-30 w-10 aspect-square text-white rounded-full p-2 left-2 self-center transition"
         onClick={prev}
       >
         <ChevronLeft className="" />
       </button>
       <button
-        className="absolute z-30 w-10 aspect-square bg-transparentBlack text-white rounded-full p-2 right-2 self-center hover:bg-orange transition"
+        className="absolute z-30 w-10 aspect-square text-white rounded-full p-2 right-2 self-center transition"
         onClick={next}
       >
         <ChevronRight className="" />
@@ -88,12 +88,12 @@ const TestimonialCarousel = ({}: {}) => {
 
         return (
           <div
-            className={`absolute flex ${inAnimation && animation} ${hidden} w-full h-full ${z} bg-tan`}
+            className={`absolute flex ${inAnimation && animation} ${hidden} w-full h-full ${z}`}
             onAnimationEnd={onAnimationEnd}
             key={t.id}
           >
-            <div className="bg-white m-5 text-blue text-center p-10 max-w-[520px]">
-              <p className="text-2xl">&ldquo;{t.message}&rdquo;</p>
+            <div className="flex flex-wrap bg-white m-5 text-blue text-center p-5 w-[320px] mx-auto justify-center flex-col">
+              <p className="text-2xl w-full">&ldquo;{t.message}&rdquo;</p>
               {t.from ? <p className="mt-5">{t.from}</p> : null}
             </div>
           </div>

@@ -28,6 +28,10 @@ const config: Config = {
       openPlus: "100ms 1 linear openPlus",
       slideUpAndFadeIn: "700ms 1 ease-out slideUpAndFadeIn",
       slideRightAndFadeIn: "1400ms 1 ease-out slideRightAndFadeIn",
+      carouselSlideInToLeft: "200ms 1 alternate carouselSlideInToLeft",
+      carouselSlideOutToLeft: "200ms 1 alternate carouselSlideOutToLeft",
+      carouselSlideInToRight: "200ms 1 alternate carouselSlideInToRight",
+      carouselSlideOutToRight: "200ms 1 alternate carouselSlideOutToRight",
     },
     keyframes: {
       slidein: {
@@ -54,6 +58,22 @@ const config: Config = {
         "0%": { transform: "translateX(-100%)", opacity: "0" },
         "50%": { opacity: "0" },
         "100%": { transform: "translateX(0px)", opacity: "1" },
+      },
+      carouselSlideOutToLeft: {
+        "0%": { transform: "translateX(0px)" },
+        "100%": { transform: "translateX(-100%)" },
+      },
+      carouselSlideInToLeft: {
+        "0%": { transform: "translateX(100%)" },
+        "100%": { transform: "translateX(0px)" },
+      },
+      carouselSlideOutToRight: {
+        "0%": { transform: "translateX(0px)" },
+        "100%": { transform: "translateX(100%)" },
+      },
+      carouselSlideInToRight: {
+        "0%": { transform: "translateX(-100%)" },
+        "100%": { transform: "translateX(0px)" },
       },
     },
   },
