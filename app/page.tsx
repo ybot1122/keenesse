@@ -1,5 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import handshake from "@/public/handshake.png";
+import leadership from "@/public/leadership.png";
+import ribbon from "@/public/ribbon.png";
+import teamwork from "@/public/teamwork.png";
+import Image from "next/image";
+import WannaChat from "@/components/WannaChat";
 
 export const metadata: Metadata = {
   title: "Keenesse",
@@ -89,10 +95,16 @@ export default function Home() {
         <div className="grid grid-cols-2 text-center max-w-[620px] mx-auto">
           <div className="col-span-1 p-5">
             <p className="text-2xl">Care</p>
+            <div className="relative w-[50px] mx-auto my-5">
+              <Image src={handshake} alt="Care" />
+            </div>
             <p>Every person and organization is cared for from day one</p>
           </div>
           <div className="col-span-1 p-5">
             <p className="text-2xl">Excellence</p>
+            <div className="relative w-[50px] mx-auto my-5">
+              <Image src={teamwork} alt="Excellence" />
+            </div>
             <p>
               We ensure a quality of experience and take pride in doing our work
               with excellence
@@ -100,6 +112,9 @@ export default function Home() {
           </div>
           <div className="col-span-1 p-5">
             <p className="text-2xl">Empowerment</p>
+            <div className="relative w-[50px] mx-auto my-5">
+              <Image src={leadership} alt="Empowerment" />
+            </div>
             <p>
               Our commitment is to empower you and give you all the tools you
               need to succeed
@@ -107,6 +122,9 @@ export default function Home() {
           </div>
           <div className="col-span-1 p-5">
             <p className="text-2xl">Authenticity</p>
+            <div className="relative w-[50px] mx-auto my-5">
+              <Image src={ribbon} alt="Authenticity" />
+            </div>
             <p>
               We take the time to understand every unique situation and provide
               authentic, personalized solutions
@@ -114,6 +132,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <WannaChat />
     </main>
   );
 }
