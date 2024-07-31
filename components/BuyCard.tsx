@@ -32,7 +32,7 @@ export default function BuyCard({
         ))}
       </ul>
 
-      {price && <p className="text-blue text-2xl mb-10">{price}</p>}
+      {price && <p className="text-blue text-2xl my-5">{price}</p>}
       <div className="text-center mt-5">
         <Link
           href={href}

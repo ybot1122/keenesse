@@ -14,7 +14,10 @@ export default function Appointments() {
           <p className="text-center max-w-[425px] text-lg mx-auto">
             Don&apos;t see what you&apos;re looking for? We also customize
             offerings to match your needs.{" "}
-            <Link href="/contact">Let us know</Link>!.
+            <Link href="/contact" className="text-underline">
+              Let us know
+            </Link>
+            !
           </p>
         </div>
       </div>
