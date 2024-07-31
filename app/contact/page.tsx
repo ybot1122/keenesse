@@ -29,7 +29,7 @@ export default function Contact() {
     {},
   );
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-white pt-10">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-gray pt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
         <div className="col-span-1 pr-10">
           <h3 className="text-blue text-4xl text-center">Let&apos;s Talk!</h3>
