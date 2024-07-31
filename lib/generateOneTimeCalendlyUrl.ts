@@ -5,6 +5,7 @@ import {
 import {
   MONTHLY_ACCOUNTABILITY_PRODUCT_ID,
   TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID,
+  TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID,
   WEEKLY_ACCOUNTABILITY_PRODUCT_ID,
 } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import { StripeLineItem } from "@/constants/StripeLineItem";
@@ -27,7 +28,8 @@ export default async function generateOneTimeCalendlyUrl(
     lineItems.some(
       (li) =>
         WEEKLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
-        TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID === li.price.product,
+        TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID === li.price.product,
     )
   ) {
     calendlyEventType = PRE_PAID_30MINS_EVENT_TYPE;
