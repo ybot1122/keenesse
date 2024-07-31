@@ -40,7 +40,7 @@ export default function FAQItem({
 
       {isOpen &&
         a.map((ans) => (
-          <p className="md:mx-10 w-full text-lg" key={ans}>
+          <p className="md:mx-10 w-full text-lg mb-5" key={ans}>
             {ans}
           </p>
         ))}

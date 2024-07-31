@@ -14,24 +14,25 @@ const faqs = [
   {
     q: "What can I expect during a coaching session?",
     a: [
-      "Keenesse provides a partner to help you navigate life so that you can achieve your personal, career and life goals! Together, we'll create a unique plan for your individual background and interests, measure progress and ensure that you're thriving within your strengths while also growing in each season.",
-      "A free 30-minute session is always offered to ensure we're the right fit for you! When you are ready to take the next steps, you can schedule incremental sessions or take advantage of up to 25% discount on 3 or 6-session packages.",
-      "You'll be working with our coach, Daisy, who has a 12+ year track record of growing individuals in business, non-profit and technology sectors amongst others. She truly cares about each person, takes the time to understand their situation and has dedicated the last 4 years to making herself available to her clients around the globe.",
+      "Keenesse provides a partner to help you achieve your personal, career and life goals! You'll be working with our coach, Daisy and together we'll create a unique plan for your individual background and situation, measure progress and ensure that you're thriving within your strengths while also growing in each season.",
+      "A free 30-minute discovery call is always offered to ensure we're the right fit for you! When you are ready to take the next steps, you can schedule incremental sessions or take advantage of our package offerings.",
     ],
   },
   {
-    q: "I have a unique project & collaboration request. What do I do?",
+    q: "I have a business project & collaboration request. What should I do?",
     a: [
-      "Keenesse coaching & consulting provides a wide array of professional services for businesses, non-profits and individuals. The first step is to schedule a free consultation with Daisy to ensure we're a right fit.",
-      "For individuals, the next steps would be to book 1:1 sessions or packages according to the rates on the appointment page. Meanwhile for organizations and businesses, a custom contract would need to be built together. This includes expectations of the service, rates and method of payments, possible mileage or travel fees.",
+      "Keenesse coaching & consulting provides a wide array of professional services for businesses, non-profits and individuals. The first step is to schedule a free consultation to ensure we're a right fit.",
+      "If you would like to proceed, Keenesse would provide a proposal and quote before we proceed to contract. The proposal will include expectations of the service, rates and method of payments, possible mileage or travel fees.",
     ],
   },
+
   {
     q: "Are there discounts for students?",
     a: [
       "Yes, students get an additional 10% off coaching sessions and packages! Email hello@keenesse.com from your .edu email address to request student discounts.",
     ],
   },
+
   {
     q: "Do you offer pro bono services?",
     a: [
