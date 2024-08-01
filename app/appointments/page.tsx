@@ -21,19 +21,19 @@ export default function Appointments() {
           </p>
           <div className="text-center mt-5">
             <Link
-              className="rounded-full border-black border p-2 m-2 bg-white"
+              className="rounded-full border-black border p-2 m-2 bg-white inline-block hover:motion-safe:scale-125 transition-transform duration-200 ease-in-out "
               href="#inquiry"
             >
               Inquiry
             </Link>
             <Link
-              className="rounded-full border-black border p-2 m-2 bg-white"
+              className="rounded-full border-black border p-2 m-2 bg-white inline-block hover:motion-safe:scale-125 transition-transform duration-200 ease-in-out "
               href="#packages"
             >
               Packages
             </Link>
             <Link
-              className="rounded-full border-black border p-2 m-2 bg-white"
+              className="rounded-full border-black border p-2 m-2 bg-white inline-block hover:motion-safe:scale-125 transition-transform duration-200 ease-in-out "
               href="#adhoc"
             >
               Ad-Hoc Sessions

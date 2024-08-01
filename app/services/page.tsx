@@ -15,7 +15,7 @@ const forIndividuals = [
 export default function Services() {
   return (
     <main className="min-h-screen">
-      <div className="bg-gray w-full p-10 md:pt-10 md:pb-20 flex justify-center flex-wrap md:flex-row-reverse">
+      <div className="bg-gray w-full p-10 md:pt-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
           <h1 className="text-4xl text-center block text-blue">Services</h1>
           <p className="text-center max-w-[425px] text-lg my-5 mx-auto">
@@ -49,7 +49,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 max-w-[1024px] py-5 px-5">
+        <div className="grid grid-cols-4 gap-2 max-w-[1024px] py-5 px-5 mx-auto">
           {forIndividuals.map((i) => (
             <ClickableTile title={i} key={i} />
           ))}
