@@ -20,8 +20,8 @@ export default function Services() {
           <h1 className="text-4xl text-center block text-blue">Services</h1>
           <p className="text-center max-w-[425px] text-lg my-5 mx-auto">
             Keenesse offers a wide range of consulting services for individuals
-            and businesses. Don't see what you're looking for? We also customize
-            offerings to match your needs.
+            and businesses. Don&apos;t see what you&apos;re looking for? We also
+            customize offerings to match your needs.
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function Services() {
 
         <div className="grid grid-cols-4 gap-2 max-w-[1024px] py-5 px-5">
           {forIndividuals.map((i) => (
-            <ClickableTile title={i} />
+            <ClickableTile title={i} key={i} />
           ))}
         </div>
       </div>
