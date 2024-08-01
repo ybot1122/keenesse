@@ -1,46 +1,24 @@
-"use client";
-
 import BuyCard from "@/components/BuyCard";
 import { useState } from "react";
 
 export default function Tabs({}) {
-  const [activeTab, setActiveTab] = useState<"inquiry" | "packages" | "adhoc">(
-    "inquiry",
-  );
-
   return (
-    <div className="bg-blue py-20 px-10">
-      <div className="text-center">
-        <button
-          className="rounded-full border-gray border p-2 m-2 bg-gray"
-          onClick={() => setActiveTab("inquiry")}
-        >
-          Inquiry
-        </button>
-        <button
-          className="rounded-full border-gray border p-2 m-2 bg-gray"
-          onClick={() => setActiveTab("packages")}
-        >
-          Packages
-        </button>
-        <button
-          className="rounded-full border-gray border p-2 m-2 bg-gray"
-          onClick={() => setActiveTab("adhoc")}
-        >
-          Ad-Hoc Sessions
-        </button>
-      </div>
-
-      {activeTab === "inquiry" && <Inquiry />}
-      {activeTab === "packages" && <Packages />}
-      {activeTab === "adhoc" && <AdHoc />}
+    <div className="bg-blue pb-20 px-10">
+      <Inquiry />
+      <Packages />
+      <AdHoc />
     </div>
   );
 }
 
 const Inquiry = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 text-center mt-10 gap-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-2">
+      <div className="col-span-1 md:col-span-2">
+        <h1 className="text-white text-4xl pb-5 pt-10" id="inquiry">
+          Inquiry
+        </h1>
+      </div>
       <BuyCard
         title="Free Consultation"
         href="https://calendly.com/keenesse/free30min"
@@ -70,6 +48,14 @@ const Inquiry = () => {
 const Packages = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 text-center mt-10 gap-2">
+      <div className="col-span-1 md:col-span-3">
+        <h1
+          className="text-white text-4xl pb-5 pt-10 border-t border-gray"
+          id="packages"
+        >
+          Packages
+        </h1>
+      </div>
       <BuyCard
         title="TODO"
         href="https://calendly.com/keenesse/free30min"
@@ -79,7 +65,7 @@ const Packages = () => {
           "Video conferencing weekly for 30 mins",
           "Daily access: coaching and check-ins via email",
           "Automated reminders and billing; cancel anytime",
-          "Sessions don’t expire, unlimited rescheduling",
+          "Sessions don't expire, unlimited rescheduling",
         ]}
       />
       <BuyCard
@@ -113,6 +99,14 @@ const Packages = () => {
 const AdHoc = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 text-center mt-10 gap-2">
+      <div className="col-span-1 md:col-span-2">
+        <h1
+          className="text-white text-4xl pb-5 pt-10 mt-10 border-t border-gray"
+          id="adhoc"
+        >
+          Ad-Hoc Sessions
+        </h1>
+      </div>
       <BuyCard
         title="Single Session - 30mins"
         href="https://calendly.com/keenesse/30min"
