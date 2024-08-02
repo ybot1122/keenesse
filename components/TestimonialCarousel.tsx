@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 const testimonials = [
   {
     id: "a",
@@ -29,10 +29,22 @@ const testimonials = [
 ];
 
 const TestimonialCarousel = ({}: {}) => {
+  const itemWidth = 320;
+  const maxItems = 3;
+
+  const [windowWidth, setWindowWidth] = React.useState(0);
   const [slideDir, setSlideDir] = React.useState<"left" | "right">("left");
   const [prevInd, setPrevInd] = React.useState(0);
   const [activeInd, setActiveInd] = React.useState(0);
   const [isAnimating, setIsAnimating] = React.useState(false);
+
+  useEffect(() => {
+    if (window) {
+      setWindowWidth(window.innerWidth);
+    }
+  }, []);
+
+  console.log(windowWidth);
 
   const next = useCallback(() => {
     setPrevInd(activeInd);
@@ -88,7 +100,7 @@ const TestimonialCarousel = ({}: {}) => {
 
         return (
           <div
-            className={`absolute flex ${inAnimation && animation} ${hidden} w-full h-full ${z}`}
+            className={`flex ${inAnimation && animation} w-full h-full ${z}`}
             onAnimationEnd={onAnimationEnd}
             key={t.id}
           >

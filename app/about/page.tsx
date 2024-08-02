@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import me from "@/public/my-pic.jpeg";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import ScrollableCarousel from "@/components/ScrollableCarousel";
 
 export const metadata: Metadata = {
   title: "Keenesse - About",
@@ -98,7 +99,7 @@ export default function About() {
           What Clients are Saying
         </h3>
 
-        <TestimonialCarousel />
+        <ScrollableCarousel />
       </div>
       <div className="bg-gray w-full p-10 md:p-24">
         <div className="w-full lg:grid lg:grid-cols-3">

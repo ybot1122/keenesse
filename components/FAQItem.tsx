@@ -28,14 +28,14 @@ export default function FAQItem({
         className={`${isOpen ? "mb-10" : ""} ml-5 relative w-[20px]`}
         aria-hidden="true"
       >
-        <rect
+        <div
           className="right-[20px] absolute inline-block w-[20px] h-[2px] bg-blue"
           aria-hidden="true"
-        ></rect>
-        <rect
+        ></div>
+        <div
           className={`right-[20px] inline-block w-[20px] h-[2px] bg-blue absolute ${isOpen ? "animate-closePlus" : "rotate-90 animate-openPlus"}`}
           aria-hidden="true"
-        ></rect>
+        ></div>
       </button>
 
       {isOpen &&
