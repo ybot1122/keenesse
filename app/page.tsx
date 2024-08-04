@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <main className="">
       <div className="text-center text-blue pt-[6vmax] pb-[5vw] px-5 w-[75%] mx-auto">
-        <h1 className="tracking-normal text-4xl md:text-6xl animate-slideUpAndFadeIn">
+        <h1 className="tracking-normal text-5xl md:text-6xl animate-slideUpAndFadeIn">
           Navigate your journey with finesse
         </h1>
         <div
@@ -43,7 +43,7 @@ export default function Home() {
       </div>
 
       <div className="md:flex bg-blue text-white py-[5vmax] md:py-[10vmax] px-10 justify-center">
-        <div className="md:pr-20 pb-10 text-center md:text-right text-5xl md:w-[325px]">
+        <div className="md:pr-20 pb-10 text-center md:text-right text-4xl md:w-[325px]">
           Consultation Specialties
         </div>
 
@@ -88,11 +88,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gray w-full p-10 md:p-24">
-        <h2 className="pb-10 text-center text-5xl md:w-[420px] mx-auto">
+      <div className="bg-gray text-blue w-full p-10 md:p-24">
+        <h2 className="pb-10  text-center text-5xl md:w-[420px] mx-auto">
           Why Keenesse?
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 text-center max-w-[820px] mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 text-center max-w-[820px] mx-auto text-2xl">
           <div className="col-span-1 p-5">
             <p className="text-2xl">Care</p>
             <div className="relative w-[50px] mx-auto my-5">
