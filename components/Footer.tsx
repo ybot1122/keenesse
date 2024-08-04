@@ -18,7 +18,7 @@ export default function Footer() {
           />
         </Link>
         <Link
-          href="http://www.linkedin.com/in/keenesse/"
+          href="https://www.linkedin.com/company/keenesse/"
           target="_blank"
           className="inline-block"
         >

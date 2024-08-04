@@ -42,7 +42,7 @@ export default function Contact() {
             You can also connect with me on{" "}
             <Link
               className="font-bold underline"
-              href="http://www.linkedin.com/in/keenesse/"
+              href="https://www.linkedin.com/company/keenesse/"
               target="_blank"
             >
               LinkedIn
