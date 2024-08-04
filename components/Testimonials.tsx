@@ -24,7 +24,7 @@ const testimonials = [
   },
 ];
 
-export default function ScrollableCarousel() {
+export default function Testimonials() {
   return (
     <div className={"w-[1020px] overflow-x-scroll block whitespace-nowrap"}>
       {testimonials.map((t, ind) => {
@@ -40,37 +40,3 @@ export default function ScrollableCarousel() {
     </div>
   );
 }
-
-const ChevronRight = ({ className }: { className: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth="3"
-    stroke="currentColor"
-    className={`w-full h-full ${className}`}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="m8.25 4.5 7.5 7.5-7.5 7.5"
-    />
-  </svg>
-);
-
-const ChevronLeft = ({ className }: { className: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth="3"
-    stroke="currentColor"
-    className={`w-full h-full ${className}`}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15.75 19.5 8.25 12l7.5-7.5"
-    />
-  </svg>
-);
