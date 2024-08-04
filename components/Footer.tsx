@@ -18,6 +18,13 @@ export default function Footer() {
           />
         </Link>
         <Link
+          href="https://www.instagram.com/keenesse_consulting/"
+          target="_blank"
+          className="inline-block mr-5"
+        >
+          <Image src="/instagram.svg" alt="Twitter" width="25" height="25" />
+        </Link>
+        <Link
           href="https://www.linkedin.com/company/keenesse/"
           target="_blank"
           className="inline-block"
