@@ -70,15 +70,19 @@ const Packages = () => {
         </h1>
       </div>
       <BuyCard
-        title="60 Min Session x4"
-        href="https://calendly.com/keenesse/free30min"
+        title="4-Session"
+        href={
+          process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
+            ? "https://buy.stripe.com/test_14k7vI4ymfhSgiQeUW"
+            : "tbd"
+        }
         indented={true}
         bg="white"
         details={[
-          "Video conferencing weekly for 30 mins",
-          "Daily access: coaching and check-ins via email",
-          "Automated reminders and billing; cancel anytime",
-          "Sessions don't expire, unlimited rescheduling",
+          "4 x 60 minutes video conferencing",
+          "Daily access and check-ins via email",
+          "Unlimited rescheduling",
+          "Sessions don't expire",
         ]}
       />
       <BuyCard
