@@ -31,6 +31,7 @@ export default async function generateLinkAndSendEmail(
   }
 
   let calendlyUrls = [];
+  let packageName = getPackageName(lineItems);
 
   if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
     const promises = [
@@ -70,13 +71,26 @@ export default async function generateLinkAndSendEmail(
 
   kv.set(checkout_session_id, calendlyUrls);
 
-  await brevoSendTransactionalEmail(
-    customer_email,
-    customer_name,
-    `Here is your one time signup URL: ${calendlyUrls}`,
-    2,
-    { calendlyUrls },
-  );
+  await brevoSendTransactionalEmail(customer_email, customer_name, ``, 2, {
+    packageName,
+    links: calendlyUrls.map((c) => `<li>${c}</li>`).join(""),
+  });
 
   return calendlyUrls;
 }
+
+const getPackageName = (lineItems: StripeLineItem[]) => {
+  if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
+    return "4-Session (60 mins)";
+  } else if (
+    lineItems.some((li) => TEST_MODE_12_SESSION === li.price.product)
+  ) {
+    return "12-Session (60 mins)";
+  } else if (
+    lineItems.some((li) => TEST_MODE_12_SESSION_LITE === li.price.product)
+  ) {
+    return "12-Session Lite (30 mins)";
+  } else {
+    throw new Error("Unexpected product id, does not have a package name");
+  }
+};
