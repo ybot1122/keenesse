@@ -1,4 +1,8 @@
-import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
+import {
+  TEST_MODE_12_SESSION,
+  TEST_MODE_12_SESSION_LITE,
+  TEST_MODE_4_SESSION,
+} from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import { StripeLineItem } from "@/constants/StripeLineItem";
 import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
@@ -30,6 +34,29 @@ export default async function generateLinkAndSendEmail(
 
   if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
     const promises = [
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+    ];
+
+    calendlyUrls = await Promise.all(promises);
+  } else if (
+    lineItems.some(
+      (li) =>
+        TEST_MODE_12_SESSION === li.price.product ||
+        TEST_MODE_12_SESSION_LITE === li.price.product,
+    )
+  ) {
+    const promises = [
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
       generateOneTimeCalendlyUrl(lineItems),
       generateOneTimeCalendlyUrl(lineItems),
       generateOneTimeCalendlyUrl(lineItems),

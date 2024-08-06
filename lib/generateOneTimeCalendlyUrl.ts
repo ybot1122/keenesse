@@ -4,6 +4,8 @@ import {
 } from "@/constants/CALENDLY_EVENT_TYPES";
 import {
   MONTHLY_ACCOUNTABILITY_PRODUCT_ID,
+  TEST_MODE_12_SESSION,
+  TEST_MODE_12_SESSION_LITE,
   TEST_MODE_4_SESSION,
   TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID,
   TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID,
@@ -29,6 +31,7 @@ export default async function generateOneTimeCalendlyUrl(
     lineItems.some(
       (li) =>
         WEEKLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        TEST_MODE_12_SESSION_LITE === li.price.product ||
         TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
         TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID === li.price.product,
     )
@@ -38,6 +41,7 @@ export default async function generateOneTimeCalendlyUrl(
     lineItems.some(
       (li) =>
         MONTHLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        TEST_MODE_12_SESSION === li.price.product ||
         TEST_MODE_4_SESSION === li.price.product,
     )
   ) {
