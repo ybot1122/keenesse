@@ -8,6 +8,8 @@ export default function BuyCard({
   bg,
   label,
   details,
+  highlight,
+  highlightLevel = 1,
 }: {
   href: string;
   title: string;
@@ -16,7 +18,17 @@ export default function BuyCard({
   bg: "gray" | "white";
   label?: string;
   details: string[];
+  highlight?: string;
+  highlightLevel?: 1 | 2 | 3;
 }) {
+  let highlightClass = "";
+  if (highlightLevel === 1) {
+    highlightClass = "bg-yellow";
+  } else if (highlightLevel === 2) {
+  } else if (highlightLevel === 3) {
+    highlightClass = "font-bold";
+  }
+
   return (
     <div
       className={`col-span-1 bg-${bg} pb-10 flex flex-col justify-between ${indented && "md:translate-y-10"}`}
@@ -33,6 +45,7 @@ export default function BuyCard({
       </ul>
 
       {price && <p className="text-blue text-2xl my-5">{price}</p>}
+      {highlight && <p className={highlightClass}>{highlight}</p>}
       <div className="text-center mt-5">
         <Link
           href={href}

@@ -55,14 +55,14 @@ export default async function Confirm({
             <span className="underline">{customerDetails.customer_email}</span>.{" "}
             Please keep these URLs.
           </p>
-          <ul>
+          <ul className="w-[620px] mx-auto list-disc">
             {calendlyUrls.map((c) => (
               <li key={c} className="underline">
                 <Link href={c}>{c}</Link>
               </li>
             ))}
           </ul>
-          <p className="text-2xl text-center">
+          <p className="text-2xl text-center mt-5">
             Looking forward to speaking with you soon!
           </p>
         </div>

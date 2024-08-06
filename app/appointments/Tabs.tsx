@@ -17,6 +17,12 @@ const Inquiry = () => {
         <h1 className="text-white text-4xl pb-5 pt-10" id="inquiry">
           Single Sessions
         </h1>
+        <p className="text-white mb-5 max-w-[420px] mx-auto">
+          For first time clients, we offer a completely free 30 minute
+          consultation. For returning clients, we offer 30 min and 60 min
+          sessions. If you want to book multiple sessions, check out our
+          packages!
+        </p>
       </div>
       <BuyCard
         title="Free Consultation"
@@ -68,6 +74,11 @@ const Packages = () => {
         >
           Packages
         </h1>
+        <p className="text-white mb-5 max-w-[420px] mx-auto">
+          At Keenesse, we offer packages for booking multiple sessions upfront.
+          Packages are a great option if you are looking for regular check ins
+          and long term support. Check out which package is best for you.
+        </p>
       </div>
       <BuyCard
         title="4-Session"
@@ -78,12 +89,15 @@ const Packages = () => {
         }
         indented={true}
         bg="white"
+        price="$749"
         details={[
           "4 x 60 minutes video conferencing",
           "Daily access and check-ins via email",
           "Unlimited rescheduling",
           "Sessions don't expire",
         ]}
+        highlight={"save 10%"}
+        highlightLevel={1}
       />
       <BuyCard
         details={[
@@ -100,6 +114,9 @@ const Packages = () => {
         }
         indented={false}
         bg="white"
+        price="$1,149"
+        highlight={"save 12%"}
+        highlightLevel={2}
       />
       <BuyCard
         details={[
@@ -109,6 +126,7 @@ const Packages = () => {
           "Sessions don't expire",
         ]}
         title="12-Session"
+        price="$2,199"
         href={
           process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
             ? "https://buy.stripe.com/test_14k5nAc0O9Xy0jS004"
@@ -116,6 +134,8 @@ const Packages = () => {
         }
         indented={true}
         bg="white"
+        highlight={"SAVE 16%"}
+        highlightLevel={3}
       />
     </div>
   );
