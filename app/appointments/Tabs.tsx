@@ -116,7 +116,7 @@ const Packages = () => {
         bg="white"
         price="$1,149"
         highlight={"save 12%"}
-        highlightLevel={2}
+        highlightLevel={1}
       />
       <BuyCard
         details={[
@@ -135,7 +135,7 @@ const Packages = () => {
         indented={true}
         bg="white"
         highlight={"SAVE 16%"}
-        highlightLevel={3}
+        highlightLevel={2}
       />
     </div>
   );

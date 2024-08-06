@@ -19,14 +19,13 @@ export default function BuyCard({
   label?: string;
   details: string[];
   highlight?: string;
-  highlightLevel?: 1 | 2 | 3;
+  highlightLevel?: 1 | 2;
 }) {
-  let highlightClass = "";
+  let highlightClass = "mx-auto w-[80px] ";
   if (highlightLevel === 1) {
-    highlightClass = "bg-yellow";
+    highlightClass += "";
   } else if (highlightLevel === 2) {
-  } else if (highlightLevel === 3) {
-    highlightClass = "font-bold";
+    highlightClass += "font-bold bg-yellow";
   }
 
   return (

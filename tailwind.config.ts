@@ -20,6 +20,7 @@ const config: Config = {
       errorBg: "#ce2c30",
       buyAccent: "#a5c8e0",
       black: "#000000",
+      yellow: "#FFF700",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",
