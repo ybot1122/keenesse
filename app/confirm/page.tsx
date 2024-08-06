@@ -2,7 +2,9 @@
 
 import { redirect } from "next/navigation";
 import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
-import generateLinkAndSendEmail from "./generateLinkAndSendEmail";
+import generateLinkAndSendEmail, {
+  getPackageName,
+} from "./generateLinkAndSendEmail";
 import Link from "next/link";
 import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 
@@ -24,15 +26,7 @@ export default async function Confirm({
     redirect("/");
   }
 
-  let purchaseItem = "";
-
-  if (
-    customerDetails.lineItems.some(
-      (li) => TEST_MODE_4_SESSION === li.price.product,
-    )
-  ) {
-    purchaseItem = "4-Session Package";
-  }
+  let packageName = getPackageName(customerDetails.lineItems);
 
   const calendlyUrls = await generateLinkAndSendEmail(
     customerDetails.lineItems,
@@ -53,7 +47,7 @@ export default async function Confirm({
             </span>
           </h1>
           <p className="text-center text-2xl mb-5">
-            We are excited to support you with our {purchaseItem}.
+            We are excited to support you with our {packageName} package.
           </p>
           <p className="text-center text-2xl mb-5">
             Below you will find the URLs to schedule your sessions. We have also
@@ -68,7 +62,9 @@ export default async function Confirm({
               </li>
             ))}
           </ul>
-          <p className="text-2xl text-center"></p>
+          <p className="text-2xl text-center">
+            Looking forward to speaking with you soon!
+          </p>
         </div>
       </div>
     </main>

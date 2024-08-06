@@ -73,13 +73,13 @@ export default async function generateLinkAndSendEmail(
 
   await brevoSendTransactionalEmail(customer_email, customer_name, ``, 2, {
     packageName,
-    links: calendlyUrls.map((c) => `<li>${c}</li>`).join(""),
+    links: calendlyUrls.join("\n"),
   });
 
   return calendlyUrls;
 }
 
-const getPackageName = (lineItems: StripeLineItem[]) => {
+export const getPackageName = (lineItems: StripeLineItem[]) => {
   if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
     return "4-Session (60 mins)";
   } else if (
