@@ -4,6 +4,7 @@ import {
 } from "@/constants/CALENDLY_EVENT_TYPES";
 import {
   MONTHLY_ACCOUNTABILITY_PRODUCT_ID,
+  TEST_MODE_4_SESSION,
   TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID,
   TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID,
   WEEKLY_ACCOUNTABILITY_PRODUCT_ID,
@@ -35,7 +36,9 @@ export default async function generateOneTimeCalendlyUrl(
     calendlyEventType = PRE_PAID_30MINS_EVENT_TYPE;
   } else if (
     lineItems.some(
-      (li) => MONTHLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product,
+      (li) =>
+        MONTHLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        TEST_MODE_4_SESSION === li.price.product,
     )
   ) {
     calendlyEventType = PRE_PAID_60MINS_EVENT_TYPE;
@@ -46,25 +49,7 @@ export default async function generateOneTimeCalendlyUrl(
   }
 
   try {
-    const calendlyResponse = await fetch(
-      "https://api.calendly.com/scheduling_links",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${calendlyPersonalAccessToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          max_event_count: 1,
-          owner: calendlyEventType,
-          owner_type: "EventType",
-        }),
-      },
-    );
-
-    const data = await calendlyResponse.json();
-
-    calendlyUrl = data.resource.booking_url;
+    calendlyUrl = await getCalendlyUrl(calendlyEventType);
   } catch (e: any) {
     console.log(e);
     throw new Error(
@@ -80,3 +65,27 @@ export default async function generateOneTimeCalendlyUrl(
 
   return calendlyUrl;
 }
+
+const getCalendlyUrl = async (calendlyEventType: string) => {
+  const calendlyResponse = await fetch(
+    "https://api.calendly.com/scheduling_links",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${calendlyPersonalAccessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        max_event_count: 1,
+        owner: calendlyEventType,
+        owner_type: "EventType",
+      }),
+    },
+  );
+
+  const data = await calendlyResponse.json();
+
+  const calendlyUrl = data.resource.booking_url;
+
+  return calendlyUrl;
+};

@@ -1,3 +1,4 @@
+import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import { StripeLineItem } from "@/constants/StripeLineItem";
 import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
@@ -18,22 +19,43 @@ export default async function generateLinkAndSendEmail(
   checkout_session_id: string,
   customer_email: string,
   customer_name: string,
-) {
+): Promise<string[]> {
   const calendlyUrlFromKV = await kv.get<string>(checkout_session_id);
 
+  console.log(calendlyUrlFromKV, checkout_session_id);
+
   if (calendlyUrlFromKV) {
-    return calendlyUrlFromKV;
+    return calendlyUrlFromKV as any;
   }
 
-  const calendlyUrl = await generateOneTimeCalendlyUrl(lineItems);
-  kv.set(checkout_session_id, calendlyUrl);
+  let calendlyUrls = [];
+
+  if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
+    const promises = [
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+      generateOneTimeCalendlyUrl(lineItems),
+    ];
+
+    calendlyUrls = await Promise.all(promises);
+  } else {
+    calendlyUrls.push(await generateOneTimeCalendlyUrl(lineItems));
+  }
+
+  console.log(calendlyUrls);
+
+  kv.set(checkout_session_id, "lalala");
+
+  /*
   await brevoSendTransactionalEmail(
     customer_email,
     customer_name,
-    `Here is your one time signup URL: ${calendlyUrl}`,
+    `Here is your one time signup URL: ${calendlyUrls}`,
     2,
-    { calendlyUrl },
+    { calendlyUrls },
   );
+*/
 
-  return calendlyUrl;
+  return calendlyUrls;
 }
