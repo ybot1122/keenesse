@@ -87,25 +87,33 @@ const Packages = () => {
       />
       <BuyCard
         details={[
-          "12 Video conferencing per year for 60 minutes (or 2x 30 mins)",
-          "Daily access: coaching and check-ins via email",
-          "Automated reminders and billing; cancel anytime",
-          "Sessions don't expire, unlimited rescheduling",
+          "12 x 30 minutes video conferencing",
+          "Daily access and check-ins via email",
+          "Unlimited rescheduling",
+          "Sessions don't expire",
         ]}
-        title="30 Min Session x12"
-        href="https://calendly.com/keenesse/30min"
+        title="12-Session Lite"
+        href={
+          process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
+            ? "https://buy.stripe.com/test_4gwg2e7Ky9Xy3w4eUX"
+            : "tbd"
+        }
         indented={false}
         bg="white"
       />
       <BuyCard
         details={[
-          "4 Video conferencing per year for 60 minutes",
-          "Daily access: coaching and check-ins via email",
-          "Automated reminders and billing; cancel anytime",
-          "Sessions don't expire, unlimited rescheduling",
+          "12 x 60 minutes video conferencing",
+          "Daily access and check-ins via email",
+          "Unlimited rescheduling",
+          "Sessions don't expire",
         ]}
-        title="TODO"
-        href="https://calendly.com/keenesse/30min"
+        title="12-Session"
+        href={
+          process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
+            ? "https://buy.stripe.com/test_14k5nAc0O9Xy0jS004"
+            : "tbd"
+        }
         indented={true}
         bg="white"
       />
