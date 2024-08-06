@@ -22,10 +22,8 @@ export default async function generateLinkAndSendEmail(
 ): Promise<string[]> {
   const calendlyUrlFromKV = await kv.get<string>(checkout_session_id);
 
-  console.log(calendlyUrlFromKV, checkout_session_id);
-
   if (calendlyUrlFromKV) {
-    return calendlyUrlFromKV as any;
+    return calendlyUrlFromKV as any as string[];
   }
 
   let calendlyUrls = [];
@@ -43,11 +41,8 @@ export default async function generateLinkAndSendEmail(
     calendlyUrls.push(await generateOneTimeCalendlyUrl(lineItems));
   }
 
-  console.log(calendlyUrls);
+  kv.set(checkout_session_id, calendlyUrls);
 
-  kv.set(checkout_session_id, "lalala");
-
-  /*
   await brevoSendTransactionalEmail(
     customer_email,
     customer_name,
@@ -55,7 +50,6 @@ export default async function generateLinkAndSendEmail(
     2,
     { calendlyUrls },
   );
-*/
 
   return calendlyUrls;
 }

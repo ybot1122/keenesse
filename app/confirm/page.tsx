@@ -52,22 +52,22 @@ export default async function Confirm({
               Thank You {customerDetails.customer_name}
             </span>
           </h1>
-          <h2 className="text-center text-2xl mb-5">
-            We are excited to support you with our {purchaseItem}. Below you
-            will find the URLs to schedule your sessions. We have also sent them
-            to your email:{" "}
-            <span className="underline">{customerDetails.customer_email}</span>{" "}
-            Please keep these URLs.
-          </h2>
-          <p className="text-2xl text-center mb-5">
-            <ul>
-              {calendlyUrls.map((c) => (
-                <li key={c} className="underline">
-                  <Link href={c}>{c}</Link>
-                </li>
-              ))}
-            </ul>
+          <p className="text-center text-2xl mb-5">
+            We are excited to support you with our {purchaseItem}.
           </p>
+          <p className="text-center text-2xl mb-5">
+            Below you will find the URLs to schedule your sessions. We have also
+            sent them to your email:{" "}
+            <span className="underline">{customerDetails.customer_email}</span>.{" "}
+            Please keep these URLs.
+          </p>
+          <ul>
+            {calendlyUrls.map((c) => (
+              <li key={c} className="underline">
+                <Link href={c}>{c}</Link>
+              </li>
+            ))}
+          </ul>
           <p className="text-2xl text-center"></p>
         </div>
       </div>
