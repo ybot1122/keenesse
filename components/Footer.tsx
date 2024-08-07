@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="text-center my-20 py-5">
+    <footer className="text-center my-5 py-5">
       <div className="mt-10 mb-5">
         <Link
           href="https://twitter.com/keenesse"

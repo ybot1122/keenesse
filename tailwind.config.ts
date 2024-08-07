@@ -21,6 +21,7 @@ const config: Config = {
       buyAccent: "#a5c8e0",
       black: "#000000",
       yellow: "#FFF700",
+      orange: "#fa664b",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",

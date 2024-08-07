@@ -8,7 +8,7 @@ export default function Services() {
       <div className="bg-gray w-full p-10 md:pt-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
           <h1 className="text-4xl text-center block text-blue">Services</h1>
-          <p className="text-center max-w-[425px] text-lg my-5 mx-auto">
+          <p className="text-center max-w-[725px] text-lg my-5 mx-auto">
             Keenesse offers a wide range of consulting services for individuals
             and businesses. Don&apos;t see what you&apos;re looking for? We also
             customize offerings to match your needs.
@@ -17,8 +17,8 @@ export default function Services() {
       </div>
 
       <div className="bg-blue w-full text-white px-5">
-        <h2 className="text-center text-2xl py-5">For Individuals</h2>
-        <div className="max-w-[425px] mx-auto">
+        <h2 className="text-center text-4xl py-5">For Individuals</h2>
+        <div className="max-w-[725px] mx-auto text-lg">
           <p>
             From discovering your career path to job searching, transitioning
             roles, growing within your field or starting a new business,
@@ -39,7 +39,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="w-[90%] py-5 px-15 mx-auto">
+        <div className="w-[90%] py-20 px-15 mx-auto">
           <ForIndividualsCarousel />
         </div>
       </div>
