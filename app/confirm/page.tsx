@@ -51,17 +51,12 @@ export default async function Confirm({
           </p>
           <p className="text-center text-2xl mb-5">
             We have sent the URLs to schedule your sessions to your email:{" "}
-            <span className="underline">{customerDetails.customer_email}</span>.{" "}
-            Please keep these URLs.
+            <span className="underline">{customerDetails.customer_email}</span>.
           </p>
           <p className="text-center text-2xl mb-5">
             <Link href={calendlyUrls[0]} className="underline">
               Schedule your first session now!
             </Link>
-          </p>
-
-          <p className="text-2xl text-center mt-5">
-            Looking forward to speaking with you soon!
           </p>
         </div>
       </div>
