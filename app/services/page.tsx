@@ -1,16 +1,6 @@
 import Link from "next/link";
 import ClickableTile from "./ClickableTile";
-
-const forIndividuals = [
-  "Small Business Planning & Launch",
-  "Digital Transformation",
-  "Website Design & Development",
-  "Product Management",
-  "STEM Education & Curriculum development",
-  "Non-profit development",
-  "Event Speaking",
-  "Customized Solutions",
-];
+import ForIndividualsCarousel from "./ForIndividualsCarousel";
 
 export default function Services() {
   return (
@@ -26,7 +16,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="bg-blue w-full text-white">
+      <div className="bg-blue w-full text-white px-5">
         <h2 className="text-center text-2xl py-5">For Individuals</h2>
         <div className="max-w-[425px] mx-auto">
           <p>
@@ -49,10 +39,8 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 max-w-[1024px] py-5 px-5 mx-auto">
-          {forIndividuals.map((i) => (
-            <ClickableTile title={i} key={i} />
-          ))}
+        <div className="w-[90%] py-5 px-15 mx-auto">
+          <ForIndividualsCarousel />
         </div>
       </div>
       <div className="bg-gray w-full mt-5">
