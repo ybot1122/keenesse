@@ -17,7 +17,7 @@ export default function Services() {
       </div>
 
       <div className="bg-blue w-full text-white px-5">
-        <h2 className="text-center text-4xl py-5">For Individuals</h2>
+        <h2 className="text-center text-4xl pb-5 pt-10">For Individuals</h2>
         <div className="max-w-[725px] mx-auto text-lg">
           <p>
             From discovering your career path to job searching, transitioning

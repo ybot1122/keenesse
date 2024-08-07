@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
 import generateLinkAndSendEmail, {
-  getPackageName,
+  getPackageNameAndEmailTemplateId,
 } from "./generateLinkAndSendEmail";
 import Link from "next/link";
 import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
@@ -26,7 +26,9 @@ export default async function Confirm({
     redirect("/");
   }
 
-  let packageName = getPackageName(customerDetails.lineItems);
+  const { packageName } = getPackageNameAndEmailTemplateId(
+    customerDetails.lineItems,
+  );
 
   const calendlyUrls = await generateLinkAndSendEmail(
     customerDetails.lineItems,

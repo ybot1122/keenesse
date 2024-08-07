@@ -31,7 +31,8 @@ export default async function generateLinkAndSendEmail(
   }
 
   let calendlyUrls = [];
-  let packageName = getPackageName(lineItems);
+  const { packageName, emailTemplateId } =
+    getPackageNameAndEmailTemplateId(lineItems);
 
   if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
     const promises = [
@@ -71,25 +72,47 @@ export default async function generateLinkAndSendEmail(
 
   kv.set(checkout_session_id, calendlyUrls);
 
-  await brevoSendTransactionalEmail(customer_email, customer_name, ``, 2, {
-    packageName,
-    links: calendlyUrls.join("\n"),
+  const links: Record<string, string> = {};
+  calendlyUrls.forEach((c, ind) => {
+    links[`link${ind + 1}`] = c;
   });
+
+  await brevoSendTransactionalEmail(
+    customer_email,
+    customer_name,
+    ``,
+    emailTemplateId,
+    {
+      packageName,
+      ...links,
+    },
+  );
 
   return calendlyUrls;
 }
 
-export const getPackageName = (lineItems: StripeLineItem[]) => {
+export const getPackageNameAndEmailTemplateId = (
+  lineItems: StripeLineItem[],
+): { packageName: string; emailTemplateId: 2 | 4 } => {
   if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
-    return "4-Session (60 mins)";
+    return {
+      packageName: "4-Session (60 mins)",
+      emailTemplateId: 2,
+    };
   } else if (
     lineItems.some((li) => TEST_MODE_12_SESSION === li.price.product)
   ) {
-    return "12-Session (60 mins)";
+    return {
+      packageName: "12-Session (60 mins)",
+      emailTemplateId: 4,
+    };
   } else if (
     lineItems.some((li) => TEST_MODE_12_SESSION_LITE === li.price.product)
   ) {
-    return "12-Session Lite (30 mins)";
+    return {
+      packageName: "12-Session Lite (30 mins)",
+      emailTemplateId: 4,
+    };
   } else {
     throw new Error("Unexpected product id, does not have a package name");
   }

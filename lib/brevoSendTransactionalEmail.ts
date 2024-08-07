@@ -6,7 +6,7 @@ export default async function brevoSendTransactionalEmail(
   customer_email: string,
   customer_name: string,
   message: string,
-  templateId: 1 | 2,
+  templateId: 1 | 2 | 4,
   params: undefined | {},
 ) {
   // Send Email
