@@ -35,7 +35,7 @@ export default function BuyCard({
       <div className="h-[24px] bg-buyAccent" />
       <h3 className="text-blue text-3xl mb-5 px-2 mt-10">{title}</h3>
 
-      <ul className="text-left max-w-[75%] mx-auto list-disc">
+      <ul className="text-left max-w-[75%] mx-auto list-disc text-lg">
         {details.map((d) => (
           <li key={d} className="mb-2">
             {d}
@@ -49,7 +49,7 @@ export default function BuyCard({
         <Link
           href={href}
           target="_blank"
-          className="inline-block bg-blue text-white py-3 w-3/4 max-w-[200px] font-semibold hover:bg-sendHover"
+          className="inline-block bg-blue text-white text-lg py-3 w-3/4 max-w-[200px] font-semibold hover:bg-sendHover"
         >
           {label ?? "Schedule"}
         </Link>

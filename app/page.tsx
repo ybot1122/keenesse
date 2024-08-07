@@ -92,7 +92,7 @@ export default function Home() {
         <h2 className="pb-10  text-center text-5xl md:w-[420px] mx-auto">
           Why Keenesse?
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 text-center max-w-[820px] mx-auto text-2xl">
+        <div className="grid grid-cols-2 lg:grid-cols-4 text-center max-w-[1240px] mx-auto text-2xl">
           <div className="col-span-1 p-5">
             <p className="text-2xl">Care</p>
             <div className="relative w-[50px] mx-auto my-5">
