@@ -1,4 +1,5 @@
 import BuyCard from "@/components/BuyCard";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Tabs({}) {
@@ -20,8 +21,11 @@ const Inquiry = () => {
         <p className="text-white mb-5 max-w-[420px] mx-auto">
           For first time clients, we offer a completely free 30 minute
           consultation. For returning clients, we offer 30 min and 60 min
-          sessions. If you want to book multiple sessions, check out our
-          packages!
+          sessions. If you want to book multiple sessions, check out our{" "}
+          <Link href="#packages" className="underline">
+            packages
+          </Link>
+          !
         </p>
       </div>
       <BuyCard
