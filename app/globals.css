@@ -25,3 +25,7 @@
 .sectiontext {
   font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 1rem);
 }
+
+body {
+  scroll-behavior: smooth;
+}

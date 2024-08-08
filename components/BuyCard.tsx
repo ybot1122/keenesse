@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import star from "@/public/icons8-star-24.png";
 
 export default function BuyCard({
   href,
@@ -10,6 +12,7 @@ export default function BuyCard({
   details,
   highlight,
   highlightLevel = 1,
+  bestValue = false,
 }: {
   href: string;
   title: string;
@@ -20,8 +23,9 @@ export default function BuyCard({
   details: string[];
   highlight?: string;
   highlightLevel?: 1 | 2;
+  bestValue?: boolean;
 }) {
-  let highlightClass = "mx-auto w-[80px] ";
+  let highlightClass = "mx-auto font-bold ";
   if (highlightLevel === 1) {
     highlightClass += "";
   } else if (highlightLevel === 2) {
@@ -35,15 +39,22 @@ export default function BuyCard({
       <div className="h-[24px] bg-buyAccent" />
       <h3 className="text-blue text-3xl mb-5 px-2 mt-10">{title}</h3>
 
-      <ul className="text-left max-w-[75%] mx-auto list-disc text-lg">
+      <ul className="text-left max-w-[75%] mx-auto text-lg">
         {details.map((d) => (
           <li key={d} className="mb-2">
+            <Star />
             {d}
           </li>
         ))}
       </ul>
 
       {price && <p className="text-blue text-2xl my-5">{price}</p>}
+      {bestValue && (
+        <div className="bg-yellow font-bold w-[125px] mx-auto p-2">
+          <p>BEST VALUE</p>
+          <p>16% SAVINGS</p>
+        </div>
+      )}
       {highlight && <p className={highlightClass}>{highlight}</p>}
       <div className="text-center mt-5">
         <Link
@@ -57,3 +68,13 @@ export default function BuyCard({
     </div>
   );
 }
+
+const Star = () => (
+  <Image
+    src={star}
+    width={24}
+    height={24}
+    className="inline mr-2 mb-1"
+    alt="list item"
+  />
+);

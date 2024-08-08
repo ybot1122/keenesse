@@ -13,8 +13,8 @@ export default function Tabs({}) {
 
 const Inquiry = () => {
   return (
-    <div className="bg-blue pb-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-2 mb-20 max-w-[1024px] mx-auto ">
+    <div className="bg-blue pb-10" id="single">
+      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-2 mb-20 max-w-[1024px] mx-auto px-5">
         <div className="col-span-1 md:col-span-3">
           <h1 className="text-white text-4xl pb-5 pt-10" id="inquiry">
             Single Sessions
@@ -63,8 +63,8 @@ const Inquiry = () => {
 
 const Packages = () => {
   return (
-    <div className="bg-gray pb-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-2 max-w-[1024px] mx-auto">
+    <div className="bg-gray pb-20" id="package">
+      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-2 max-w-[1024px] mx-auto px-5">
         <div className="col-span-1 md:col-span-3">
           <h1 className="text-blue text-4xl pb-5 pt-10" id="packages">
             Packages
@@ -77,7 +77,7 @@ const Packages = () => {
           </p>
         </div>
         <BuyCard
-          title="4-Session"
+          title="Basic Package"
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k7vI4ymfhSgiQeUW"
@@ -85,53 +85,55 @@ const Packages = () => {
           }
           indented={true}
           bg="white"
-          price="$749"
+          price="$788 ($197/hr)"
           details={[
             "4 x 60 minutes video conferencing",
-            "Daily access and check-ins via email",
+            "Great for quarterly meetings or short-term collaboration",
+            "Daily access via email",
+            "Sessions never expire",
             "Unlimited rescheduling",
-            "Sessions don't expire",
           ]}
-          highlight={"save 10%"}
-          highlightLevel={1}
-        />
-        <BuyCard
-          details={[
-            "12 x 30 minutes video conferencing",
-            "Daily access and check-ins via email",
-            "Unlimited rescheduling",
-            "Sessions don't expire",
-          ]}
-          title="12-Session Lite"
-          href={
-            process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
-              ? "https://buy.stripe.com/test_4gwg2e7Ky9Xy3w4eUX"
-              : "tbd"
-          }
-          indented={false}
-          bg="white"
-          price="$1,149"
-          highlight={"save 12%"}
+          highlight={"SAVE 10%"}
           highlightLevel={1}
         />
         <BuyCard
           details={[
             "12 x 60 minutes video conferencing",
-            "Daily access and check-ins via email",
+            "Perfect for weekly, bi-weekly or monthly deep collaboration",
+            "First priority access via email or messaging",
+            "Sessions never expire",
             "Unlimited rescheduling",
-            "Sessions don't expire",
           ]}
-          title="12-Session"
-          price="$2,199"
+          title="Premium Package"
+          price="$2,199 ($179/hr)"
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k5nAc0O9Xy0jS004"
               : "tbd"
           }
+          indented={false}
+          bg="white"
+          bestValue
+        />
+        <BuyCard
+          details={[
+            "12 x 30 minutes video conferencing",
+            "Great for weekly, bi-weekly or monthly check-ins",
+            "Daily access via email or messaging",
+            "Sessions never expire",
+            "Unlimited rescheduling",
+          ]}
+          title="Lite Package"
+          href={
+            process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
+              ? "https://buy.stripe.com/test_4gwg2e7Ky9Xy3w4eUX"
+              : "tbd"
+          }
           indented={true}
           bg="white"
-          highlight={"SAVE 16%"}
-          highlightLevel={2}
+          price="$1,149 ($189/hr)"
+          highlight={"SAVE 12%"}
+          highlightLevel={1}
         />
       </div>
     </div>
