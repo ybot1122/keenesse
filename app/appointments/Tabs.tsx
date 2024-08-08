@@ -36,7 +36,7 @@ const Inquiry = () => {
           title="Single Session - 30mins"
           href="https://calendly.com/keenesse/30min"
           indented={false}
-          price="$129"
+          price="$109"
           bg="white"
           details={[
             "30 minutes",
@@ -46,7 +46,7 @@ const Inquiry = () => {
         />
         <BuyCard
           title="Single Session - 60mins"
-          price="$249"
+          price="$219"
           details={[
             "60 minutes",
             "One-time consultation.",

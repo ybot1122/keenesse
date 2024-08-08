@@ -58,7 +58,7 @@ const RightChevron = () => (
   <svg
     width="25"
     height="25"
-    className="inline-block mb-1 mx-2"
+    className="inline-block my-3 mx-2"
     viewBox="0 0 200 200"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
