@@ -3,17 +3,25 @@
 import { useState } from "react";
 
 export default function ClickableTile({ title }: { title: string }) {
+  const [touched, setTouched] = useState(false);
   const [flipped, setFlipped] = useState(false);
+
+  const flippedClass = touched
+    ? flipped
+      ? "flip-card-flipped"
+      : "flip-card-unflipped"
+    : "";
 
   return (
     <div className="flip-card h-full cursor-pointer">
       <div
-        className={`flip-card-inner h-full ${flipped ? "flip-card-flip" : ""}`}
+        className={`flip-card-inner h-full ${flippedClass}`}
+        onClick={() => {
+          setFlipped(!flipped);
+          setTouched(true);
+        }}
       >
-        <div
-          className={`flip-card-front flex justify-center flex-wrap`}
-          onClick={() => setFlipped(!flipped)}
-        >
+        <div className={`flip-card-front flex justify-center flex-wrap`}>
           <div className="text-center self-start w-full mt-5">
             <Star />
             <Star />

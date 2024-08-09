@@ -13,6 +13,7 @@ export default function BuyCard({
   highlight,
   highlightLevel = 1,
   bestValue = false,
+  listType = "dot",
 }: {
   href: string;
   title: string;
@@ -24,6 +25,7 @@ export default function BuyCard({
   highlight?: string;
   highlightLevel?: 1 | 2;
   bestValue?: boolean;
+  listType?: "dot" | "star";
 }) {
   let highlightClass = "mx-auto font-bold ";
   if (highlightLevel === 1) {
@@ -39,10 +41,12 @@ export default function BuyCard({
       <div className="h-[24px] bg-buyAccent" />
       <h3 className="text-blue text-3xl mb-5 px-2 mt-10">{title}</h3>
 
-      <ul className="text-left max-w-[75%] mx-auto text-lg">
+      <ul
+        className={`text-left max-w-[75%] mx-auto text-lg ${listType === "dot" ? "list-disc" : ""}`}
+      >
         {details.map((d) => (
           <li key={d} className="mb-2">
-            <Star />
+            {listType === "star" && <Star />}
             {d}
           </li>
         ))}
@@ -51,7 +55,6 @@ export default function BuyCard({
       {price && <p className="text-blue text-2xl my-5">{price}</p>}
       {bestValue && (
         <div className="bg-yellow font-bold w-[125px] mx-auto p-2">
-          <p>BEST VALUE</p>
           <p>16% SAVINGS</p>
         </div>
       )}

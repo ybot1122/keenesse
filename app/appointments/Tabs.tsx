@@ -95,6 +95,7 @@ const Packages = () => {
           ]}
           highlight={"SAVE 10%"}
           highlightLevel={1}
+          listType="star"
         />
         <BuyCard
           details={[
@@ -113,6 +114,7 @@ const Packages = () => {
           }
           indented={false}
           bg="white"
+          listType="star"
           bestValue
         />
         <BuyCard
@@ -134,6 +136,7 @@ const Packages = () => {
           price="$1,149 ($189/hr)"
           highlight={"SAVE 12%"}
           highlightLevel={1}
+          listType="star"
         />
       </div>
     </div>
