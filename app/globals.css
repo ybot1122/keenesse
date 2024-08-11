@@ -72,3 +72,7 @@
   background-color: white;
   transform: rotateY(180deg);
 } 
+
+.slick-next::before, .slick-prev::before {
+  display: none;
+}

@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClickableTile from "./ClickableTile";
+import Image from "next/image";
+import rightArrow from "@/public/arrow-icon-right.png";
+import leftArrow from "@/public/arrow-icon-left.png";
 
 const forIndividuals = [
   "Small Business Planning & Launch",
@@ -24,6 +27,8 @@ export default function ForIndividualsCarousel() {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1620,
@@ -59,3 +64,35 @@ export default function ForIndividualsCarousel() {
     </Slider>
   );
 }
+
+const NextArrow = ({ className, style, onClick }: any) => {
+  return (
+    <button className={className} style={style} onClick={onClick}>
+      <Image
+        src={rightArrow}
+        alt="Next slide"
+        width={24}
+        height={24}
+        className="inline-block"
+      />
+    </button>
+  );
+};
+
+const PrevArrow = ({ className, style, onClick }: any) => {
+  return (
+    <button
+      className={className + " rounded-full bg-white"}
+      style={style}
+      onClick={onClick}
+    >
+      <Image
+        src={leftArrow}
+        alt="Previous slide"
+        width={24}
+        height={24}
+        className="inline-block"
+      />
+    </button>
+  );
+};

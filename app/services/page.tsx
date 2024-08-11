@@ -43,17 +43,24 @@ export default function Services() {
           <ForIndividualsCarousel />
         </div>
       </div>
-      <div className="bg-gray w-full mt-5">
-        <h2>For Businesses</h2>
-        <p>
-          Keenesse develops customized business and technical solutions from
-          small businesses to academic institutions, nonprofits and
-          corporations.
-        </p>
-        <p>
-          To get started, schedule a free 45 minute business consultation TODO
-          LINK or send an inquiry message TODO LINK.
-        </p>
+
+      <div className="bg-gray w-full text-blue px-5">
+        <h2 className="text-center text-4xl pb-5 pt-10">For Businesses</h2>
+        <div className="max-w-[725px] mx-auto text-lg">
+          <p>
+            Keenesse develops customized business and technical solutions from
+            small businesses to academic institutions, nonprofits and
+            corporations.
+          </p>
+          <p className="mt-5">
+            To get started, schedule a free 45 minute business consultation TODO
+            LINK or send an inquiry message TODO LINK.
+          </p>
+        </div>
+
+        <div className="w-[90%] py-20 px-15 mx-auto">
+          <ForIndividualsCarousel />
+        </div>
       </div>
     </main>
   );

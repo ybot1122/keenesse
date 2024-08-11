@@ -15,10 +15,10 @@ export default function ClickableTile({ title }: { title: string }) {
   return (
     <div className="flip-card h-full cursor-pointer">
       <div
-        className={`flip-card-inner h-full ${flippedClass}`}
+        className={`flip-card-inner h-full ${flippedClass} px-2`}
         onClick={() => {
-          setFlipped(!flipped);
-          setTouched(true);
+          // setFlipped(!flipped);
+          // setTouched(true);
         }}
       >
         <div className={`flip-card-front flex justify-center flex-wrap`}>
@@ -69,7 +69,7 @@ const Star = () => (
         gradientUnits="userSpaceOnUse"
       >
         {" "}
-        <stop stop-color="#ACAAFF" /> <stop offset="1" stop-color="#C0E8FF" />{" "}
+        <stop stopColor="#ACAAFF" /> <stop offset="1" stopColor="#C0E8FF" />{" "}
       </linearGradient>{" "}
       <clipPath id="clip0_116_139">
         {" "}
