@@ -60,10 +60,10 @@ export default function ContactForm({
         <label className="cursor-pointer block mb-5">
           <input
             type="checkbox"
-            name="techConsulting"
+            name="consulting"
             className="w-[16px] h-[16px] mr-5 border border-inputBurder bg-inputBg"
           />
-          Tech Consulting
+          Consulting
         </label>
         <label className="cursor-pointer block mb-5">
           <input
@@ -86,10 +86,10 @@ export default function ContactForm({
         <label className="cursor-pointer block">
           <input
             type="checkbox"
-            name="corporateEvents"
+            name="somethingElse"
             className="w-[16px] h-[16px] mr-5 border border-inputBurder bg-inputBg"
           />
-          Corporate Events
+          Something Else
         </label>
       </div>
       <div className="col-span-2 mt-5">
