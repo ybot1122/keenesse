@@ -19,29 +19,19 @@ export default function Appointments() {
             </Link>
             !
           </p>
-          <div className="text-center mt-5 grid grid-cols-2 gap-2">
-            <div className="bg-white border border-blue py-5 flex items-center justify-center flex-col">
-              <p>
-                <RightChevron />
-              </p>
-              <p className="text-xl align-middle underline">
-                <Link href="#single">Browse our Single Sessions</Link>
-              </p>
-              <p className="mt-2">
-                <RightChevron />
-              </p>
-            </div>
-            <div className="bg-white border border-blue py-5 flex items-center justify-center flex-col">
-              <p>
-                <RightChevron />
-              </p>
-              <p className="text-xl align-middle underline">
-                <Link href="#package">Browse our Packages</Link>
-              </p>
-              <p className="mt-2">
-                <RightChevron />
-              </p>
-            </div>
+          <div className="text-center mt-5 grid grid-cols-2 gap-2 max-w-[620px] mx-auto">
+            <Link
+              href="#single"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+            >
+              Browse our Single Sessions
+            </Link>
+            <Link
+              href="#package"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+            >
+              Browse our Packages
+            </Link>
           </div>
         </div>
       </div>
@@ -49,41 +39,3 @@ export default function Appointments() {
     </main>
   );
 }
-
-const RightChevron = () => (
-  <svg
-    width="25"
-    height="25"
-    className="inline-block my-3 mx-2"
-    viewBox="0 0 200 200"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    {" "}
-    <g clipPath="url(#clip0_105_351)">
-      {" "}
-      <path
-        d="M156.064 143.936L112.127 100L156.064 56.0636L200 100L156.064 143.936ZM43.9364 143.936L0 100L43.9364 56.0636L87.8728 100L43.9364 143.936ZM100 200L56.0636 156.064L100 112.127L143.936 156.064L100 200ZM100 87.8728L56.0636 43.9364L100 0L143.936 43.9364L100 87.8728Z"
-        fill="url(#paint0_linear_105_351)"
-      />{" "}
-    </g>{" "}
-    <defs>
-      {" "}
-      <linearGradient
-        id="paint0_linear_105_351"
-        x1="20.5"
-        y1="16"
-        x2="100"
-        y2="200"
-        gradientUnits="userSpaceOnUse"
-      >
-        {" "}
-        <stop stopColor="#ACAAFF" /> <stop offset="1" stopColor="#C0E8FF" />{" "}
-      </linearGradient>{" "}
-      <clipPath id="clip0_105_351">
-        {" "}
-        <rect width="200" height="200" fill="white" />{" "}
-      </clipPath>{" "}
-    </defs>{" "}
-  </svg>
-);
