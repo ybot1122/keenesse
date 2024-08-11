@@ -55,7 +55,7 @@ const faqs = [
 export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="bg-gray w-full p-10 md:p-24 flex justify-center flex-wrap md:flex-row-reverse">
+      <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full md:w-1/2 max-w-[620px] h-[50vw] max-h-[420px]">
           <div className="relative w-full h-full">
             <Image

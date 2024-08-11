@@ -26,14 +26,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className={"w-[1020px] overflow-x-scroll block whitespace-nowrap"}>
+    <div className={"max-w-[1020px] block grid grid-cols-1 md:grid-cols-2"}>
       {testimonials.map((t, ind) => {
         return (
-          <div className="inline-block whitespace-normal mx-10" key={t.id}>
-            <div className="flex flex-wrap bg-white m-5 text-blue text-center p-5 w-[320px] mx-auto justify-center flex-col">
-              <p className="text-2xl w-full">&ldquo;{t.message}&rdquo;</p>
-              {t.from ? <p className="mt-5">{t.from}</p> : null}
-            </div>
+          <div
+            className="flex flex-col p-5 m-5 lg:p-10 lg:m-10 col-span-1 bg-white items-center justify-center"
+            key={t.id}
+          >
+            <p className="text-2xl w-full text-center">
+              &ldquo;{t.message}&rdquo;
+            </p>
+            {t.from ? <p className="mt-5">{t.from}</p> : null}
           </div>
         );
       })}
