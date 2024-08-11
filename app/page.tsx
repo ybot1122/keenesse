@@ -76,12 +76,12 @@ export default function Home() {
               <p className="px-5 pb-5">Small Business Planning &amp; Launch</p>
               <p className="px-5 pb-5">Digital Transformation</p>
               <p className="px-5 pb-5">Website Design &amp; Development</p>
-              <p className="px-5">Product Management</p>
+              <p className="px-5">Event Speaking</p>
             </div>
             <div className="col-span-1">
               <p className="px-5 pb-5">STEM Education</p>
               <p className="px-5 pb-5">Non-Profit Development</p>
-              <p className="px-5 pb-5">Event Speaking</p>
+              <p className="px-5 pb-5">Product Management</p>
               <p className="px-5">Customized Solutions</p>
             </div>
           </div>

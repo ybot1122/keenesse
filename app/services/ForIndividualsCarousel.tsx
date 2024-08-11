@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClickableTile from "./ClickableTile";
 import Image from "next/image";
-import rightArrow from "@/public/arrow-icon-right-white.png";
-import leftArrow from "@/public/arrow-icon-left-white.png";
+import rightArrow from "@/public/arrow-icon-right.png";
+import leftArrow from "@/public/arrow-icon-left.png";
 
 const forIndividuals = [
   "Job Application Strategies",
