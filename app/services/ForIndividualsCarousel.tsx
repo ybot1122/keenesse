@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClickableTile from "./ClickableTile";
 import Image from "next/image";
-import rightArrow from "@/public/arrow-icon-right.png";
-import leftArrow from "@/public/arrow-icon-left.png";
+import rightArrow from "@/public/arrow-icon-right-white.png";
+import leftArrow from "@/public/arrow-icon-left-white.png";
 
 const forIndividuals = [
   "Job Application Strategies",
@@ -22,7 +22,7 @@ const forIndividuals = [
 export default function ForIndividualsCarousel() {
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,

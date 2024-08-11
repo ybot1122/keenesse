@@ -40,7 +40,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="w-[90%] py-20 px-15 mx-auto">
+        <div className="w-[90%] pb-20 pt-10 px-15 mx-auto">
           <ForIndividualsCarousel />
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="w-[90%] py-20 px-15 mx-auto">
+        <div className="w-[90%] pb-20 pt-10 px-15 mx-auto">
           <ForBusinessesCarousel />
         </div>
       </div>
