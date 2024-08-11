@@ -30,7 +30,7 @@ export default function Testimonials() {
       {testimonials.map((t, ind) => {
         return (
           <div
-            className="flex flex-col p-5 m-5 lg:p-10 lg:m-10 col-span-1 bg-white items-center justify-center"
+            className="flex flex-col p-5 m-5 lg:p-10 lg:m-10 col-span-1 bg-white items-center justify-center text-blue"
             key={t.id}
           >
             <p className="text-2xl w-full text-center">

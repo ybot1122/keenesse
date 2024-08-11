@@ -75,8 +75,8 @@ export default function BuyCard({
 const Star = () => (
   <Image
     src={star}
-    width={24}
-    height={24}
+    width={16}
+    height={16}
     className="inline mr-2 mb-1"
     alt="list item"
   />

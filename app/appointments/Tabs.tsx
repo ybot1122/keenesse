@@ -26,11 +26,7 @@ const Inquiry = () => {
           indented={true}
           price={"FREE"}
           bg="white"
-          details={[
-            "30 minutes",
-            "Discovery call for the first time only.",
-            "Video Conferencing.",
-          ]}
+          details={["Discovery call for the first time only."]}
         />
         <BuyCard
           title="Single Session - 30mins"
@@ -38,20 +34,12 @@ const Inquiry = () => {
           indented={false}
           price="$109"
           bg="white"
-          details={[
-            "30 minutes",
-            "One-time consultation.",
-            "Video Conferencing.",
-          ]}
+          details={[]}
         />
         <BuyCard
           title="Single Session - 60mins"
           price="$219"
-          details={[
-            "60 minutes",
-            "One-time consultation.",
-            "Video Conferencing.",
-          ]}
+          details={[]}
           href="https://calendly.com/keenesse/60min"
           indented={true}
           bg="white"
@@ -77,7 +65,7 @@ const Packages = () => {
           </p>
         </div>
         <BuyCard
-          title="Basic Package"
+          title="Starter Package"
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k7vI4ymfhSgiQeUW"
@@ -90,20 +78,17 @@ const Packages = () => {
             "4 x 60 minutes video conferencing",
             "Great for quarterly meetings or short-term collaboration",
             "Daily access via email",
-            "Sessions never expire",
-            "Unlimited rescheduling",
           ]}
           highlight={"SAVE 10%"}
           highlightLevel={1}
           listType="star"
+          label="Select"
         />
         <BuyCard
           details={[
             "12 x 60 minutes video conferencing",
             "Perfect for weekly, bi-weekly or monthly deep collaboration",
             "First priority access via email or messaging",
-            "Sessions never expire",
-            "Unlimited rescheduling",
           ]}
           title="Premium Package"
           price="$2,199 ($179/hr)"
@@ -116,14 +101,13 @@ const Packages = () => {
           bg="white"
           listType="star"
           bestValue
+          label="Select"
         />
         <BuyCard
           details={[
             "12 x 30 minutes video conferencing",
             "Great for weekly, bi-weekly or monthly check-ins",
             "Daily access via email or messaging",
-            "Sessions never expire",
-            "Unlimited rescheduling",
           ]}
           title="Lite Package"
           href={
@@ -137,6 +121,7 @@ const Packages = () => {
           highlight={"SAVE 12%"}
           highlightLevel={1}
           listType="star"
+          label="Select"
         />
       </div>
     </div>
