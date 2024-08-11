@@ -1,4 +1,5 @@
 import BuyCard from "@/components/BuyCard";
+import SingleSessionCard from "@/components/SingleSessionCard";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -20,26 +21,26 @@ const Inquiry = () => {
             Single Sessions
           </h1>
         </div>
-        <BuyCard
+        <SingleSessionCard
+          description="First Time Only - 30 Minutes"
           title="Free Consultation"
+          price={"FREE"}
           href="https://calendly.com/keenesse/free30min"
           indented={true}
-          price={"FREE"}
           bg="white"
-          details={["Discovery call for the first time only."]}
         />
-        <BuyCard
-          title="Single Session - 30mins"
+        <SingleSessionCard
+          description="Single Session"
+          title="30 Minutes"
+          price="$89"
           href="https://calendly.com/keenesse/30min"
           indented={false}
-          price="$109"
           bg="white"
-          details={[]}
         />
-        <BuyCard
-          title="Single Session - 60mins"
-          price="$219"
-          details={[]}
+        <SingleSessionCard
+          description="Single Session"
+          title="60 Minutes"
+          price="$179"
           href="https://calendly.com/keenesse/60min"
           indented={true}
           bg="white"
