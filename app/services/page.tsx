@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ClickableTile from "./ClickableTile";
 import ForIndividualsCarousel from "./ForIndividualsCarousel";
+import ForBusinessesCarousel from "./ForBusinessesCarousel";
 
 export default function Services() {
   return (
@@ -59,7 +60,7 @@ export default function Services() {
         </div>
 
         <div className="w-[90%] py-20 px-15 mx-auto">
-          <ForIndividualsCarousel />
+          <ForBusinessesCarousel />
         </div>
       </div>
     </main>

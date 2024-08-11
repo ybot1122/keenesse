@@ -9,17 +9,17 @@ import rightArrow from "@/public/arrow-icon-right.png";
 import leftArrow from "@/public/arrow-icon-left.png";
 
 const forIndividuals = [
-  "Job Application Strategies",
-  "Resume Development",
-  "Interviewing",
-  "Offer Negotiations",
-  "Career Development & Transitions",
-  "Growth & Leadership",
-  "Lifestyle changes",
-  "Accountability",
+  "Small Business Planning & Launch",
+  "Digital Transformation",
+  "Website Design & Development",
+  "Product Management",
+  "STEM Education & Curriculum development",
+  "Non-profit development",
+  "Event Speaking",
+  "Customized Solutions",
 ];
 
-export default function ForIndividualsCarousel() {
+export default function ForBusinessesCarousel() {
   var settings = {
     dots: true,
     infinite: false,

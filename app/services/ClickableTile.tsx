@@ -15,7 +15,7 @@ export default function ClickableTile({ title }: { title: string }) {
   return (
     <div className="flip-card h-full cursor-pointer">
       <div
-        className={`flip-card-inner h-full ${flippedClass} px-2`}
+        className={`flip-card-inner h-full ${flippedClass}`}
         onClick={() => {
           // setFlipped(!flipped);
           // setTouched(true);
@@ -27,7 +27,9 @@ export default function ClickableTile({ title }: { title: string }) {
             <Star />
             <Star />
           </div>
-          <p className="text-blue text-center text-4xl self-center">{title}</p>
+          <p className="text-blue text-center text-4xl self-center px-2">
+            {title}
+          </p>
           <div className="text-center self-end w-full mb-5">
             <Star />
             <Star />
