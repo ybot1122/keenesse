@@ -32,7 +32,7 @@ const Inquiry = () => {
         <SingleSessionCard
           description="Single Session"
           title="30 Minutes"
-          price="$89"
+          price="$109"
           href="https://calendly.com/keenesse/30min"
           indented={false}
           bg="white"
@@ -40,7 +40,7 @@ const Inquiry = () => {
         <SingleSessionCard
           description="Single Session"
           title="60 Minutes"
-          price="$179"
+          price="$219"
           href="https://calendly.com/keenesse/60min"
           indented={true}
           bg="white"
