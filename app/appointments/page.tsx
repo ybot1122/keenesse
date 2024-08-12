@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Tabs from "./Tabs";
+import WannaChat from "@/components/WannaChat";
 
 export default function Appointments() {
   return (
@@ -36,6 +37,7 @@ export default function Appointments() {
         </div>
       </div>
       <Tabs />
+      <WannaChat />
     </main>
   );
 }

@@ -101,7 +101,7 @@ export default function About() {
 
         <Testimonials />
       </div>
-      <div className="bg-gray w-full p-10 md:p-24">
+      <div className="bg-gray w-full px-10 lg:p-24">
         <div className="w-full lg:grid lg:grid-cols-3">
           <h3 className="text-4xl text-blue lg:text-center lg:col-span-1 my-10 lg:text-6xl">
             FAQs
