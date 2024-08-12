@@ -8,6 +8,7 @@ export default function SingleSessionCard({
   indented,
   bg,
   label,
+  extra,
 }: {
   href: string;
   description: string;
@@ -16,6 +17,7 @@ export default function SingleSessionCard({
   indented: boolean;
   bg: "gray" | "white";
   label?: string;
+  extra?: string;
 }) {
   return (
     <div
@@ -25,6 +27,7 @@ export default function SingleSessionCard({
       <p className="mt-10 mb-5 text-lg px-2">{description}</p>
       <h3 className="text-blue text-3xl mb-5 px-2">{title}</h3>
       {price && <p className="text-blue text-2xl mb-10">{price}</p>}
+      {extra && <p>{extra}</p>}
       <div className="text-center">
         <Link
           href={href}

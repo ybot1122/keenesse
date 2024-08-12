@@ -6,6 +6,7 @@ export default function BuyCard({
   href,
   title,
   price,
+  priceEntice,
   indented,
   bg,
   label,
@@ -17,6 +18,7 @@ export default function BuyCard({
 }: {
   href: string;
   title: string;
+  priceEntice?: string;
   price?: string;
   indented: boolean;
   bg: "gray" | "white";
@@ -52,7 +54,8 @@ export default function BuyCard({
         ))}
       </ul>
 
-      {price && <p className="text-blue text-2xl my-5">{price}</p>}
+      {price && <p className="text-blue text-2xl mt-5">{price}</p>}
+      {priceEntice && <p className="mb-5 text-md">{priceEntice}</p>}
       {bestValue && (
         <div className="bg-yellow font-bold w-[125px] mx-auto p-2">
           <p>16% SAVINGS</p>

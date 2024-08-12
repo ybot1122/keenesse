@@ -74,7 +74,8 @@ const Packages = () => {
           }
           indented={true}
           bg="white"
-          price="$788 ($197/hr)"
+          price="$788"
+          priceEntice="($197/hr)"
           details={[
             "4 x 60 minutes video conferencing",
             "Great for quarterly meetings or short-term collaboration",
@@ -92,7 +93,8 @@ const Packages = () => {
             "First priority access via email or messaging",
           ]}
           title="Premium Package"
-          price="$2,199 ($179/hr)"
+          price="$2,199"
+          priceEntice="($179/hr)"
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k5nAc0O9Xy0jS004"
@@ -118,7 +120,8 @@ const Packages = () => {
           }
           indented={true}
           bg="white"
-          price="$1,149 ($189/hr)"
+          price="$1,149"
+          priceEntice="($189/hr)"
           highlight={"SAVE 12%"}
           highlightLevel={1}
           listType="star"
