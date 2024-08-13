@@ -18,18 +18,23 @@ export default async function brevoSendTransactionalEmail(
     );
     const sendSmtpEmail = new Brevo.SendSmtpEmail();
 
+    const name =
+      customer_name && customer_name.length > 0
+        ? customer_name
+        : "Keenesse Client";
+
     sendSmtpEmail.sender = {
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.to = [{ email: customer_email, name: customer_name }];
+    sendSmtpEmail.to = [{ email: customer_email, name }];
     sendSmtpEmail.replyTo = {
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
     sendSmtpEmail.templateId = templateId;
     sendSmtpEmail.params = {
-      name: customer_name,
+      name,
       email: customer_email,
       message: message,
       ...params,
