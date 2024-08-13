@@ -78,7 +78,7 @@ const Packages = () => {
           details={[
             "4 x 60 minutes video conferencing",
             "Great for quarterly meetings or short-term collaboration",
-            "Daily access via email",
+            "Unlimited support via email",
           ]}
           highlight={"SAVE 10%"}
           highlightLevel={1}
@@ -89,7 +89,7 @@ const Packages = () => {
           details={[
             "12 x 60 minutes video conferencing",
             "Perfect for weekly, bi-weekly or monthly deep collaboration",
-            "First priority access via email or messaging",
+            "First priority support via email or messaging",
           ]}
           title="Premium Package"
           price="$2,148"
@@ -109,7 +109,7 @@ const Packages = () => {
           details={[
             "12 x 30 minutes video conferencing",
             "Great for weekly, bi-weekly or monthly check-ins",
-            "Daily access via email or messaging",
+            "Unlimited support via email or messaging",
           ]}
           title="Lite Package"
           href={
