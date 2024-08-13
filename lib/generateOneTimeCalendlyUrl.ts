@@ -3,6 +3,9 @@ import {
   PRE_PAID_60MINS_EVENT_TYPE,
 } from "@/constants/CALENDLY_EVENT_TYPES";
 import {
+  LIVE_MODE_12_SESSION,
+  LIVE_MODE_12_SESSION_LITE,
+  LIVE_MODE_4_SESSION,
   MONTHLY_ACCOUNTABILITY_PRODUCT_ID,
   TEST_MODE_12_SESSION,
   TEST_MODE_12_SESSION_LITE,
@@ -32,6 +35,7 @@ export default async function generateOneTimeCalendlyUrl(
       (li) =>
         WEEKLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
         TEST_MODE_12_SESSION_LITE === li.price.product ||
+        LIVE_MODE_12_SESSION_LITE === li.price.product ||
         TEST_MODE_DAILY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
         TESTING_LIVE_DAILY_CHARGE_PRODUCT_ID === li.price.product,
     )
@@ -41,6 +45,8 @@ export default async function generateOneTimeCalendlyUrl(
     lineItems.some(
       (li) =>
         MONTHLY_ACCOUNTABILITY_PRODUCT_ID === li.price.product ||
+        LIVE_MODE_4_SESSION === li.price.product ||
+        LIVE_MODE_12_SESSION === li.price.product ||
         TEST_MODE_12_SESSION === li.price.product ||
         TEST_MODE_4_SESSION === li.price.product,
     )

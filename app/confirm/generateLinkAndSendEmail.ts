@@ -1,4 +1,7 @@
 import {
+  LIVE_MODE_12_SESSION,
+  LIVE_MODE_12_SESSION_LITE,
+  LIVE_MODE_4_SESSION,
   TEST_MODE_12_SESSION,
   TEST_MODE_12_SESSION_LITE,
   TEST_MODE_4_SESSION,
@@ -34,7 +37,13 @@ export default async function generateLinkAndSendEmail(
   const { packageName, emailTemplateId } =
     getPackageNameAndEmailTemplateId(lineItems);
 
-  if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
+  if (
+    lineItems.some(
+      (li) =>
+        TEST_MODE_4_SESSION === li.price.product ||
+        LIVE_MODE_4_SESSION === li.price.product,
+    )
+  ) {
     const promises = [
       generateOneTimeCalendlyUrl(lineItems),
       generateOneTimeCalendlyUrl(lineItems),
@@ -46,6 +55,8 @@ export default async function generateLinkAndSendEmail(
   } else if (
     lineItems.some(
       (li) =>
+        LIVE_MODE_12_SESSION === li.price.product ||
+        LIVE_MODE_12_SESSION_LITE === li.price.product ||
         TEST_MODE_12_SESSION === li.price.product ||
         TEST_MODE_12_SESSION_LITE === li.price.product,
     )
