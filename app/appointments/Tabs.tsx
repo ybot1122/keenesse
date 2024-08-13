@@ -92,7 +92,7 @@ const Packages = () => {
             "First priority access via email or messaging",
           ]}
           title="Premium Package"
-          price="$2,199"
+          price="$2,148"
           priceEntice="($179/hr)"
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
@@ -119,7 +119,7 @@ const Packages = () => {
           }
           indented={true}
           bg="white"
-          price="$1,149"
+          price="$1,128"
           priceEntice="($189/hr)"
           highlight={"SAVE 12%"}
           highlightLevel={1}
