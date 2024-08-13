@@ -80,7 +80,7 @@ const Packages = () => {
             "Great for quarterly meetings or short-term collaboration",
             "Unlimited support via email",
           ]}
-          highlight={"SAVE 10%"}
+          highlight={"10% OFF"}
           highlightLevel={1}
           listType="star"
           label="Select"
@@ -121,7 +121,7 @@ const Packages = () => {
           bg="white"
           price="$1,128"
           priceEntice="($189/hr)"
-          highlight={"SAVE 12%"}
+          highlight={"14% OFF"}
           highlightLevel={1}
           listType="star"
           label="Select"

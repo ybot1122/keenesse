@@ -58,7 +58,7 @@ export default function BuyCard({
       {priceEntice && <p className="mb-5 text-md">{priceEntice}</p>}
       {bestValue && (
         <div className="bg-yellow font-bold w-[125px] mx-auto p-2">
-          <p>16% SAVINGS</p>
+          <p>18% OFF</p>
         </div>
       )}
       {highlight && <p className={highlightClass}>{highlight}</p>}
