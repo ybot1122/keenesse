@@ -131,7 +131,7 @@ export const getPackageNameAndEmailTemplateId = (
     lineItems.some(
       (li) =>
         TEST_MODE_12_SESSION_LITE === li.price.product ||
-        TEST_MODE_12_SESSION_LITE === li.price.product,
+        LIVE_MODE_12_SESSION_LITE === li.price.product,
     )
   ) {
     return {
