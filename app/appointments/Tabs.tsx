@@ -24,7 +24,6 @@ const Inquiry = () => {
         <SingleSessionCard
           description="First Time Only - 30 Minutes"
           title="Free Consultation"
-          price={"FREE"}
           href="https://calendly.com/keenesse/free30min"
           indented={true}
           bg="white"
@@ -70,7 +69,7 @@ const Packages = () => {
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k7vI4ymfhSgiQeUW"
-              : "tbd"
+              : "https://buy.stripe.com/6oE3eL80G74C4bS147"
           }
           indented={true}
           bg="white"
@@ -98,7 +97,7 @@ const Packages = () => {
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_14k5nAc0O9Xy0jS004"
-              : "tbd"
+              : "https://buy.stripe.com/cN2cPl6WC88GdMs6os"
           }
           indented={false}
           bg="white"
@@ -116,7 +115,7 @@ const Packages = () => {
           href={
             process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
               ? "https://buy.stripe.com/test_4gwg2e7Ky9Xy3w4eUX"
-              : "tbd"
+              : "https://buy.stripe.com/6oE02z80GgFcaAgcMR"
           }
           indented={true}
           bg="white"

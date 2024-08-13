@@ -23,13 +23,13 @@ export default function Appointments() {
           <div className="text-center mt-5 grid grid-cols-2 gap-2 max-w-[620px] mx-auto">
             <Link
               href="#single"
-              className="hover-2 text-xl align-middle underline bg-white border border-blue py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue px-5 py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
             >
               Browse our Single Sessions
             </Link>
             <Link
               href="#package"
-              className="hover-2 text-xl align-middle underline bg-white border border-blue py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue px-5 py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
             >
               Browse our Packages
             </Link>
