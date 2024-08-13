@@ -105,20 +105,34 @@ export default async function generateLinkAndSendEmail(
 export const getPackageNameAndEmailTemplateId = (
   lineItems: StripeLineItem[],
 ): { packageName: string; emailTemplateId: 2 | 4 } => {
-  if (lineItems.some((li) => TEST_MODE_4_SESSION === li.price.product)) {
+  if (
+    lineItems.some(
+      (li) =>
+        TEST_MODE_4_SESSION === li.price.product ||
+        LIVE_MODE_4_SESSION === li.price.product,
+    )
+  ) {
     return {
       packageName: "4-Session (60 mins)",
       emailTemplateId: 2,
     };
   } else if (
-    lineItems.some((li) => TEST_MODE_12_SESSION === li.price.product)
+    lineItems.some(
+      (li) =>
+        TEST_MODE_12_SESSION === li.price.product ||
+        LIVE_MODE_12_SESSION === li.price.product,
+    )
   ) {
     return {
       packageName: "12-Session (60 mins)",
       emailTemplateId: 4,
     };
   } else if (
-    lineItems.some((li) => TEST_MODE_12_SESSION_LITE === li.price.product)
+    lineItems.some(
+      (li) =>
+        TEST_MODE_12_SESSION_LITE === li.price.product ||
+        TEST_MODE_12_SESSION_LITE === li.price.product,
+    )
   ) {
     return {
       packageName: "12-Session Lite (30 mins)",
