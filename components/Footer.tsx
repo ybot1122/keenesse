@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="text-center my-20 py-5">
+    <footer className="text-center my-5 py-5">
       <div className="mt-10 mb-5">
         <Link
           href="https://twitter.com/keenesse"
@@ -18,7 +18,14 @@ export default function Footer() {
           />
         </Link>
         <Link
-          href="http://www.linkedin.com/in/keenesse/"
+          href="https://www.instagram.com/keenesse_consulting/"
+          target="_blank"
+          className="inline-block mr-5"
+        >
+          <Image src="/instagram.svg" alt="Twitter" width="25" height="25" />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/company/keenesse/"
           target="_blank"
           className="inline-block"
         >

@@ -37,8 +37,8 @@ export default function validateContactForm(formData: FormData): {
   if (formData.get("coachingServices")) {
     topics.push("Coaching Services");
   }
-  if (formData.get("techConsulting")) {
-    topics.push("Tech Consulting");
+  if (formData.get("consulting")) {
+    topics.push("Consulting");
   }
   if (formData.get("speakingRequest")) {
     topics.push("Speaking Request");
@@ -46,8 +46,8 @@ export default function validateContactForm(formData: FormData): {
   if (formData.get("collaborations")) {
     topics.push("Collaborations");
   }
-  if (formData.get("corporateEvents")) {
-    topics.push("Corporate Events");
+  if (formData.get("somethingElse")) {
+    topics.push("Something Else");
   }
 
   if (!isValidEmail(email)) {

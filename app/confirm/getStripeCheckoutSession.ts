@@ -40,6 +40,8 @@ export default async function isValidStripeCheckoutSession(
         customer_email,
         lineItems,
       };
+    } else {
+      throw new Error("Stripe product does not require confirm page");
     }
   } catch (e: any) {
     console.log("Error retrieving stripe checkout session", e);

@@ -2,8 +2,11 @@
 
 import { redirect } from "next/navigation";
 import isValidStripeCheckoutSession from "./getStripeCheckoutSession";
-import generateLinkAndSendEmail from "./generateLinkAndSendEmail";
+import generateLinkAndSendEmail, {
+  getPackageNameAndEmailTemplateId,
+} from "./generateLinkAndSendEmail";
 import Link from "next/link";
+import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 
 export default async function Confirm({
   searchParams,
@@ -23,14 +26,18 @@ export default async function Confirm({
     redirect("/");
   }
 
-  const calendlyUrl = await generateLinkAndSendEmail(
+  const { packageName } = getPackageNameAndEmailTemplateId(
+    customerDetails.lineItems,
+  );
+
+  const calendlyUrls = await generateLinkAndSendEmail(
     customerDetails.lineItems,
     checkoutSessionId,
     customerDetails.customer_email,
     customerDetails.customer_name,
   );
 
-  redirect(calendlyUrl);
+  // redirect(calendlyUrl);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -41,19 +48,17 @@ export default async function Confirm({
               Thank You {customerDetails.customer_name}
             </span>
           </h1>
-          <h2 className="text-center text-2xl mb-5">
-            You are subscribed to a weekly accountability check-in
-          </h2>
-          <p className="text-2xl text-center mb-5">
-            To schedule your first session, click here:{" "}
-            <Link href={calendlyUrl} className="underline">
-              {calendlyUrl}
-            </Link>
+          <p className="text-center text-2xl mb-5">
+            We are excited to support you with our {packageName} package.
           </p>
-          <p className="text-2xl text-center">
-            Every week you stay subscribed, we will email{" "}
-            <span className="underline">{customerDetails.customer_email}</span>{" "}
-            a new Calendly link to schedule your session.
+          <p className="text-center text-2xl mb-5">
+            We have sent the URLs to schedule your sessions to your email:{" "}
+            <span className="underline">{customerDetails.customer_email}</span>.
+          </p>
+          <p className="text-center text-2xl mb-5">
+            <Link href={calendlyUrls[0]} className="underline">
+              Schedule your first session now!
+            </Link>
           </p>
         </div>
       </div>

@@ -12,8 +12,6 @@ const action = async (
 ): Promise<ContactFormState> => {
   const validation = validateContactForm(formData);
 
-  console.log(validation);
-
   if (validation.status === "Invalid") {
     return {
       status: "fail",
@@ -31,8 +29,8 @@ export default function Contact() {
     {},
   );
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-white pt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-white mx-5 md:m-10 md:p-10 max-w-[1280px]">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-gray pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-white mx-5 mb-10 md:m-10 p-5 md:p-10 max-w-[1280px]">
         <div className="col-span-1 pr-10">
           <h3 className="text-blue text-4xl text-center">Let&apos;s Talk!</h3>
           <p className="py-10 text-xl">
@@ -44,7 +42,7 @@ export default function Contact() {
             You can also connect with me on{" "}
             <Link
               className="font-bold underline"
-              href="http://www.linkedin.com/in/keenesse/"
+              href="https://www.linkedin.com/company/keenesse/"
               target="_blank"
             >
               LinkedIn

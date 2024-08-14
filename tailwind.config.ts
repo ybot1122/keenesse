@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      blue: "rgb(20, 112, 175)",
+      blue: "#1470af",
       lightBlue: "rgb(142, 182, 220)",
       white: "#FFFFFF",
       gray: "#eaeaee",
@@ -20,6 +20,8 @@ const config: Config = {
       errorBg: "#ce2c30",
       buyAccent: "#a5c8e0",
       black: "#000000",
+      yellow: "#FFF700",
+      orange: "#fa664b",
     },
     animation: {
       slideIn: "300ms 1 alternate slidein",
@@ -28,6 +30,10 @@ const config: Config = {
       openPlus: "100ms 1 linear openPlus",
       slideUpAndFadeIn: "700ms 1 ease-out slideUpAndFadeIn",
       slideRightAndFadeIn: "1400ms 1 ease-out slideRightAndFadeIn",
+      carouselSlideInToLeft: "200ms 1 alternate carouselSlideInToLeft",
+      carouselSlideOutToLeft: "200ms 1 alternate carouselSlideOutToLeft",
+      carouselSlideInToRight: "200ms 1 alternate carouselSlideInToRight",
+      carouselSlideOutToRight: "200ms 1 alternate carouselSlideOutToRight",
     },
     keyframes: {
       slidein: {
@@ -54,6 +60,22 @@ const config: Config = {
         "0%": { transform: "translateX(-100%)", opacity: "0" },
         "50%": { opacity: "0" },
         "100%": { transform: "translateX(0px)", opacity: "1" },
+      },
+      carouselSlideOutToLeft: {
+        "0%": { transform: "translateX(0px)" },
+        "100%": { transform: "translateX(-100%)" },
+      },
+      carouselSlideInToLeft: {
+        "0%": { transform: "translateX(100%)" },
+        "100%": { transform: "translateX(0px)" },
+      },
+      carouselSlideOutToRight: {
+        "0%": { transform: "translateX(0px)" },
+        "100%": { transform: "translateX(100%)" },
+      },
+      carouselSlideInToRight: {
+        "0%": { transform: "translateX(-100%)" },
+        "100%": { transform: "translateX(0px)" },
       },
     },
   },

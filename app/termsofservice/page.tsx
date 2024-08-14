@@ -70,12 +70,6 @@ export default function TermsOfService() {
           upper limits or temporal limits may be set by us at any time, in our
           sole discretion.
         </TermsP>
-        <TermsP>
-          B. All purchases of products and/or services via the Service are
-          governed by the Terms and Conditions of Sale available at{" "}
-          <span className="font-bold text-blue">TO BE LINKED</span>, which are
-          hereby incorporated by reference into this Agreement.
-        </TermsP>
         <TermsP>2. Acceptable Use Policy.</TermsP>
         <TermsP>
           A. You agree that (i) you will use the Service solely for your own,
@@ -222,16 +216,8 @@ export default function TermsOfService() {
           V. You will not create or attempt to create multiple user accounts.
         </TermsP>
         <TermsP>
-          3. Products. We take pride in our Products and try to be accurate in
-          our descriptions. However, we do not warrant that our Product
-          descriptions are 100% accurate, complete, reliable, current, or
-          error-free. If a Product is not as described, your sole remedy is to
-          return it in unused condition for a full refund (to the extent that
-          such Product is eligible for a refund [i.e., sales for live
-          interactive meetings and offerings are final]). Except where noted
-          otherwise, the price displayed for Products is the full retail price.
-          It does not include any applicable sales or other taxes that we may be
-          required to collect.
+          3. Refunds. We do not offer refund for any product under any
+          circumstance.
         </TermsP>
         <TermsP>4. Access to the Service; Reservation of Rights.</TermsP>
         <TermsP>
