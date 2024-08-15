@@ -52,12 +52,12 @@ export default async function Confirm({
             We are excited to support you with our {packageName} package.
           </p>
           <p className="text-center text-2xl mb-5">
-            We have sent the URLs to schedule your sessions to your email:{" "}
+            We have sent the links to schedule all your sessions to your email:{" "}
             <span className="underline">{customerDetails.customer_email}</span>.
           </p>
           <p className="text-center text-2xl mb-5">
             <Link href={calendlyUrls[0]} className="underline">
-              Schedule your first session now!
+              Click here to schedule first session!
             </Link>
           </p>
         </div>
