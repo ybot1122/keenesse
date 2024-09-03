@@ -30,6 +30,8 @@ export default async function Confirm({
     customerDetails.lineItems,
   );
 
+  // START NEW CAL FLOW HERE //
+
   const calendlyUrls = await generateLinkAndSendEmail(
     customerDetails.lineItems,
     checkoutSessionId,
