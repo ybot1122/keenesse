@@ -7,6 +7,7 @@ import generateLinkAndSendEmail, {
 } from "./generateLinkAndSendEmail";
 import Link from "next/link";
 import { TEST_MODE_4_SESSION } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
+import generateCalLinkAndSendEmail from "./generateCalLinkAndSendEmail";
 
 export default async function Confirm({
   searchParams,
@@ -31,6 +32,13 @@ export default async function Confirm({
   );
 
   // START NEW CAL FLOW HERE //
+
+  const calLink = await generateCalLinkAndSendEmail(
+    customerDetails.lineItems,
+    checkoutSessionId,
+    customerDetails.customer_email,
+    customerDetails.customer_name,
+  );
 
   const calendlyUrls = await generateLinkAndSendEmail(
     customerDetails.lineItems,
