@@ -48,7 +48,12 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 4 session 60 min
-    await createCalEventType(60, customer_name, packageName);
+    await createCalEventType(
+      60,
+      customer_name,
+      packageName,
+      checkout_session_id,
+    );
   } else if (
     lineItems.some(
       (li) =>
@@ -57,7 +62,12 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 12 session 60min
-    await createCalEventType(60, customer_name, packageName);
+    await createCalEventType(
+      60,
+      customer_name,
+      packageName,
+      checkout_session_id,
+    );
   } else if (
     lineItems.some(
       (li) =>
@@ -66,7 +76,12 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 12 session 30min
-    await createCalEventType(30, customer_name, packageName);
+    await createCalEventType(
+      30,
+      customer_name,
+      packageName,
+      checkout_session_id,
+    );
   } else {
     throw new Error(
       "tried to generate Cal links but did not recognize product id",
