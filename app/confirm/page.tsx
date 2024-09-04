@@ -33,14 +33,7 @@ export default async function Confirm({
 
   // START NEW CAL FLOW HERE //
 
-  const calLink = await generateCalLinkAndSendEmail(
-    customerDetails.lineItems,
-    checkoutSessionId,
-    customerDetails.customer_email,
-    customerDetails.customer_name,
-  );
-
-  const calendlyUrls = await generateLinkAndSendEmail(
+  const calendlyUrls = await generateCalLinkAndSendEmail(
     customerDetails.lineItems,
     checkoutSessionId,
     customerDetails.customer_email,

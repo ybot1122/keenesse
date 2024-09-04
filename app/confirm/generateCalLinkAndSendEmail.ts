@@ -10,6 +10,7 @@ import { StripeLineItem } from "@/constants/StripeLineItem";
 import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
 import { kv } from "@vercel/kv";
+import createCalEventType from "./createCalEventType";
 
 /**
  * Given a Stripe checkout_session_id and Stripe line items, it will either return
@@ -29,11 +30,13 @@ export default async function generateCalLinkAndSendEmail(
 ): Promise<string[]> {
   const calendlyUrlFromKV = await kv.get<string>(checkout_session_id);
 
+  /*
   if (calendlyUrlFromKV) {
     return calendlyUrlFromKV as any as string[];
   }
+    */
 
-  let calendlyUrls: string[] = [];
+  let calendlyUrls: string[] = ["hi"];
   const { packageName, emailTemplateId } =
     getPackageNameAndEmailTemplateId(lineItems);
 
@@ -45,6 +48,7 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 4 session 60 min
+    await createCalEventType(60, customer_name, packageName);
   } else if (
     lineItems.some(
       (li) =>
@@ -53,6 +57,7 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 12 session 60min
+    await createCalEventType(60, customer_name, packageName);
   } else if (
     lineItems.some(
       (li) =>
@@ -61,6 +66,7 @@ export default async function generateCalLinkAndSendEmail(
     )
   ) {
     // TODO generate 12 session 30min
+    await createCalEventType(30, customer_name, packageName);
   } else {
     throw new Error(
       "tried to generate Cal links but did not recognize product id",
@@ -74,6 +80,7 @@ export default async function generateCalLinkAndSendEmail(
     links[`link${ind + 1}`] = c;
   });
 
+  /*
   await brevoSendTransactionalEmail(
     customer_email,
     customer_name,
@@ -84,6 +91,7 @@ export default async function generateCalLinkAndSendEmail(
       ...links,
     },
   );
+  */
 
   return calendlyUrls;
 }
