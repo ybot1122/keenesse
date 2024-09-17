@@ -10,19 +10,19 @@ import WannaChat from "@/components/WannaChat";
 export const metadata: Metadata = {
   title: "Keenesse",
   description:
-    "Connect with a partner who has been where you are. Your first meeting is on us.",
+    "Navigate your journey with finesse. Your first meeting is on us.",
   keywords: ["Keenesse", "coaching", "consulting", "software engineering"],
   openGraph: {
     title: "Keenesse",
     description:
-      "Connect with a partner who has been where you are. Your first meeting is on us.",
+      "Navigate your journey with finesse. Your first meeting is on us.",
     url: "https://www.keeness.com",
     siteName: "Keenesse",
   },
   twitter: {
     title: "Keenesse",
     description:
-      "Connect with a partner who has been where you are. Your first meeting is on us.",
+      "Navigate your journey with finesse. Your first meeting is on us.",
     card: "summary",
   },
 };
@@ -38,7 +38,7 @@ export default function Home() {
           id="subheadline"
           className="mt-10 mb-10 text-lightBlue italic underline animate-slideRightAndFadeIn font-bold"
         >
-          <Link href="/appointments">Your first meeting is on us</Link>
+          <Link href="https://calendly.com/keenesse/free30min">Your first meeting is on us</Link>
         </div>
       </div>
 
@@ -74,9 +74,9 @@ export default function Home() {
 
             <div className="col-span-1">
               <p className="px-5 pb-5">Small Business Planning &amp; Launch</p>
-              <p className="px-5 pb-5">Digital Transformation</p>
+              <p className="px-5 pb-5">Management Consulting</p>
               <p className="px-5 pb-5">Website Design &amp; Development</p>
-              <p className="px-5">Event Speaking</p>
+              <p className="px-5">Events</p>
             </div>
             <div className="col-span-1">
               <p className="px-5 pb-5">STEM Education</p>
