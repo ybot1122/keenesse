@@ -9,19 +9,19 @@ const font = EB_Garamond({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Keenesse",
   description:
-    "Connect with a partner who has been where you are. Your first meeting is on us.",
+    "Navigate your journey with finesse. Your first meeting is on us.",
   keywords: ["Keenesse", "coaching", "consulting", "software engineering"],
   openGraph: {
     title: "Keenesse",
     description:
-      "Connect with a partner who has been where you are. Your first meeting is on us.",
+      "Navigate your journey with finesse. Your first meeting is on us.",
     url: "https://www.keeness.com",
     siteName: "Keenesse",
   },
   twitter: {
     title: "Keenesse",
     description:
-      "Connect with a partner who has been where you are. Your first meeting is on us.",
+      "Navigate your journey with finesse. Your first meeting is on us.",
     card: "summary",
   },
 };

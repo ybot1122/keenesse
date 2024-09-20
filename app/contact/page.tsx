@@ -39,7 +39,7 @@ export default function Contact() {
           </p>
 
           <p className="pb-10 text-xl">
-            You can also connect with me on{" "}
+            You can also connect with us on{" "}
             <Link
               className="font-bold underline"
               href="https://www.linkedin.com/company/keenesse/"
