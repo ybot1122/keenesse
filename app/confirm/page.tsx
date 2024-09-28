@@ -26,7 +26,7 @@ export default async function Confirm({
     redirect("/");
   }
 
-  const { packageName } = getPackageNameAndEmailTemplateId(
+  const { packageName, coachName } = getPackageNameAndEmailTemplateId(
     customerDetails.lineItems,
   );
 
@@ -49,7 +49,8 @@ export default async function Confirm({
             </span>
           </h1>
           <p className="text-center text-2xl mb-5">
-            We are excited to support you with our {packageName} package.
+            We are excited to support you with our {packageName} package with{" "}
+            {coachName}.
           </p>
           <p className="text-center text-2xl mb-5">
             We have sent the links to schedule all your sessions to your email:{" "}
