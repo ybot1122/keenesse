@@ -125,7 +125,7 @@ export const getPackageNameAndEmailTemplateId = (
     lineItems.some((li) => DONG_12_SESSION_LITE === li.price.product)
   ) {
     return {
-      packageName: "12-Session Lite (30 mins)",
+      packageName: "12-Session Lite (30 mins) with Dong",
       emailTemplateId: 4,
     };
   } else if (
