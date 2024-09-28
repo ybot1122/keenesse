@@ -115,7 +115,8 @@ export const getPackageNameAndEmailTemplateId = (
     lineItems.some(
       (li) =>
         TEST_MODE_4_SESSION === li.price.product ||
-        LIVE_MODE_4_SESSION === li.price.product,
+        LIVE_MODE_4_SESSION === li.price.product ||
+        DONG_4_SESSION === li.price.product,
     )
   ) {
     return {
@@ -126,7 +127,8 @@ export const getPackageNameAndEmailTemplateId = (
     lineItems.some(
       (li) =>
         TEST_MODE_12_SESSION === li.price.product ||
-        LIVE_MODE_12_SESSION === li.price.product,
+        LIVE_MODE_12_SESSION === li.price.product ||
+        DONG_12_SESSION === li.price.product,
     )
   ) {
     return {
@@ -137,7 +139,8 @@ export const getPackageNameAndEmailTemplateId = (
     lineItems.some(
       (li) =>
         TEST_MODE_12_SESSION_LITE === li.price.product ||
-        LIVE_MODE_12_SESSION_LITE === li.price.product,
+        LIVE_MODE_12_SESSION_LITE === li.price.product ||
+        DONG_12_SESSION_LITE === li.price.product,
     )
   ) {
     return {
