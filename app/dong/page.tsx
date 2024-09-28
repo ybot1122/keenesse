@@ -29,10 +29,10 @@ export default function Appointments() {
                 at companies like Axon and Microsoft.
               </p>
               <p className="mb-2">
-                Throughout my career, I've discovered that guiding and mentoring
-                others is incredibly rewarding. I fundamentally believe the most
-                interesting and challenging problems in any organization are
-                people problems - which are coachable!
+                Throughout my career, I&apos;ve discovered that guiding and
+                mentoring others is incredibly rewarding. I fundamentally
+                believe the most interesting and challenging problems in any
+                organization are people problems - which are coachable!
               </p>
               <div className="mb-2">
                 <p className="mb-2">As your coach, I can help you:</p>
