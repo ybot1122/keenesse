@@ -1,8 +1,13 @@
 import {
+  DONG_PRE_PAID_30MINS_EVENT_TYPE,
+  DONG_PRE_PAID_60MINS_EVENT_TYPE,
   PRE_PAID_30MINS_EVENT_TYPE,
   PRE_PAID_60MINS_EVENT_TYPE,
 } from "@/constants/CALENDLY_EVENT_TYPES";
 import {
+  DONG_12_SESSION,
+  DONG_12_SESSION_LITE,
+  DONG_4_SESSION,
   LIVE_MODE_12_SESSION,
   LIVE_MODE_12_SESSION_LITE,
   LIVE_MODE_4_SESSION,
@@ -52,6 +57,18 @@ export default async function generateOneTimeCalendlyUrl(
     )
   ) {
     calendlyEventType = PRE_PAID_60MINS_EVENT_TYPE;
+  } else if (
+    lineItems.some(
+      (li) =>
+        DONG_4_SESSION === li.price.product ||
+        DONG_12_SESSION === li.price.product,
+    )
+  ) {
+    calendlyEventType = DONG_PRE_PAID_60MINS_EVENT_TYPE;
+  } else if (
+    lineItems.some((li) => DONG_12_SESSION_LITE === li.price.product)
+  ) {
+    calendlyEventType = DONG_PRE_PAID_30MINS_EVENT_TYPE;
   } else {
     throw new Error(
       "Tried to create a Calendly URL but did not have a valid subscription",
