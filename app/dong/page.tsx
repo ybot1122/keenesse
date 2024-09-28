@@ -8,11 +8,25 @@ export default function Appointments() {
       <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
           <h1 className="text-4xl text-center block text-blue">
-            Dong&apos;s Page
+            Schedule with Dong
           </h1>
           <p className="text-center max-w-[725px] text-lg my-5 mx-auto">
-            Description
+            Hi, I&apos;m Dong!
           </p>
+          <div className="text-center mt-5 grid grid-cols-2 gap-2 max-w-[620px] mx-auto">
+            <Link
+              href="#single"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue px-5 py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+            >
+              Browse our Single Sessions
+            </Link>
+            <Link
+              href="#package"
+              className="hover-2 text-xl align-middle underline bg-white border border-blue px-5 py-5 flex items-center justify-center flex-col rounded-full hover:bg-blue"
+            >
+              Browse our Packages
+            </Link>
+          </div>
         </div>
       </div>
       <Tabs />

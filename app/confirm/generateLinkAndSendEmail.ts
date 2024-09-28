@@ -1,4 +1,7 @@
 import {
+  DONG_12_SESSION,
+  DONG_12_SESSION_LITE,
+  DONG_4_SESSION,
   LIVE_MODE_12_SESSION,
   LIVE_MODE_12_SESSION_LITE,
   LIVE_MODE_4_SESSION,
@@ -41,7 +44,8 @@ export default async function generateLinkAndSendEmail(
     lineItems.some(
       (li) =>
         TEST_MODE_4_SESSION === li.price.product ||
-        LIVE_MODE_4_SESSION === li.price.product,
+        LIVE_MODE_4_SESSION === li.price.product ||
+        DONG_4_SESSION === li.price.product,
     )
   ) {
     const promises = [
@@ -58,7 +62,9 @@ export default async function generateLinkAndSendEmail(
         LIVE_MODE_12_SESSION === li.price.product ||
         LIVE_MODE_12_SESSION_LITE === li.price.product ||
         TEST_MODE_12_SESSION === li.price.product ||
-        TEST_MODE_12_SESSION_LITE === li.price.product,
+        TEST_MODE_12_SESSION_LITE === li.price.product ||
+        DONG_12_SESSION === li.price.product ||
+        DONG_12_SESSION_LITE === li.price.product,
     )
   ) {
     const promises = [
