@@ -37,7 +37,7 @@ export default async function generateLinkAndSendEmail(
   }
 
   let calendlyUrls = [];
-  const { packageName, emailTemplateId } =
+  const { packageName, emailTemplateId, coachName } =
     getPackageNameAndEmailTemplateId(lineItems);
 
   if (
@@ -101,6 +101,7 @@ export default async function generateLinkAndSendEmail(
     emailTemplateId,
     {
       packageName,
+      coachName,
       ...links,
     },
   );
@@ -110,23 +111,30 @@ export default async function generateLinkAndSendEmail(
 
 export const getPackageNameAndEmailTemplateId = (
   lineItems: StripeLineItem[],
-): { packageName: string; emailTemplateId: 2 | 4 } => {
+): {
+  packageName: string;
+  emailTemplateId: 2 | 4;
+  coachName: "Dong" | "Daisy";
+} => {
   if (lineItems.some((li) => DONG_4_SESSION === li.price.product)) {
     return {
-      packageName: "4-Session (60 mins) with Dong",
+      packageName: "4-Session (60 mins)",
       emailTemplateId: 2,
+      coachName: "Dong",
     };
   } else if (lineItems.some((li) => DONG_12_SESSION === li.price.product)) {
     return {
-      packageName: "12-Session (60 mins) with Dong",
+      packageName: "12-Session (60 mins)",
       emailTemplateId: 4,
+      coachName: "Dong",
     };
   } else if (
     lineItems.some((li) => DONG_12_SESSION_LITE === li.price.product)
   ) {
     return {
-      packageName: "12-Session Lite (30 mins) with Dong",
+      packageName: "12-Session Lite (30 mins)",
       emailTemplateId: 4,
+      coachName: "Dong",
     };
   } else if (
     lineItems.some(
@@ -138,6 +146,7 @@ export const getPackageNameAndEmailTemplateId = (
     return {
       packageName: "4-Session (60 mins)",
       emailTemplateId: 2,
+      coachName: "Daisy",
     };
   } else if (
     lineItems.some(
@@ -149,6 +158,7 @@ export const getPackageNameAndEmailTemplateId = (
     return {
       packageName: "12-Session (60 mins)",
       emailTemplateId: 4,
+      coachName: "Daisy",
     };
   } else if (
     lineItems.some(
@@ -160,6 +170,7 @@ export const getPackageNameAndEmailTemplateId = (
     return {
       packageName: "12-Session Lite (30 mins)",
       emailTemplateId: 4,
+      coachName: "Daisy",
     };
   } else {
     throw new Error("Unexpected product id, does not have a package name");
