@@ -11,7 +11,7 @@ export default function Appointments() {
           <h1 className="text-4xl text-center block text-blue">
             Schedule with Dong
           </h1>
-          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[725px] text-lg my-5 mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
             <Image
               src={dong}
               placeholder="blur"
@@ -21,9 +21,9 @@ export default function Appointments() {
                 height: "150px",
               }}
             />
-            <div className="mt-5 md:mt-0 md:ml-5">
-              <p className="mb-2">Hi, I&apos;m Dong!</p>
-              <p className="mb-2">
+            <div className="mt-0 md:mt-0 md:ml-5">
+              <p className="mb-0">Hi, I&apos;m Dong!</p>
+              <p className="mb-0">
                 I&apos;m an engineering leader with 15+ years of experience
                 building world class teams and launching new software products
                 at companies like Axon and Microsoft.
@@ -34,22 +34,11 @@ export default function Appointments() {
                 believe the most interesting and challenging problems in any
                 organization are people problems - which are coachable!
               </p>
-              <div className="mb-2">
-                <p className="mb-2">As your coach, I can help you:</p>
-                <ul className="list-disc ml-10">
-                  <li>
-                    Build stronger relationships with colleagues and your
-                    manager
-                  </li>
-                  <li>Master leadership and people management skills</li>
-                  <li>Develop strategies to earn your next promotion</li>
-                </ul>
-              </div>
               <p className="mb-2">
                 I believe in a direct, results-oriented approach tailored to
                 your individual needs.
               </p>
-              <p className="mb-2">Interested? Schedule a discovery call!</p>
+              <p className="mb-2">Interested? Schedule a free discovery call!</p>
             </div>
           </div>
           <div className="text-center mt-5 grid grid-cols-2 gap-2 max-w-[620px] mx-auto">

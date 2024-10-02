@@ -32,7 +32,7 @@ const Inquiry = () => {
           description="Single Session"
           title="30 Minutes"
           price="$109"
-          href="https://calendly.com/dong-keenesse/30min-session"
+          href="https://calendly.com/keenesse-sessions/30mins-with-dong"
           indented={false}
           bg="white"
         />
@@ -40,7 +40,7 @@ const Inquiry = () => {
           description="Single Session"
           title="60 Minutes"
           price="$219"
-          href="https://calendly.com/dong-keenesse/60min-session"
+          href="https://calendly.com/keenesse-sessions/60-minute-session-with-dong"
           indented={true}
           bg="white"
         />
