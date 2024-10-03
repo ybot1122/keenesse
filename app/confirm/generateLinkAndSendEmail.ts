@@ -1,3 +1,4 @@
+import { Coach } from "@/constants/Coaches";
 import {
   DONG_12_SESSION,
   DONG_12_SESSION_LITE,
@@ -104,6 +105,7 @@ export default async function generateLinkAndSendEmail(
       coachName,
       ...links,
     },
+    coachName,
   );
 
   return calendlyUrls;
@@ -114,7 +116,7 @@ export const getPackageNameAndEmailTemplateId = (
 ): {
   packageName: string;
   emailTemplateId: 2 | 4;
-  coachName: "Dong" | "Daisy";
+  coachName: Coach;
 } => {
   if (lineItems.some((li) => DONG_4_SESSION === li.price.product)) {
     return {

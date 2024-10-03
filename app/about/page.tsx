@@ -63,8 +63,8 @@ export default function About() {
           </p>
           <p className="text-xl mb-3 leading-8">
             We provide specialized coaches and consultants who share our passion
-            for improving people’s lives and empowering businesses by listening,
-            caring and providing personalized solutions.
+            for improving people&apos;s lives and empowering businesses by
+            listening, caring and providing personalized solutions.
           </p>
           <p className="text-xl mb-3 leading-8">
             Our clients' success is our success. We are dedicated to
