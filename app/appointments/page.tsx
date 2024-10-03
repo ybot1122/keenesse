@@ -38,7 +38,7 @@ export default function Appointments() {
               </Link>
             </div>
             <h2 className="text-3xl underline mt-5">
-              <Link href="/daisy">Schedule With Daisy</Link>
+              <Link href="/daisy">Schedule With Daisy Isibor</Link>
             </h2>
           </div>
 

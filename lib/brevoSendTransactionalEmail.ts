@@ -7,23 +7,10 @@ export default async function brevoSendTransactionalEmail(
   customer_email: string,
   customer_name: string,
   message: string,
-  templateId: 1 | 2 | 4,
+  templateId: 1 | 2 | 4 | 5,
   params: undefined | {},
   coachName: Coach | "none",
 ) {
-  let coachEmail;
-
-  switch (coachName) {
-    case "Daisy":
-      coachEmail = "hello@keenesee.com";
-      break;
-    case "Dong":
-      coachEmail = "dong@keenesse.com";
-      break;
-    default:
-      break;
-  }
-
   // Send Email
   try {
     const apiInstance = new Brevo.TransactionalEmailsApi();
@@ -43,9 +30,6 @@ export default async function brevoSendTransactionalEmail(
       email: "hello@keenesse.com",
     };
     sendSmtpEmail.to = [{ email: customer_email, name }];
-    if (coachEmail) {
-      sendSmtpEmail.cc = [{ email: coachEmail, name: coachName }];
-    }
     sendSmtpEmail.replyTo = {
       name: "Keenesse",
       email: "hello@keenesse.com",
