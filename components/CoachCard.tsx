@@ -1,7 +1,5 @@
 import Link from "next/link";
-import WannaChat from "@/components/WannaChat";
 import Image, { StaticImageData } from "next/image";
-import daisy from "../../public/my-pic.jpeg";
 
 export default function CoachCard({
   name,
@@ -17,7 +15,7 @@ export default function CoachCard({
   description: string;
 }) {
   return (
-    <div className="max-w-[725px] text-lg my-5 sm:mr-5">
+    <div className="max-w-[725px] text-lg my-5 sm:mx-5">
       <div className="w-[200px] h-[200px] overflow-hidden relative">
         <Link href={appointmentsHref}>
           {" "}

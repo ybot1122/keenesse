@@ -1,11 +1,8 @@
 import FAQItem from "@/components/FAQItem";
 import WannaChat from "@/components/WannaChat";
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import daisy from "@/public/my-pic.jpeg";
 import dong from "../../public/dong.png";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import Testimonials from "@/components/Testimonials";
 import CoachCard from "@/components/CoachCard";
 
