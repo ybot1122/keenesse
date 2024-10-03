@@ -45,7 +45,7 @@ export default async function brevoSendTransactionalEmail(
     sendSmtpEmail.to = [{ email: customer_email, name }];
 
     if (coachEmail) {
-      sendSmtpEmail.cc = [{ email: coachEmail, name: coachName }];
+      sendSmtpEmail.to.push({ email: coachEmail, name: coachName });
     }
 
     sendSmtpEmail.replyTo = {
