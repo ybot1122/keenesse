@@ -80,66 +80,79 @@ export default function About() {
         <h3 className="text-4xl text-blue text-center my-10 w-full lg:text-6xl">
           Our Team
         </h3>
-        <div className="flex flex-col md:flex-row items-center md:items-start max-w-[725px] text-lg my-5 mx-auto">
-          <div className="w-[200px] h-[200px] overflow-hidden relative">
-            <Image
-              src={daisy}
-              placeholder="blur"
-              alt="Daisy"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
+
+        <div className="flex flex-col sm:flex-row justify-center items-center">
+          <div className="max-w-[725px] text-lg my-5 sm:mr-5">
+            <div className="w-[200px] h-[200px] overflow-hidden relative">
+              <Link href="/daisy">
+                {" "}
+                <Image
+                  src={daisy}
+                  placeholder="blur"
+                  alt="Daisy"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Link>
+            </div>
+
+            <div className="mt-2">
+              <Link href="/appointments" className="underline">
+                Daisy Isibor
+              </Link>
+              <p className="mb-2">Founder, Coach & Consultant</p>
+              <Link
+                href="https://www.linkedin.com/in/daisy-isibor/"
+                target="_blank"
+                className="inline-block"
+              >
+                <Image
+                  src="/icons8-linkedin.svg"
+                  alt="LinkedIn"
+                  width="25"
+                  height="25"
+                />
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-5 md:mt-0 md:ml-5">
-            <Link href="/appointments">Daisy Isibor</Link>
-            <p className="mb-2">Founder, Coach & Consultant</p>
-            <Link
-              href="https://www.linkedin.com/in/daisy-isibor/"
-              target="_blank"
-              className="inline-block"
-            >
-              <Image
-                src="/icons8-linkedin.svg"
-                alt="LinkedIn"
-                width="25"
-                height="25"
-              />
-            </Link>
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center md:items-start max-w-[725px] text-lg my-5 mx-auto">
-          <div className="w-[200px] h-[200px] overflow-hidden">
-            <Image
-              src={dong}
-              placeholder="blur"
-              alt="Dong"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-          <div className="mt-5 md:mt-0 md:ml-5">
-            <Link href="/dong">Dong Ming</Link>
-            <p className="mb-2">Coach & Consultant</p>
-            <Link
-              href="https://www.linkedin.com/in/dongming/"
-              target="_blank"
-              className="inline-block"
-            >
-              <Image
-                src="/icons8-linkedin.svg"
-                alt="LinkedIn"
-                width="25"
-                height="25"
-              />
-            </Link>
+          <div className="max-w-[725px] text-lg my-5 sm:ml-5">
+            <div className="w-[200px] h-[200px] overflow-hidden">
+              <Link href="/dong">
+                {" "}
+                <Image
+                  src={dong}
+                  placeholder="blur"
+                  alt="Dong"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Link>
+            </div>
+            <div className="mt-2">
+              <Link href="/dong" className="underline">
+                Dong Ming
+              </Link>
+              <p className="mb-2">Coach & Consultant</p>
+              <Link
+                href="https://www.linkedin.com/in/dongming/"
+                target="_blank"
+                className="inline-block"
+              >
+                <Image
+                  src="/icons8-linkedin.svg"
+                  alt="LinkedIn"
+                  width="25"
+                  height="25"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
