@@ -108,33 +108,6 @@ export default async function generateLinkAndSendEmail(
     coachName,
   );
 
-  let coachEmail;
-
-  switch (coachName) {
-    case "Daisy":
-      coachEmail = "hello@keenesee.com";
-      break;
-    case "Dong":
-      coachEmail = "dong@keenesse.com";
-      break;
-    default:
-      break;
-  }
-
-  if (coachEmail) {
-    await brevoSendTransactionalEmail(
-      coachEmail,
-      customer_name,
-      "",
-      5,
-      {
-        customer_name,
-        coachName,
-      },
-      coachName,
-    );
-  }
-
   return calendlyUrls;
 }
 
