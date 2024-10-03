@@ -57,80 +57,91 @@ export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
-      
         <div className="bg-white p-10 text-blue w-full lg:p-20 max-w-[920px]">
           <h3 className="text-4xl mb-5 lg:text-6xl">Welcome to Keenesse!</h3>
           <p className="text-xl mb-3 leading-8">
-            Our mission is to provide every individual and organization with a partner to help them navigate their journey with finesse.
+            Our mission is to provide every individual and organization with a
+            partner to help them navigate their journey with finesse.
           </p>
           <p className="text-xl mb-3 leading-8">
-          We provide specialized coaches and consultants who share our passion for improving people’s lives and empowering businesses by listening, caring and providing personalized solutions.
+            We provide specialized coaches and consultants who share our passion
+            for improving people’s lives and empowering businesses by listening,
+            caring and providing personalized solutions.
           </p>
           <p className="text-xl mb-3 leading-8">
-          Our clients' success is our success. We are dedicated to understanding and exceeding their expectations. We conduct our business with the highest ethical standards, ensuring trust and credibility in all our relationships.
+            Our clients' success is our success. We are dedicated to
+            understanding and exceeding their expectations. We conduct our
+            business with the highest ethical standards, ensuring trust and
+            credibility in all our relationships.
           </p>
         </div>
       </div>
       <div className="bg-white p-10 text-blue w-full lg:p-10 max-w-[620px]">
-      <h3 className="text-4xl text-blue text-center my-10 w-full lg:text-6xl">
+        <h3 className="text-4xl text-blue text-center my-10 w-full lg:text-6xl">
           Our Team
         </h3>
         <div className="flex flex-col md:flex-row items-center md:items-start max-w-[725px] text-lg my-5 mx-auto">
+          <div className="w-[200px] h-[200px] overflow-hidden relative">
             <Image
               src={daisy}
               placeholder="blur"
               alt="Daisy"
               style={{
-                width: "200px",
-                height: "160px",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
               }}
             />
-            <div className="mt-5 md:mt-0 md:ml-5">
-            <Link href="/appointments">Daisy Isibor</Link>
-              <p className="mb-2">Founder, Coach & Consultant</p>
-              <Link
-          href="https://www.linkedin.com/in/daisy-isibor/"
-          target="_blank"
-          className="inline-block"
-        >
-          <Image
-            src="/icons8-linkedin.svg"
-            alt="LinkedIn"
-            width="25"
-            height="25"
-          />
-        </Link>
-            </div>
           </div>
-          
+
+          <div className="mt-5 md:mt-0 md:ml-5">
+            <Link href="/appointments">Daisy Isibor</Link>
+            <p className="mb-2">Founder, Coach & Consultant</p>
+            <Link
+              href="https://www.linkedin.com/in/daisy-isibor/"
+              target="_blank"
+              className="inline-block"
+            >
+              <Image
+                src="/icons8-linkedin.svg"
+                alt="LinkedIn"
+                width="25"
+                height="25"
+              />
+            </Link>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center md:items-start max-w-[725px] text-lg my-5 mx-auto">
+          <div className="w-[200px] h-[200px] overflow-hidden">
             <Image
               src={dong}
               placeholder="blur"
               alt="Dong"
               style={{
-                width: "160px",
-                height: "160px",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
               }}
             />
-            <div className="mt-5 md:mt-0 md:ml-5">
-              
-              <Link href="/dong">Dong Ming</Link>
-              <p className="mb-2">Coach & Consultant</p>
-              <Link
-          href="https://www.linkedin.com/in/dongming/"
-          target="_blank"
-          className="inline-block"
-        >
-          <Image
-            src="/icons8-linkedin.svg"
-            alt="LinkedIn"
-            width="25"
-            height="25"
-          />
-        </Link>
-            </div>
           </div>
+          <div className="mt-5 md:mt-0 md:ml-5">
+            <Link href="/dong">Dong Ming</Link>
+            <p className="mb-2">Coach & Consultant</p>
+            <Link
+              href="https://www.linkedin.com/in/dongming/"
+              target="_blank"
+              className="inline-block"
+            >
+              <Image
+                src="/icons8-linkedin.svg"
+                alt="LinkedIn"
+                width="25"
+                height="25"
+              />
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="flex bg-blue w-full p-5 items-center flex-wrap justify-center">
         <h3 className="text-4xl text-white text-center my-10 w-full lg:text-6xl">
