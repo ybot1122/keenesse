@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Keenesse",
     description:
       "Navigate your journey with finesse. Your first meeting is on us.",
-    url: "https://www.keeness.com",
+    url: "https://www.keenesse.com",
     siteName: "Keenesse",
   },
   twitter: {

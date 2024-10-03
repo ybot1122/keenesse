@@ -15,10 +15,8 @@ export default function CoachCard({
   description: string;
 }) {
   return (
-    <div className="max-w-[725px] text-lg my-5 sm:mx-5">
+    <div className="max-w-[725px] text-lg my-2 sm:mx-5">
       <div className="w-[200px] h-[200px] overflow-hidden relative">
-        <Link href={appointmentsHref}>
-          {" "}
           <Image
             src={imageSrc}
             placeholder="blur"
@@ -29,14 +27,9 @@ export default function CoachCard({
               objectFit: "cover",
             }}
           />
-        </Link>
-      </div>
 
+      </div>
       <div className="mt-2">
-        <Link href={appointmentsHref} className="underline">
-          {name}
-        </Link>
-        <p className="mb-2">{description}</p>
         <Link href={linkedInHref} target="_blank" className="inline-block">
           <Image
             src="/icons8-linkedin.svg"

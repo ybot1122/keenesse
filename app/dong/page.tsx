@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Tabs from "./Tabs";
-import Image from "next/image";
 import dong from "../../public/dong.png";
+import CoachCard from "@/components/CoachCard";
 
 export default function Appointments() {
   return (
@@ -12,15 +12,14 @@ export default function Appointments() {
             Schedule with Dong
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
-            <Image
-              src={dong}
-              placeholder="blur"
-              alt="Keenesse Coach Dong"
-              style={{
-                width: "150px",
-                height: "150px",
-              }}
-            />
+          <CoachCard
+            name="Dong Ming"
+            appointmentsHref="/dong"
+            description="Coach & Consultant"
+            linkedInHref="https://www.linkedin.com/in/dongming"
+            imageSrc={dong}
+          ></CoachCard>
+
             <div className="mt-0 md:mt-0 md:ml-5">
               <p className="mb-0">Hi, I&apos;m Dong!</p>
               <p className="mb-0">

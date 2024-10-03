@@ -57,6 +57,12 @@ const Packages = () => {
           <h1 className="text-blue text-4xl pb-5 pt-10" id="packages">
             Packages
           </h1>
+          <p className="text-blue mb-5 max-w-[620px] mx-auto text-lg">
+            At Keenesse, we offer packages for booking multiple sessions
+            upfront. Packages are a great option if you are looking for regular
+            check ins and long term support. Check out which package is best for
+            you.
+          </p>
         </div>
         <BuyCard
           title="Starter Package"

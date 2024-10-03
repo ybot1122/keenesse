@@ -1,7 +1,5 @@
 import Link from "next/link";
-import WannaChat from "@/components/WannaChat";
 import daisy from "../../public/my-pic.jpeg";
-import CoachCard from "@/components/CoachCard";
 import dong from "../../public/dong.png";
 import Image, { StaticImageData } from "next/image";
 
@@ -9,13 +7,15 @@ export default function Appointments() {
   return (
     <main className="min-h-screen">
       <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-col items-center`">
-        <p className="max-w-[720px] mx-auto text-center text-blue text-2xl">
-          Thank you for your interest in scheduling a sessions with Keenesse!
+      <h1 className="text-4xl text-center block text-blue">Appointments</h1>
+        <p className="text-center max-w-[725px] text-lg my-5 mx-auto">
+          Thank you for your interest in working with Keenesse!
         </p>
-        <p className="max-w-[720px] mx-auto mt-5 text-center text-blue text-2xl">
-          All our coaches offer a free 30 minute consultation, as well as
-          individual sessions and packages. Select the coach you are interested
-          in booking with.
+        <p className="text-center max-w-[825px] text-lg mx-auto">
+        Please select the consultant you would like to work with. New here? Get started with{" "}
+            <Link href="https://calendly.com/keenesse/free30min" className="text-underline">
+            a free 30 minute consultation.
+            </Link>
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function Appointments() {
                 <Image
                   src={daisy}
                   placeholder="blur"
-                  alt={"Daisy Isibor"}
+                  alt={"Daisy"}
                   style={{
                     width: "100%",
                     height: "100%",
@@ -38,7 +38,7 @@ export default function Appointments() {
               </Link>
             </div>
             <h2 className="text-3xl underline mt-5">
-              <Link href="/daisy">Schedule With Daisy Isibor</Link>
+              <Link href="/daisy">Schedule with Daisy</Link>
             </h2>
           </div>
 
@@ -49,7 +49,7 @@ export default function Appointments() {
                 <Image
                   src={dong}
                   placeholder="blur"
-                  alt={"Dong Ming"}
+                  alt={"Dong"}
                   style={{
                     width: "100%",
                     height: "100%",
@@ -59,7 +59,7 @@ export default function Appointments() {
               </Link>
             </div>
             <h2 className="text-3xl underline mt-5">
-              <Link href="/dong">Schedule With Dong Ming</Link>
+              <Link href="/dong">Schedule with Dong</Link>
             </h2>
           </div>
         </div>

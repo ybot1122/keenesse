@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Tabs from "./Tabs";
 import WannaChat from "@/components/WannaChat";
-import Image from "next/image";
 import daisy from "../../public/my-pic.jpeg";
+import CoachCard from "@/components/CoachCard";
 
 export default function Daisy() {
   return (
@@ -13,15 +13,14 @@ export default function Daisy() {
             Schedule with Daisy
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
-            <Image
-              src={daisy}
-              placeholder="blur"
-              alt="Keenesse Coach Daisy"
-              style={{
-                width: "230px",
-                height: "180px",
-              }}
-            />
+          <CoachCard
+            name="Daisy Isibor"
+            appointmentsHref="/daisy"
+            description="Founder, Coach & Consultant"
+            linkedInHref="https://www.linkedin.com/in/daisy-isibor"
+            imageSrc={daisy}
+          ></CoachCard>
+
             <div className="mt-0 md:mt-0 md:ml-5">
               <p className="mb-0">Hello, I&apos;m Daisy!</p>
               <p className="mb-0">

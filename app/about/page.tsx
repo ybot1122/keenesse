@@ -2,9 +2,10 @@ import FAQItem from "@/components/FAQItem";
 import WannaChat from "@/components/WannaChat";
 import type { Metadata } from "next";
 import daisy from "@/public/my-pic.jpeg";
-import dong from "../../public/dong.png";
 import Testimonials from "@/components/Testimonials";
-import CoachCard from "@/components/CoachCard";
+import Link from "next/link";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Keenesse - About",
@@ -55,14 +56,26 @@ export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
-        <div className="bg-white p-10 text-blue w-full lg:p-20 max-w-[920px]">
-          <h3 className="text-4xl mb-5 lg:text-6xl">Welcome to Keenesse!</h3>
+      <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
+        <div className="w-full md:w-1/2 max-w-[620px] h-[50vw] max-h-[420px]">
+          <div className="relative w-full h-full">
+            <Image
+              src={daisy}
+              alt="Daisy"
+              fill
+              className="object-cover"
+              placeholder="blur"
+            />
+          </div>
+        </div>
+        <div className="bg-white p-10 text-blue w-full md:w-1/2 lg:p-20 max-w-[620px]">
+          <h3 className="text-4xl mb-5 lg:text-6xl">Welcome!</h3>
           <p className="text-xl mb-3 leading-8">
-            Our mission is to provide every individual and organization with a
-            partner to help them navigate their journey with finesse.
+            I started Keenesse with one goal in mind: to provide every individual and organization with a
+            partner to help them navigate their work and life journey with finesse.
           </p>
           <p className="text-xl mb-3 leading-8">
-            We provide specialized coaches and consultants who share our passion
+            At Keenesse, we provide specialized coaches and consultants who share our passion
             for improving people&apos;s lives and empowering businesses by
             listening, caring and providing personalized solutions.
           </p>
@@ -72,30 +85,16 @@ export default function About() {
             business with the highest ethical standards, ensuring trust and
             credibility in all our relationships.
           </p>
+          <p className="text-xl mb-3 leading-8">
+            Thank you for stopping by, hope to hear from you soon!
+          </p>
+          <p className="text-xl mb-3 leading-8">
+            <Link href="/daisy">
+              - Daisy
+            </Link>
+          </p>
         </div>
       </div>
-      <div className="bg-white p-10 text-blue w-full lg:p-10 max-w-[620px]">
-        <h3 className="text-4xl text-blue text-center my-10 w-full lg:text-6xl">
-          Our Team
-        </h3>
-
-        <div className="flex flex-col sm:flex-row justify-center items-center">
-          <CoachCard
-            name="Daisy Isibor"
-            appointmentsHref="/daisy"
-            description="Founder, Coach & Consultant"
-            linkedInHref="https://www.linkedin.com/in/daisy-isibor"
-            imageSrc={daisy}
-          ></CoachCard>
-
-          <CoachCard
-            name="Dong Ming"
-            appointmentsHref="/dong"
-            description="Coach & Consultant"
-            linkedInHref="https://www.linkedin.com/in/dongming"
-            imageSrc={dong}
-          ></CoachCard>
-        </div>
       </div>
       <div className="flex bg-blue w-full p-5 items-center flex-wrap justify-center">
         <h3 className="text-4xl text-white text-center my-10 w-full lg:text-6xl">
@@ -104,7 +103,7 @@ export default function About() {
 
         <Testimonials />
       </div>
-      <div className="bg-gray w-full px-10 lg:p-24">
+      <div className="bg-white w-full px-10 lg:p-24">
         <div className="w-full lg:grid lg:grid-cols-3">
           <h3 className="text-4xl text-blue lg:text-center lg:col-span-1 my-10 lg:text-6xl">
             FAQs
