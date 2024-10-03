@@ -67,7 +67,7 @@ export default function About() {
             listening, caring and providing personalized solutions.
           </p>
           <p className="text-xl mb-3 leading-8">
-            Our clients' success is our success. We are dedicated to
+            Our clients&apos; success is our success. We are dedicated to
             understanding and exceeding their expectations. We conduct our
             business with the highest ethical standards, ensuring trust and
             credibility in all our relationships.
