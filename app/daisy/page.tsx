@@ -9,17 +9,22 @@ export default function Daisy() {
     <main className="min-h-screen">
       <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
+          <div>
+            <Link href="/appointments" className="underline">
+              Back to All Coaches
+            </Link>
+          </div>
           <h1 className="text-4xl text-center block text-blue">
             Schedule with Daisy
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
-          <CoachCard
-            name="Daisy Isibor"
-            appointmentsHref="/daisy"
-            description="Founder, Coach & Consultant"
-            linkedInHref="https://www.linkedin.com/in/daisy-isibor"
-            imageSrc={daisy}
-          ></CoachCard>
+            <CoachCard
+              name="Daisy Isibor"
+              appointmentsHref="/daisy"
+              description="Founder, Coach & Consultant"
+              linkedInHref="https://www.linkedin.com/in/daisy-isibor"
+              imageSrc={daisy}
+            ></CoachCard>
 
             <div className="mt-0 md:mt-0 md:ml-5">
               <p className="mb-0">Hello, I&apos;m Daisy!</p>
