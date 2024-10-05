@@ -14,18 +14,27 @@ export default function Daisy() {
       <div className="bg-gray w-full px-10 pt-0 md:pt-0 pb-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
           <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg mx-auto">
-            <CoachCard
-              name="Daisy Isibor"
-              appointmentsHref="/daisy"
-              description="Founder, Coach & Consultant"
-              linkedInHref="https://www.linkedin.com/in/daisy-isibor"
-              imageSrc={daisy}
-            ></CoachCard>
+            <CoachCard name="Daisy Isibor" imageSrc={daisy}></CoachCard>
 
             <div className="mt-0 md:mt-0 md:ml-5">
-              <p className="mb-0 text-2xl text-blue font-bold">
-                Hello, I&apos;m Daisy!
-              </p>
+              <div className="flex flex-row items-center justify-center md:justify-start">
+                <p className="mb-0 text-2xl text-blue font-bold">
+                  Hello, I&apos;m Daisy!
+                </p>
+                <Link
+                  href={"https://www.linkedin.com/in/daisy-isibor"}
+                  target="_blank"
+                  className="inline-block"
+                >
+                  <Image
+                    src="/icons8-linkedin.svg"
+                    alt="LinkedIn"
+                    width="25"
+                    height="25"
+                    className="ml-2"
+                  />
+                </Link>
+              </div>
               <p className="mb-0">
                 I started Keenesse with one goal in mind: to partner with
                 individuals and organizations so that they can navigate their
