@@ -3,17 +3,17 @@ import Tabs from "./Tabs";
 import WannaChat from "@/components/WannaChat";
 import daisy from "../../public/my-pic.jpeg";
 import CoachCard from "@/components/CoachCard";
+import breadcrumb from "@/public/breadcrumb.svg";
+import Image from "next/image";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function Daisy() {
   return (
     <main className="min-h-screen">
       <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-wrap md:flex-row-reverse">
+        <Breadcrumb />
+
         <div className="w-full max-w-[1024px]">
-          <div>
-            <Link href="/appointments" className="underline">
-              Back to All Coaches
-            </Link>
-          </div>
           <h1 className="text-4xl text-center block text-blue">
             Schedule with Daisy
           </h1>
