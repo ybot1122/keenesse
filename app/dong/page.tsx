@@ -2,21 +2,15 @@ import Link from "next/link";
 import Tabs from "./Tabs";
 import dong from "../../public/dong.png";
 import CoachCard from "@/components/CoachCard";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function Appointments() {
   return (
     <main className="min-h-screen">
-      <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-wrap md:flex-row-reverse">
+      <Breadcrumb coach="Dong" />
+      <div className="bg-gray w-full px-10 pt-0 md:pt-0 pb-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
-          <div>
-            <Link href="/appointments" className="underline">
-              Back to All Coaches
-            </Link>
-          </div>
-          <h1 className="text-4xl text-center block text-blue">
-            Schedule with Dong
-          </h1>
-          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg mx-auto">
             <CoachCard
               name="Dong Ming"
               appointmentsHref="/dong"
@@ -26,7 +20,9 @@ export default function Appointments() {
             ></CoachCard>
 
             <div className="mt-0 md:mt-0 md:ml-5">
-              <p className="mb-0">Hi, I&apos;m Dong!</p>
+              <p className="mb-0 text-2xl text-blue font-bold">
+                Hi, I&apos;m Dong!
+              </p>
               <p className="mb-0">
                 I&apos;m an engineering leader with 15+ years of experience
                 building world class teams and launching new software products

@@ -1,3 +1,4 @@
+import { Coach } from "@/constants/Coaches";
 import Link from "next/link";
 
 const Arrow = () => (
@@ -18,16 +19,18 @@ const Arrow = () => (
   </svg>
 );
 
-export default function Breadcrumb({}) {
+export default function Breadcrumb({ coach }: { coach: Coach }) {
   return (
-    <div className="flex flex-row items-center">
-      <Link href="/appointments" className="underline">
-        Appointments
-      </Link>
-      <Arrow />{" "}
-      <Link href="/daisy" className="underline">
-        Daisy
-      </Link>
+    <div className="bg-gray w-full flex justify-center">
+      <div className="flex flex-row items-center w-full max-w-[1024px] px-[70px] pt-5 text-blue justify-center md:justify-start">
+        <Link href="/appointments" className="underline">
+          Appointments
+        </Link>
+        <Arrow />{" "}
+        <Link href={`/${coach.toLowerCase()}`} className="underline">
+          {coach}
+        </Link>
+      </div>
     </div>
   );
 }

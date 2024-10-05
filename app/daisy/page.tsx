@@ -10,14 +10,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 export default function Daisy() {
   return (
     <main className="min-h-screen">
-      <div className="bg-gray w-full p-10 md:pt-10 md:pb-10 flex justify-center flex-wrap md:flex-row-reverse">
-        <Breadcrumb />
-
+      <Breadcrumb coach="Daisy" />
+      <div className="bg-gray w-full px-10 pt-0 md:pt-0 pb-10 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full max-w-[1024px]">
-          <h1 className="text-4xl text-center block text-blue">
-            Schedule with Daisy
-          </h1>
-          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg my-5 mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:items-start max-w-[925px] text-lg mx-auto">
             <CoachCard
               name="Daisy Isibor"
               appointmentsHref="/daisy"
@@ -27,7 +23,9 @@ export default function Daisy() {
             ></CoachCard>
 
             <div className="mt-0 md:mt-0 md:ml-5">
-              <p className="mb-0">Hello, I&apos;m Daisy!</p>
+              <p className="mb-0 text-2xl text-blue font-bold">
+                Hello, I&apos;m Daisy!
+              </p>
               <p className="mb-0">
                 I started Keenesse with one goal in mind: to partner with
                 individuals and organizations so that they can navigate their
