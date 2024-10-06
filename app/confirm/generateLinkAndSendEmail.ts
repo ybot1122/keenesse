@@ -14,6 +14,8 @@ import { StripeLineItem } from "@/constants/StripeLineItem";
 import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
 import { kv } from "@vercel/kv";
+import { contactFormAction } from "../contact/contactFormAction";
+import brevoContactFormEmail from "@/lib/brevoContactFormEmail";
 
 /**
  * Given a Stripe checkout_session_id and Stripe line items, it will either return
@@ -105,8 +107,29 @@ export default async function generateLinkAndSendEmail(
       coachName,
       ...links,
     },
-    coachName,
   );
+
+  let coachEmail;
+
+  switch (coachName) {
+    case "Daisy":
+      coachEmail = "hello@keenesee.com";
+      break;
+    case "Dong":
+      coachEmail = "dong@keenesse.com";
+      break;
+    default:
+      break;
+  }
+
+  if (coachEmail) {
+    await brevoSendTransactionalEmail(coachEmail, coachName, ``, 5, {
+      coachName: coachName,
+      customerName: customer_name,
+      customerEmail: customer_email,
+      packageName,
+    });
+  }
 
   return calendlyUrls;
 }

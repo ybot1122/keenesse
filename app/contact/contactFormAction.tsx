@@ -32,7 +32,6 @@ const contactFormAction = async (
     validation.sanitized?.message,
     1,
     { topics: validation.sanitized?.topics.join(", ") },
-    "none",
   );
 
   return {

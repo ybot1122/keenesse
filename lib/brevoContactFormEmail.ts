@@ -10,7 +10,7 @@ export default async function brevoContactFormEmail(
   customer_email: string,
   customer_name: string,
   message: string,
-  templateId: 1,
+  templateId: 1 | 5,
   params: undefined | {},
 ) {
   // Send Email
