@@ -13,12 +13,15 @@ export default async function brevoPackagePurchasedEmail(
   packageName: string,
 ) {
   let coachEmail;
+  let name;
 
   switch (coachName) {
     case "Daisy":
+      name = "Keenesse";
       coachEmail = "hello@keenesee.com";
       break;
     case "Dong":
+      name = "Dong";
       coachEmail = "dong@keenesse.com";
       break;
     default:
@@ -38,7 +41,7 @@ export default async function brevoPackagePurchasedEmail(
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.to = [{ email: coachEmail, name: coachName }];
+    sendSmtpEmail.to = [{ email: coachEmail, name }];
     sendSmtpEmail.templateId = 5;
     sendSmtpEmail.params = {
       coachName,
