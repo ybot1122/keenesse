@@ -2,12 +2,13 @@
  * Used to inform the coach when someone has purchased a package.
  */
 
+import { Coach } from "@/constants/Coaches";
 import * as Brevo from "@getbrevo/brevo";
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 
 export default async function brevoPackagePurchasedEmail(
-  coachName: string,
+  coachName: Coach,
   customerName: string,
   customerEmail: string,
   packageName: string,
@@ -41,7 +42,16 @@ export default async function brevoPackagePurchasedEmail(
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.to = [{ email: coachEmail, name }];
+    sendSmtpEmail.to = [
+      {
+        name: coachName,
+        email: coachEmail,
+      },
+    ];
+    sendSmtpEmail.replyTo = {
+      name: "Keenesse",
+      email: "hello@keenesse.com",
+    };
     sendSmtpEmail.templateId = 5;
     sendSmtpEmail.params = {
       coachName,
