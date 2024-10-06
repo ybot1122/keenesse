@@ -123,7 +123,7 @@ export default async function generateLinkAndSendEmail(
   }
 
   if (coachEmail) {
-    await brevoSendTransactionalEmail(coachEmail, coachName, ``, 5, {
+    await brevoSendTransactionalEmail(coachEmail, "Keenesse", ``, 5, {
       coachName: coachName,
       customerName: customer_name,
       customerEmail: customer_email,
