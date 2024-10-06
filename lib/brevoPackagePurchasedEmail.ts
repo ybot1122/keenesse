@@ -1,32 +1,27 @@
-/**
- * Used to inform the coach when someone has purchased a package.
- */
-
 import { Coach } from "@/constants/Coaches";
 import * as Brevo from "@getbrevo/brevo";
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 
 export default async function brevoPackagePurchasedEmail(
+  customer_email: string,
+  customer_name: string,
+  templateId: 2 | 4,
+  params: {},
   coachName: Coach,
-  customerName: string,
-  customerEmail: string,
-  packageName: string,
 ) {
   let coachEmail;
-  let name;
-
   switch (coachName) {
     case "Daisy":
-      name = "Keenesse";
-      coachEmail = "hello@keenesee.com";
+      coachEmail = "hello@keenesse.com";
       break;
     case "Dong":
-      name = "Dong";
       coachEmail = "dong@keenesse.com";
       break;
     default:
-      return;
+      throw new Error(
+        "Tried to send a package purchased email without a coach name",
+      );
   }
 
   // Send Email
@@ -38,26 +33,26 @@ export default async function brevoPackagePurchasedEmail(
     );
     const sendSmtpEmail = new Brevo.SendSmtpEmail();
 
+    const name =
+      customer_name && customer_name.length > 0
+        ? customer_name
+        : "Keenesse Client";
+
     sendSmtpEmail.sender = {
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.to = [
-      {
-        name: coachName,
-        email: coachEmail,
-      },
-    ];
+    sendSmtpEmail.to = [{ email: customer_email, name }];
+    sendSmtpEmail.cc = [{ email: coachEmail, name: coachName }];
     sendSmtpEmail.replyTo = {
       name: "Keenesse",
       email: "hello@keenesse.com",
     };
-    sendSmtpEmail.templateId = 5;
+    sendSmtpEmail.templateId = templateId;
     sendSmtpEmail.params = {
-      coachName,
-      customerName,
-      customerEmail,
-      packageName,
+      name,
+      email: customer_email,
+      ...params,
     };
 
     const response = await apiInstance.sendTransacEmail(sendSmtpEmail);

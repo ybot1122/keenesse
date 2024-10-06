@@ -11,12 +11,9 @@ import {
   TEST_MODE_4_SESSION,
 } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import { StripeLineItem } from "@/constants/StripeLineItem";
-import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
+import brevoPackagePurchasedEmail from "@/lib/brevoPackagePurchasedEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
 import { kv } from "@vercel/kv";
-import { contactFormAction } from "../contact/contactFormAction";
-import brevoContactFormEmail from "@/lib/brevoContactFormEmail";
-import brevoPackagePurchasedEmail from "@/lib/brevoPackagePurchasedEmail";
 
 /**
  * Given a Stripe checkout_session_id and Stripe line items, it will either return
@@ -98,26 +95,17 @@ export default async function generateLinkAndSendEmail(
     links[`link${ind + 1}`] = c;
   });
 
-  await Promise.all([
-    brevoSendTransactionalEmail(
-      customer_email,
-      customer_name,
-      ``,
-      emailTemplateId,
-      {
-        packageName,
-        coachName,
-        ...links,
-      },
-    ),
-
-    brevoPackagePurchasedEmail(
-      coachName,
-      customer_name,
-      customer_email,
+  await brevoPackagePurchasedEmail(
+    customer_email,
+    customer_name,
+    emailTemplateId,
+    {
       packageName,
-    ),
-  ]);
+      coachName,
+      ...links,
+    },
+    coachName,
+  );
 
   return calendlyUrls;
 }
