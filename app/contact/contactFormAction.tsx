@@ -2,7 +2,7 @@
 
 import validateContactForm from "./validateContactForm";
 import { newsletterSignupAction } from "./newsletterSignupAction";
-import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
+import brevoContactFormEmail from "@/lib/brevoContactFormEmail";
 
 export type ContactFormState = {
   status?: "success" | "fail";
@@ -26,7 +26,7 @@ const contactFormAction = async (
   await newsletterSignupAction({}, formData);
 
   // Send transactional email
-  await brevoSendTransactionalEmail(
+  await brevoContactFormEmail(
     validation.sanitized?.email,
     validation.sanitized?.firstName + " " + validation.sanitized?.lastName,
     validation.sanitized?.message,

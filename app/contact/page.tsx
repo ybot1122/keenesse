@@ -59,7 +59,9 @@ export default function Contact() {
         </div>
         <div className="col-span-1">
           {formState.status === "success" ? (
-            <p>Thank you for the message, I&apos;ll get back to you shortly!</p>
+            <p>
+              Thank you for the message, we&apos;ll get back to you shortly!
+            </p>
           ) : (
             <form className="grid grid-cols-2 gap-2" action={formAction}>
               <ContactForm message={formState.message} />
