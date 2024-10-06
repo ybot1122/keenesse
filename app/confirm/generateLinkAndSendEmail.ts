@@ -98,24 +98,26 @@ export default async function generateLinkAndSendEmail(
     links[`link${ind + 1}`] = c;
   });
 
-  await brevoSendTransactionalEmail(
-    customer_email,
-    customer_name,
-    ``,
-    emailTemplateId,
-    {
-      packageName,
-      coachName,
-      ...links,
-    },
-  );
+  await Promise.all([
+    brevoSendTransactionalEmail(
+      customer_email,
+      customer_name,
+      ``,
+      emailTemplateId,
+      {
+        packageName,
+        coachName,
+        ...links,
+      },
+    ),
 
-  await brevoPackagePurchasedEmail(
-    coachName,
-    customer_name,
-    customer_email,
-    packageName,
-  );
+    brevoPackagePurchasedEmail(
+      coachName,
+      customer_name,
+      customer_email,
+      packageName,
+    ),
+  ]);
 
   return calendlyUrls;
 }
