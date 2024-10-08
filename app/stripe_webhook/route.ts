@@ -1,7 +1,8 @@
+// TODO: this is unused?
+
 import stripe from "stripe";
 import { NextResponse, type NextRequest } from "next/server";
 import handleCustomerCreated from "./handleCustomerCreated";
-import handleInvoicePaymentSucceeded from "./handleInvoicePaymentSucceeded";
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
 const stripeApiSecret = process.env.STRIPE_API_KEY ?? "";
@@ -44,9 +45,6 @@ export async function POST(request: NextRequest) {
       case "customer.created":
         const customer = event.data.object;
         return await handleCustomerCreated(customer);
-      case "invoice.payment_succeeded":
-        const invoice = event.data.object;
-        return await handleInvoicePaymentSucceeded(invoice);
       default:
         console.log(`Unhandled event type ${event.type}.`);
         return new NextResponse(

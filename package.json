@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typecheck": "tsc"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json}": [

@@ -49,7 +49,7 @@ export default async function Confirm({
             </span>
           </h1>
           <p className="text-center text-2xl mb-5">
-            We are excited to support you with our {packageName} package with{" "}
+            We are excited to work with you with our {packageName} package with{" "}
             {coachName}.
           </p>
           <p className="text-center text-2xl mb-5">

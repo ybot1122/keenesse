@@ -1,11 +1,11 @@
 import FAQItem from "@/components/FAQItem";
 import WannaChat from "@/components/WannaChat";
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import me from "@/public/my-pic.jpeg";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import daisy from "@/public/my-pic.jpeg";
 import Testimonials from "@/components/Testimonials";
+import Link from "next/link";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Keenesse - About",
@@ -15,12 +15,12 @@ const faqs = [
   {
     q: "What can I expect during a coaching session?",
     a: [
-      "Keenesse provides a partner to help you achieve your personal, career and life goals! You'll be working with our coach, Daisy and together we'll create a unique plan for your individual background and situation, measure progress and ensure that you're thriving within your strengths while also growing in each season.",
+      "You can choose to meet with any of our coaches to create a unique plan for your individual background and situation, measure progress and ensure that you're thriving within your strengths while also growing in each season.",
       "A free 30-minute discovery call is always offered to ensure we're the right fit for you! When you are ready to take the next steps, you can schedule incremental sessions or take advantage of our package offerings.",
     ],
   },
   {
-    q: "I have a business project & collaboration request. What should I do?",
+    q: "I have a business consultation request. What should I do?",
     a: [
       "Keenesse coaching & consulting provides a wide array of professional services for businesses, non-profits and individuals. The first step is to schedule a free consultation to ensure we're a right fit.",
       "If you would like to proceed, Keenesse would provide a proposal and quote before we proceed to contract. The proposal will include expectations of the service, rates and method of payments, possible mileage or travel fees.",
@@ -30,7 +30,7 @@ const faqs = [
   {
     q: "Are there discounts for students?",
     a: [
-      "Yes, students get an additional 10% off coaching sessions and packages! Email hello@keenesse.com from your .edu email address to request student discounts.",
+      "Yes, students get an additional 15% off all packages! Email hello@keenesse.com from your .edu email address to request student discounts.",
     ],
   },
 
@@ -56,10 +56,11 @@ export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
+      <div className="bg-gray w-full p-5 md:p-10 lg:p-24 flex justify-center flex-wrap md:flex-row-reverse">
         <div className="w-full md:w-1/2 max-w-[620px] h-[50vw] max-h-[420px]">
           <div className="relative w-full h-full">
             <Image
-              src={me}
+              src={daisy}
               alt="Daisy"
               fill
               className="object-cover"
@@ -68,31 +69,32 @@ export default function About() {
           </div>
         </div>
         <div className="bg-white p-10 text-blue w-full md:w-1/2 lg:p-20 max-w-[620px]">
-          <h3 className="text-4xl mb-5 lg:text-6xl">Hi, I&apos;m Daisy</h3>
+          <h3 className="text-4xl mb-5 lg:text-6xl">Welcome!</h3>
           <p className="text-xl mb-3 leading-8">
-            I started Keenesse with one goal in mind: to partner with
-            individuals and organizations so that they can navigate their work
-            and life with finesse.
+            I started Keenesse with one goal in mind: to provide every individual and organization with a
+            partner to help them navigate their work and life journey with finesse.
           </p>
           <p className="text-xl mb-3 leading-8">
-            I have a 12+ years track record of growing individuals and building
-            projects from the ground up in business, non-profit and technology
-            sectors amongst others. I provide consulting services on a wide
-            array of areas. To name a few: career development, leadership, small
-            business launch and growth, and STEM education.
+            At Keenesse, we provide specialized coaches and consultants who share our passion
+            for improving people&apos;s lives and empowering businesses by
+            listening, caring and providing personalized solutions.
           </p>
           <p className="text-xl mb-3 leading-8">
-            I truly care about each client. I take the time to understand each
-            unique situation and I have dedicated Keenesse to making myself
-            available to my clients around the globe.
+            Our clients&apos; success is our success. We are dedicated to
+            understanding and exceeding their expectations. We conduct our
+            business with the highest ethical standards, ensuring trust and
+            credibility in all our relationships.
           </p>
           <p className="text-xl mb-3 leading-8">
-            Interested?{" "}
-            <Link href="/appointments" className="underline">
-              Schedule a discovery call!
+            Thank you for stopping by, hope to hear from you soon!
+          </p>
+          <p className="text-xl mb-3 leading-8">
+            <Link href="/daisy">
+              - Daisy
             </Link>
           </p>
         </div>
+      </div>
       </div>
       <div className="flex bg-blue w-full p-5 items-center flex-wrap justify-center">
         <h3 className="text-4xl text-white text-center my-10 w-full lg:text-6xl">
@@ -101,7 +103,7 @@ export default function About() {
 
         <Testimonials />
       </div>
-      <div className="bg-gray w-full px-10 lg:p-24">
+      <div className="bg-white w-full px-10 lg:p-24">
         <div className="w-full lg:grid lg:grid-cols-3">
           <h3 className="text-4xl text-blue lg:text-center lg:col-span-1 my-10 lg:text-6xl">
             FAQs

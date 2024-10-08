@@ -88,7 +88,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gray text-blue w-full p-10 md:p-24">
+      <div className="bg-white text-blue w-full p-10 md:p-24">
         <h2 className="pb-10  text-center text-5xl md:w-[420px] mx-auto">
           Why Keenesse?
         </h2>

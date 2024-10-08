@@ -39,7 +39,7 @@ export default function Contact() {
           </p>
 
           <p className="pb-10 text-xl">
-            You can also connect with us on{" "}
+            You can also follow us on{" "}
             <Link
               className="font-bold underline"
               href="https://www.linkedin.com/company/keenesse/"
@@ -51,7 +51,7 @@ export default function Contact() {
           </p>
 
           <p className="pb-10 text-xl">
-            If you&apos;re interested in 1:1 coaching, you can also go ahead and{" "}
+            If you&apos;re interested in 1:1 coaching or business consulting, you can also go ahead and{" "}
             <Link href="/appointments" className="underline text-blue">
               schedule your free consultation.
             </Link>

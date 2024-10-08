@@ -1,3 +1,4 @@
+import { Coach } from "@/constants/Coaches";
 import {
   DONG_12_SESSION,
   DONG_12_SESSION_LITE,
@@ -10,7 +11,7 @@ import {
   TEST_MODE_4_SESSION,
 } from "@/constants/STRIPE_SUBSCRIPTION_PRODUCT_IDS";
 import { StripeLineItem } from "@/constants/StripeLineItem";
-import brevoSendTransactionalEmail from "@/lib/brevoSendTransactionalEmail";
+import brevoPackagePurchasedEmail from "@/lib/brevoPackagePurchasedEmail";
 import generateOneTimeCalendlyUrl from "@/lib/generateOneTimeCalendlyUrl";
 import { kv } from "@vercel/kv";
 
@@ -94,16 +95,16 @@ export default async function generateLinkAndSendEmail(
     links[`link${ind + 1}`] = c;
   });
 
-  await brevoSendTransactionalEmail(
+  await brevoPackagePurchasedEmail(
     customer_email,
     customer_name,
-    ``,
     emailTemplateId,
     {
       packageName,
       coachName,
       ...links,
     },
+    coachName,
   );
 
   return calendlyUrls;
@@ -114,7 +115,7 @@ export const getPackageNameAndEmailTemplateId = (
 ): {
   packageName: string;
   emailTemplateId: 2 | 4;
-  coachName: "Dong" | "Daisy";
+  coachName: Coach;
 } => {
   if (lineItems.some((li) => DONG_4_SESSION === li.price.product)) {
     return {

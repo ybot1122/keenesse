@@ -1,14 +1,29 @@
+import { Coach } from "@/constants/Coaches";
 import * as Brevo from "@getbrevo/brevo";
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY ?? "";
 
-export default async function brevoSendTransactionalEmail(
+export default async function brevoPackagePurchasedEmail(
   customer_email: string,
   customer_name: string,
-  message: string,
-  templateId: 1 | 2 | 4,
-  params: undefined | {},
+  templateId: 2 | 4,
+  params: {},
+  coachName: Coach,
 ) {
+  let coachEmail;
+  switch (coachName) {
+    case "Daisy":
+      coachEmail = "hello@keenesse.com";
+      break;
+    case "Dong":
+      coachEmail = "dong@keenesse.com";
+      break;
+    default:
+      throw new Error(
+        "Tried to send a package purchased email without a coach name",
+      );
+  }
+
   // Send Email
   try {
     const apiInstance = new Brevo.TransactionalEmailsApi();
@@ -28,6 +43,7 @@ export default async function brevoSendTransactionalEmail(
       email: "hello@keenesse.com",
     };
     sendSmtpEmail.to = [{ email: customer_email, name }];
+    sendSmtpEmail.cc = [{ email: coachEmail, name: coachName }];
     sendSmtpEmail.replyTo = {
       name: "Keenesse",
       email: "hello@keenesse.com",
@@ -36,7 +52,6 @@ export default async function brevoSendTransactionalEmail(
     sendSmtpEmail.params = {
       name,
       email: customer_email,
-      message: message,
       ...params,
     };
 
