@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "node_modules/@ybot1122/toby-ui/dist/**/*.js",
   ],
   theme: {
     extend: {
